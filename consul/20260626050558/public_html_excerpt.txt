@@ -1,0 +1,27 @@
+
+
+=== .lp-warning ===
+<div class="wp-block-group lp-warning is-yellow"><div class="wp-block-group__inner-container">
+
+<p class="lp-warning-title wp-block-paragraph">⚠ Attention</p>
+
+
+
+<p class="lp-warning-subtitle wp-block-paragraph">お読みになる前にご確認ください</p>
+
+
+
+<p class="wp-block-paragraph">転職エージェントの担当者との相性はサービスの満足度を大きく左右するため、初回面談で違和感があれば担当変更や他社との併用を早めに検討しましょう。</p>
+
+
+
+<p class="wp-block-paragraph">特化型エージェントは非公開求人の割合が高い傾向があるため、求人の全体像は登録・面談後でないと把握できない点をあらかじめご了承ください。</p>
+
+
+
+<p class="wp-block-paragraph">転職活動では複数エージェントの併用が一般的ですが、同一企業への重複応募はトラブルの原因となるため応募管理を徹底してください。</p>
+
+</div></div>
+
+=== table ===
+<table><thead><tr><th>比較項目</th><th>Groovement Agent</th><th>大手総合転職エージェント</th></tr></thead><tbody><tr><td>得意領域</td><td>コンサル・スタートアップ・DX特化</td><td>全業界・全職種対応</td></tr><tr><td>対象者</td><td>コンサル志望の20代〜40代（未経験含む）</td><td>幅広い年代・職種</td></tr><tr><td>独立支援</td><td>転職後のフリーランス独立支援あり</td><td>基本的になし</td></tr><tr><td>求人数</td><td>特化型のため限定的（詳細は要確認）</td><td>数万件規模</td></tr><tr><td>業界知見</td><td>フリーコンサル支援事業の知見を活用</td><td>業界ごとに担当者が異なる</td></tr><tr><td>サービス歴</td><td>2025年7月開始（新しい）</td><td>10年以上の実績あり</td></tr></tbody></table>

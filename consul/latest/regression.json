@@ -1,29 +1,13 @@
 {
-  "status": "BLOCKER",
+  "status": "PASS",
   "site_key": "consul",
-  "curr_timestamp": "20260625225233",
-  "prev_timestamp": "20260625222729",
-  "regressions": [
-    {
-      "gate": "attention_sp_leftMargin",
-      "prev": 1,
-      "curr": 27,
-      "type": "numeric_increase",
-      "severity": "BLOCKER"
-    }
-  ],
-  "blockers": [
-    {
-      "gate": "attention_sp_leftMargin",
-      "prev": 1,
-      "curr": 27,
-      "type": "numeric_increase",
-      "severity": "BLOCKER"
-    }
-  ],
+  "curr_timestamp": "20260626050558",
+  "prev_timestamp": "20260625225233",
+  "regressions": [],
+  "blockers": [],
   "majors": [],
-  "regression_count": 1,
-  "checked_at": "2026-06-25T22:52:58.167248",
-  "post_allowed": false,
+  "regression_count": 0,
+  "checked_at": "2026-06-26T05:06:12.041441",
+  "post_allowed": true,
   "_rule": "品質後退（BLOCKER/MAJOR）がある場合、投稿禁止。"
 }

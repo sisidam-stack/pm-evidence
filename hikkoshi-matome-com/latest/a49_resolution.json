@@ -1,0 +1,15 @@
+{
+  "gate": "A-49 PM Resolution Gate",
+  "site_key": "hikkoshi-matome-com",
+  "current_commit": "6949571",
+  "generated_at": "2026-06-26T05:05:20.955095",
+  "summary": {
+    "total": 0,
+    "pending": 0,
+    "resolved": 0,
+    "acknowledged": 0
+  },
+  "pm_approval_ready": true,
+  "warnings": [],
+  "note": "pending=0 のとき pm_approval_ready=true"
+}

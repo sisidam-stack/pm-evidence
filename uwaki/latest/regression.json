@@ -1,13 +1,13 @@
 {
   "status": "PASS",
   "site_key": "uwaki",
-  "curr_timestamp": "20260625230013",
-  "prev_timestamp": "20260625225258",
+  "curr_timestamp": "20260626050612",
+  "prev_timestamp": "20260625230013",
   "regressions": [],
   "blockers": [],
   "majors": [],
   "regression_count": 0,
-  "checked_at": "2026-06-25T23:00:38.470637",
+  "checked_at": "2026-06-26T05:06:26.424422",
   "post_allowed": true,
   "_rule": "品質後退（BLOCKER/MAJOR）がある場合、投稿禁止。"
 }
