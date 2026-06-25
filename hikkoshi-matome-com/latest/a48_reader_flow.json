@@ -17,7 +17,7 @@
     "電気の手続きサポートセンターに関するよくある質問",
     "まとめ"
   ],
-  "checked_at": "2026-06-26T07:26:53.622731",
+  "checked_at": "2026-06-26T07:34:39.367255",
   "pm_review_required": true,
   "note": "Reader Flow Gateは全てWARNING扱い。PASS/FAILではなくPMが判断する。"
 }

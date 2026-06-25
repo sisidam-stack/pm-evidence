@@ -1,10 +1,10 @@
 {
   "success": true,
-  "review_path": "/Users/ishidamotoki/Applications/CroudeCode作業フォルダ/affiliate-tool/reports/evidence/hikkoshi-matome-com/20260626072634/review.json",
+  "review_path": "/Users/ishidamotoki/Applications/CroudeCode作業フォルダ/affiliate-tool/reports/evidence/hikkoshi-matome-com/20260626073417/review.json",
   "review_type": "A-42 AI Review Gate",
-  "reviewed_at": "2026-06-26T07:26:59.345097",
+  "reviewed_at": "2026-06-26T07:34:32.023086",
   "site_key": "hikkoshi-matome-com",
-  "article_commit_id": "63db624",
+  "article_commit_id": "de30f29",
   "status": "PASS",
   "score": 100,
   "blockers": [],
@@ -14,7 +14,7 @@
   "ai_error": null,
   "evidence_ref": {
     "url": "https://hikkoshi-matome.com",
-    "captured_at": "2026-06-25T22:26:46.648Z",
+    "captured_at": "2026-06-25T22:34:31.793Z",
     "quality_gates": {
       "A28_public_html_truth": "PASS",
       "A30_comparison_duplication": "PASS",
