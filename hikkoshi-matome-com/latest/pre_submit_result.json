@@ -1,35 +1,42 @@
 {
+  "gate": "pre_submit_check (Phase E-1 Registry参照版)",
   "site_key": "hikkoshi-matome-com",
-  "checked_at": "2026-06-26T07:34:45.360862",
+  "checked_at": "2026-06-26T08:49:28.172240",
   "can_submit": true,
+  "gate_summary_ref": {
+    "overall_status": "WARNING",
+    "can_submit": true,
+    "layer1_fail": false,
+    "run_at": "2026-06-26T07:48:15.131295"
+  },
   "pm_review_checklist": [
     {
       "label": "最新GitHub Pages証跡提出",
       "ok": true,
-      "detail": "latest/index.html あり"
+      "detail": "latest/index.html"
     },
     {
       "label": "latest/index.html更新済",
       "ok": true,
-      "detail": "captured_at=2026-06-25T22:34:31."
+      "detail": "commit=de30f29"
     },
     {
-      "label": "PM Issue pending=0（pendingなし）",
+      "label": "PM Issue pending=0",
       "ok": true,
       "detail": "pending=0 partial=0 resolved=8/8"
     },
     {
       "label": "A-55 coverage=100%",
       "ok": true,
-      "detail": "coverage=100% partial=[]"
+      "detail": "coverage=100%"
     },
     {
-      "label": "Layer1 全PASS",
+      "label": "Layer1 全PASS（gate_summary参照）",
       "ok": true,
-      "detail": "review=PASS a47=PASS a50=WARNING a53=PASS a58=WARNING structure=PASS"
+      "detail": "overall=WARNING layer1_fail=False"
     },
     {
-      "label": "DL動作確認（A-53 Playwright）",
+      "label": "DL動作確認",
       "ok": true,
       "detail": "status=PASS items=24"
     },
@@ -39,188 +46,24 @@
       "detail": "status=WARNING"
     },
     {
-      "label": "Layer2確認済（a48/a49）",
+      "label": "Layer2確認済",
       "ok": true,
-      "detail": "a48=PASS a49_pending=0"
+      "detail": "a48=PASS"
     },
     {
-      "label": "チェックリストDL確認（10項目以上）",
+      "label": "チェックリストDL（10項目以上）",
       "ok": true,
-      "detail": "items=12 file=あり"
+      "detail": "a53=PASS items=12"
     },
     {
       "label": "PC/SPスクリーンショット",
       "ok": true,
-      "detail": "PC=9/9 SP=9/9"
-    },
-    {
-      "label": "指示書全項目照合完了",
-      "ok": true,
-      "detail": "NG=0/22"
-    }
-  ],
-  "instruction_checklist": [
-    {
-      "section": "Rule-0",
-      "label": "最新GitHub Pages証跡提出",
-      "ok": true,
-      "status": "✅ 対応済み",
-      "detail": "index.html 存在"
-    },
-    {
-      "section": "S1",
-      "label": "PM Issue全件登録",
-      "ok": true,
-      "status": "✅ 対応済み",
-      "detail": "total=8"
-    },
-    {
-      "section": "S1",
-      "label": "PM Issue pending=0",
-      "ok": true,
-      "status": "✅ 対応済み",
-      "detail": "pending=[]"
-    },
-    {
-      "section": "S1-A55",
-      "label": "A-55 coverage=100%（partialなし）",
-      "ok": true,
-      "status": "✅ 対応済み",
-      "detail": "coverage=100% partial=[]"
-    },
-    {
-      "section": "B-1",
-      "label": "TOC重複解消",
-      "ok": true,
-      "status": "✅ 対応済み",
-      "detail": "a47=PASS"
-    },
-    {
-      "section": "B-2",
-      "label": "口コミ構造(口コミ→出典→投稿日→EC)",
-      "ok": true,
-      "status": "✅ 対応済み",
-      "detail": "G-2 violations=0"
-    },
-    {
-      "section": "B-3",
-      "label": "口コミ連続配置(悪い→良い)",
-      "ok": true,
-      "status": "✅ 対応済み",
-      "detail": "bad_idx=3 good_idx=4"
-    },
-    {
-      "section": "B-4",
-      "label": "申し込み3STEP以上",
-      "ok": true,
-      "status": "✅ 対応済み",
-      "detail": "count=6"
-    },
-    {
-      "section": "B-5",
-      "label": "注意事項集約(A-51 BLOCKER=0)",
-      "ok": true,
-      "status": "✅ 対応済み",
-      "detail": "blockers=0"
-    },
-    {
-      "section": "B-6",
-      "label": "禁止略語なし(CB等)",
-      "ok": true,
-      "status": "✅ 対応済み",
-      "detail": "count=0"
-    },
-    {
-      "section": "B-7",
-      "label": "比較表 読者メリット3件以上",
-      "ok": true,
-      "status": "✅ 対応済み",
-      "detail": "found=['キャンペーン', 'キャッシュバック', '受付時間', 'サポート', '対応エリア', '無料', 'WEB受付', '24時間']"
-    },
-    {
-      "section": "B-8",
-      "label": "チェックリストDL実装",
-      "ok": true,
-      "status": "✅ 対応済み",
-      "detail": "items=12"
-    },
-    {
-      "section": "S3",
-      "label": "チェックリスト最低10項目",
-      "ok": true,
-      "status": "✅ 対応済み",
-      "detail": "items=12"
-    },
-    {
-      "section": "S4",
-      "label": "Layer1 全PASS",
-      "ok": true,
-      "status": "✅ 対応済み",
-      "detail": "review=PASS a47=PASS a50=WARNING a53=PASS"
-    },
-    {
-      "section": "S4",
-      "label": "A-58 役割重複ゼロ（Phase C/D+）",
-      "ok": true,
-      "status": "✅ 対応済み",
-      "detail": "status=WARNING"
-    },
-    {
-      "section": "S4",
-      "label": "DL動作確認（クリック→HTTP200→表示）",
-      "ok": true,
-      "status": "✅ 対応済み",
-      "detail": "status=PASS items=24"
-    },
-    {
-      "section": "S4",
-      "label": "Layer2 確認済",
-      "ok": true,
-      "status": "✅ 対応済み",
-      "detail": "a48=PASS"
-    },
-    {
-      "section": "S6",
-      "label": "latest/ 全ファイル同一commit",
-      "ok": true,
-      "status": "✅ 対応済み",
-      "detail": "commit=de30f29"
-    },
-    {
-      "section": "S6",
-      "label": "checklist.html Evidence保存",
-      "ok": true,
-      "status": "✅ 対応済み",
-      "detail": ""
-    },
-    {
-      "section": "S7",
-      "label": "Reader First（AI Review score≥90）",
-      "ok": true,
-      "status": "✅ 対応済み",
-      "detail": "score=100"
-    },
-    {
-      "section": "S8",
-      "label": "8-1 PM Issue照合実行",
-      "ok": true,
-      "status": "✅ 対応済み",
-      "detail": "issues=8"
-    },
-    {
-      "section": "S10",
-      "label": "全完了条件クリア確認",
-      "ok": true,
-      "status": "✅ 対応済み",
-      "detail": ""
+      "detail": "PC=9 SP=9"
     }
   ],
   "summary": {
     "pm_ok": 10,
     "pm_ng": 0,
-    "inst_ok": 22,
-    "inst_ng": 0,
-    "inst_coverage_pct": 100
-  },
-  "blockers": []
+    "a55_coverage_pct": 100
+  }
 }
