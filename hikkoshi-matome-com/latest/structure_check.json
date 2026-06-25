@@ -1,0 +1,51 @@
+{
+  "status": "PASS",
+  "url": "https://hikkoshi-matome.com/",
+  "checked_at": "2026-06-26T04:43:59.915293",
+  "blocker_count": 0,
+  "warning_count": 0,
+  "blockers": [],
+  "warnings": [],
+  "checks": {
+    "h2_consecutive": {
+      "count": 0,
+      "items": []
+    },
+    "h2_duplicate": {
+      "count": 0,
+      "items": []
+    },
+    "review_section_order": {
+      "count": 0,
+      "items": []
+    },
+    "review_card_order": {
+      "count": 0,
+      "items": []
+    },
+    "forbidden_abbreviations": {
+      "count": 0,
+      "items": []
+    },
+    "toc_h2_duplicate": {
+      "count": 0,
+      "items": []
+    },
+    "visible_label_duplicate": {
+      "count": 0,
+      "items": []
+    },
+    "h2_order": [
+      "電気の手続きサポートセンターの基本情報・特徴",
+      "電気の手続きサポートセンターの料金・キャンペーン情報",
+      "電気の手続きサポートセンターが向いている人・向いていない人",
+      "電気の手続きサポートセンターの悪い口コミ・評判",
+      "電気の手続きサポートセンターの良い口コミ・評判",
+      "電気の手続きサポートセンターの申し込み手順",
+      "電気の手続きサポートセンターを利用する前の注意点",
+      "電気の手続きサポートセンターの比較・仕様まとめ",
+      "電気の手続きサポートセンターに関するよくある質問",
+      "まとめ"
+    ]
+  }
+}

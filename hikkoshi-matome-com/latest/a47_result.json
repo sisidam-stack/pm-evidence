@@ -1,0 +1,12 @@
+{
+  "gate": "A-47 Visible Text Duplicate Gate",
+  "status": "PASS",
+  "url": "https://hikkoshi-matome.com/",
+  "threshold_px": 300,
+  "fail_count": 0,
+  "warn_count": 0,
+  "failures": [],
+  "warnings": [],
+  "checked_at": "2026-06-25T19:44:04.115Z",
+  "note": "距離100px以内の同一visible text重複 → FAIL / 100-300px → WARNING"
+}

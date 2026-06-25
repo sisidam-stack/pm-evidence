@@ -1,13 +1,13 @@
 {
   "status": "PASS",
   "site_key": "hikkoshi-matome-com",
-  "curr_timestamp": "20260626043506",
-  "prev_timestamp": "20260625235701",
+  "curr_timestamp": "20260626044346",
+  "prev_timestamp": "20260626043506",
   "regressions": [],
   "blockers": [],
   "majors": [],
   "regression_count": 0,
-  "checked_at": "2026-06-26T04:35:18.632251",
+  "checked_at": "2026-06-26T04:43:58.937907",
   "post_allowed": true,
   "_rule": "品質後退（BLOCKER/MAJOR）がある場合、投稿禁止。"
 }
