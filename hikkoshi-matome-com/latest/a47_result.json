@@ -7,6 +7,6 @@
   "warn_count": 0,
   "failures": [],
   "warnings": [],
-  "checked_at": "2026-06-25T19:49:24.675Z",
+  "checked_at": "2026-06-25T21:00:13.872Z",
   "note": "距離100px以内の同一visible text重複 → FAIL / 100-300px → WARNING"
 }

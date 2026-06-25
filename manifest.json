@@ -1,10 +1,10 @@
 {
   "hikkoshi-matome-com": {
     "site_key": "hikkoshi-matome-com",
-    "timestamp": "20260626044751",
+    "timestamp": "20260626055956",
     "url": "https://hikkoshi-matome.com",
-    "commit_id": "6949571",
-    "captured_at": "2026-06-25T19:48:04.320Z",
+    "commit_id": "9b17d39",
+    "captured_at": "2026-06-25T21:00:08.579Z",
     "pc_screenshots": 9,
     "sp_screenshots": 9,
     "index_html": "/evidence/hikkoshi-matome-com/latest/index.html",
@@ -14,18 +14,18 @@
     "screenshots_sp": "/evidence/hikkoshi-matome-com/latest/screenshots/sp/"
   },
   "latest": {
-    "site_key": "recoverywear",
-    "timestamp": "20260626050626",
-    "url": "https://recoverywear.net",
-    "commit_id": "100f481",
-    "captured_at": "2026-06-25T20:06:37.816Z",
+    "site_key": "hikkoshi-matome-com",
+    "timestamp": "20260626055956",
+    "url": "https://hikkoshi-matome.com",
+    "commit_id": "9b17d39",
+    "captured_at": "2026-06-25T21:00:08.579Z",
     "pc_screenshots": 9,
     "sp_screenshots": 9,
-    "index_html": "/evidence/recoverywear/latest/index.html",
-    "evidence_json": "/evidence/recoverywear/latest/evidence.json",
-    "zip": "/evidence/recoverywear/latest/evidence.zip",
-    "screenshots_pc": "/evidence/recoverywear/latest/screenshots/pc/",
-    "screenshots_sp": "/evidence/recoverywear/latest/screenshots/sp/"
+    "index_html": "/evidence/hikkoshi-matome-com/latest/index.html",
+    "evidence_json": "/evidence/hikkoshi-matome-com/latest/evidence.json",
+    "zip": "/evidence/hikkoshi-matome-com/latest/evidence.zip",
+    "screenshots_pc": "/evidence/hikkoshi-matome-com/latest/screenshots/pc/",
+    "screenshots_sp": "/evidence/hikkoshi-matome-com/latest/screenshots/sp/"
   },
   "tokyo": {
     "site_key": "tokyo",

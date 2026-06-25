@@ -1,0 +1,69 @@
+{
+  "combined_status": "BLOCKER",
+  "url": "https://osaka-shiroari.net",
+  "checked_at": "2026-06-26T05:29:45.680862",
+  "a50": {
+    "gate": "A-50 Section Completeness Gate",
+    "status": "BLOCKER",
+    "layer": "Layer1",
+    "blockers": [
+      "A-50 BLOCKER: 「テコラの悪い口コミ・注意点」に口コミまたは調査ボックスがありません"
+    ],
+    "warnings": [
+      "A-50 WARNING: 比較表に読者メリットキーワードが0件（3件以上推奨）: []"
+    ],
+    "checks": {
+      "chuui_items": {
+        "ok": true,
+        "count": 38,
+        "h2": "テコラの悪い口コミ・注意点"
+      },
+      "mouikomi_steps": {
+        "ok": true,
+        "count": 4,
+        "h2": "テコラの申し込み手順"
+      },
+      "bad_review": {
+        "ok": false,
+        "h2": "テコラの悪い口コミ・注意点"
+      },
+      "comparison_merit": {
+        "ok": false,
+        "found_keywords": [],
+        "h2": "テコラの比較・仕様まとめ"
+      }
+    }
+  },
+  "a51": {
+    "gate": "A-51 Information Consolidation Gate",
+    "status": "WARNING",
+    "layer": "Layer1",
+    "blockers": [],
+    "warnings": [
+      "A-51 WARNING: 「適用除外」が4箇所に分散（テコラの料金・保証・支払い方法・テコラが向いている人・向いていない人・テコラの悪い口コミ・注意点）—集約を検討"
+    ],
+    "topic_locations": {
+      "対応エリア": [
+        "テコラの基本情報・特徴",
+        "よくある質問"
+      ],
+      "適用除外": [
+        "テコラの料金・保証・支払い方法",
+        "テコラが向いている人・向いていない人",
+        "テコラの悪い口コミ・注意点",
+        "よくある質問"
+      ],
+      "注意事項": [
+        "テコラの料金・保証・支払い方法",
+        "よくある質問"
+      ]
+    }
+  },
+  "blockers": [
+    "A-50 BLOCKER: 「テコラの悪い口コミ・注意点」に口コミまたは調査ボックスがありません"
+  ],
+  "warnings": [
+    "A-50 WARNING: 比較表に読者メリットキーワードが0件（3件以上推奨）: []",
+    "A-51 WARNING: 「適用除外」が4箇所に分散（テコラの料金・保証・支払い方法・テコラが向いている人・向いていない人・テコラの悪い口コミ・注意点）—集約を検討"
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "combined_status": "BLOCKER",
+  "url": "https://recoverywear.net",
+  "checked_at": "2026-06-26T05:29:47.860357",
+  "a50": {
+    "gate": "A-50 Section Completeness Gate",
+    "status": "BLOCKER",
+    "layer": "Layer1",
+    "blockers": [
+      "A-50 BLOCKER: 「TOJIリカバリーウェアの悪い口コミ・注意点」に口コミまたは調査ボックスがありません"
+    ],
+    "warnings": [
+      "A-50 WARNING: 比較表に読者メリットキーワードが0件（3件以上推奨）: []"
+    ],
+    "checks": {
+      "chuui_items": {
+        "ok": true,
+        "count": 39,
+        "h2": "TOJIリカバリーウェアの悪い口コミ・注意点"
+      },
+      "bad_review": {
+        "ok": false,
+        "h2": "TOJIリカバリーウェアの悪い口コミ・注意点"
+      },
+      "comparison_merit": {
+        "ok": false,
+        "found_keywords": [],
+        "h2": "TOJIリカバリーウェアの比較・仕様まとめ"
+      }
+    }
+  },
+  "a51": {
+    "gate": "A-51 Information Consolidation Gate",
+    "status": "PASS",
+    "layer": "Layer1",
+    "blockers": [],
+    "warnings": [],
+    "topic_locations": {
+      "注意事項": [
+        "TOJIリカバリーウェアの購入手順",
+        "よくある質問"
+      ]
+    }
+  },
+  "blockers": [
+    "A-50 BLOCKER: 「TOJIリカバリーウェアの悪い口コミ・注意点」に口コミまたは調査ボックスがありません"
+  ],
+  "warnings": [
+    "A-50 WARNING: 比較表に読者メリットキーワードが0件（3件以上推奨）: []"
+  ]
+}

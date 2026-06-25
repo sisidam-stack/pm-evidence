@@ -1,0 +1,12 @@
+{
+  "gate": "A-53 Download Asset Gate",
+  "status": "PASS",
+  "layer": "Layer1",
+  "site_key": "osaka",
+  "service_name": "テコラ（シロアリ予防）",
+  "checklist_path": "/Users/ishidamotoki/Applications/CroudeCode作業フォルダ/affiliate-tool/public/evidence/osaka/latest/checklist.html",
+  "item_count": 8,
+  "file_size_bytes": 6184,
+  "generated_at": "2026-06-26T05:29:31.835665",
+  "blockers": []
+}

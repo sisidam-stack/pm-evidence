@@ -1,0 +1,12 @@
+{
+  "gate": "A-53 Download Asset Gate",
+  "status": "PASS",
+  "layer": "Layer1",
+  "site_key": "hikkoshi-matome-com",
+  "service_name": "電気の手続きサポートセンター",
+  "checklist_path": "/Users/ishidamotoki/Applications/CroudeCode作業フォルダ/affiliate-tool/public/evidence/hikkoshi-matome-com/latest/checklist.html",
+  "item_count": 8,
+  "file_size_bytes": 6211,
+  "generated_at": "2026-06-26T06:00:14.848132",
+  "blockers": []
+}

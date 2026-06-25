@@ -1,0 +1,63 @@
+{
+  "combined_status": "BLOCKER",
+  "url": "https://consul-tenshoku.com",
+  "checked_at": "2026-06-26T05:29:46.486632",
+  "a50": {
+    "gate": "A-50 Section Completeness Gate",
+    "status": "BLOCKER",
+    "layer": "Layer1",
+    "blockers": [
+      "A-50 BLOCKER: 「【2026年最新】Groovementの悪い口コミ・注意点」に口コミまたは調査ボックスがありません"
+    ],
+    "warnings": [
+      "A-50 WARNING: 比較表に読者メリットキーワードが1件（3件以上推奨）: ['無料']"
+    ],
+    "checks": {
+      "chuui_items": {
+        "ok": true,
+        "count": 8,
+        "h2": "Groovement Agentの保証内容と確認すべき注意点"
+      },
+      "mouikomi_steps": {
+        "ok": true,
+        "count": 4,
+        "h2": "Groovement Agentの申し込み手順"
+      },
+      "bad_review": {
+        "ok": false,
+        "h2": "【2026年最新】Groovementの悪い口コミ・注意点"
+      },
+      "comparison_merit": {
+        "ok": false,
+        "found_keywords": [
+          "無料"
+        ],
+        "h2": "【2026年最新】Groovementの比較・仕様まとめ"
+      }
+    }
+  },
+  "a51": {
+    "gate": "A-51 Information Consolidation Gate",
+    "status": "PASS",
+    "layer": "Layer1",
+    "blockers": [],
+    "warnings": [],
+    "topic_locations": {
+      "注意事項": [
+        "Groovement Agentの基本情",
+        "Groovement Agentの保証内",
+        "よくある質問"
+      ],
+      "対応エリア": [
+        "Groovement Agentの基本情",
+        "よくある質問"
+      ]
+    }
+  },
+  "blockers": [
+    "A-50 BLOCKER: 「【2026年最新】Groovementの悪い口コミ・注意点」に口コミまたは調査ボックスがありません"
+  ],
+  "warnings": [
+    "A-50 WARNING: 比較表に読者メリットキーワードが1件（3件以上推奨）: ['無料']"
+  ]
+}

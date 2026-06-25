@@ -1,7 +1,7 @@
 {
   "gate": "A-48 Reader Flow Gate",
   "status": "PASS",
-  "url": "https://hikkoshi-matome.com",
+  "url": "https://hikkoshi-matome.com/",
   "score": 100,
   "warning_count": 0,
   "warnings": [],
@@ -17,7 +17,7 @@
     "電気の手続きサポートセンターに関するよくある質問",
     "まとめ"
   ],
-  "checked_at": "2026-06-26T05:05:20.610966",
+  "checked_at": "2026-06-26T06:00:15.688326",
   "pm_review_required": true,
   "note": "Reader Flow Gateは全てWARNING扱い。PASS/FAILではなくPMが判断する。"
 }

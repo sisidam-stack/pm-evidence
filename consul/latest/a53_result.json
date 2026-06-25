@@ -1,0 +1,12 @@
+{
+  "gate": "A-53 Download Asset Gate",
+  "status": "PASS",
+  "layer": "Layer1",
+  "site_key": "consul",
+  "service_name": "Groovement Agent（転職エージェント）",
+  "checklist_path": "/Users/ishidamotoki/Applications/CroudeCode作業フォルダ/affiliate-tool/public/evidence/consul/latest/checklist.html",
+  "item_count": 8,
+  "file_size_bytes": 6223,
+  "generated_at": "2026-06-26T05:29:33.454672",
+  "blockers": []
+}
