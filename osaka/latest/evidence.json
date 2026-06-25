@@ -1,0 +1,170 @@
+{
+  "site_key": "osaka",
+  "url": "https://osaka-shiroari.net",
+  "captured_at": "2026-06-25T13:52:33.147Z",
+  "commit_id": "a74d8bc",
+  "article_commit_id": "a74d8bc",
+  "implementation_commit_id": "a74d8bc",
+  "review_target": {
+    "url": "https://osaka-shiroari.net",
+    "article_version": "2026-06-25"
+  },
+  "quality_gates": {
+    "A28_public_html_truth": "PASS",
+    "A30_comparison_duplication": "PASS",
+    "A31_editorial_comment": "PASS",
+    "A34_attention_sp_margin": "PASS",
+    "A38_headline_relevance": "PASS",
+    "A40_evidence_generated": "PASS",
+    "A41_evidence_published": "PASS",
+    "page_errors": 0,
+    "review_violations": 0,
+    "attention_sp_leftMargin": 27
+  },
+  "viewport": [
+    "pc",
+    "sp"
+  ],
+  "screenshots": {
+    "pc": [
+      {
+        "id": "01_fv",
+        "label": "FV（ファーストビュー）",
+        "file": "01_fv.png",
+        "captured": true
+      },
+      {
+        "id": "02_keypoints",
+        "label": "この記事でわかること",
+        "file": "02_keypoints.png",
+        "captured": true
+      },
+      {
+        "id": "03_attention",
+        "label": "Attention",
+        "file": "03_attention.png",
+        "captured": true
+      },
+      {
+        "id": "04_bad_reviews",
+        "label": "悪い口コミ・評判",
+        "file": "04_bad_reviews.png",
+        "captured": true
+      },
+      {
+        "id": "05_good_reviews",
+        "label": "良い口コミ・評判",
+        "file": "05_good_reviews.png",
+        "captured": true
+      },
+      {
+        "id": "06_comparison",
+        "label": "比較表",
+        "file": "06_comparison.png",
+        "captured": true
+      },
+      {
+        "id": "07_faq",
+        "label": "FAQ",
+        "file": "07_faq.png",
+        "captured": true
+      },
+      {
+        "id": "08_summary",
+        "label": "まとめ",
+        "file": "08_summary.png",
+        "captured": true
+      },
+      {
+        "id": "09_cta",
+        "label": "CTA",
+        "file": "09_cta.png",
+        "captured": true
+      }
+    ],
+    "sp": [
+      {
+        "id": "01_fv",
+        "label": "FV（ファーストビュー）",
+        "file": "01_fv.png",
+        "captured": true
+      },
+      {
+        "id": "02_keypoints",
+        "label": "この記事でわかること",
+        "file": "02_keypoints.png",
+        "captured": true
+      },
+      {
+        "id": "03_attention",
+        "label": "Attention",
+        "file": "03_attention.png",
+        "captured": true
+      },
+      {
+        "id": "04_bad_reviews",
+        "label": "悪い口コミ・評判",
+        "file": "04_bad_reviews.png",
+        "captured": true
+      },
+      {
+        "id": "05_good_reviews",
+        "label": "良い口コミ・評判",
+        "file": "05_good_reviews.png",
+        "captured": true
+      },
+      {
+        "id": "06_comparison",
+        "label": "比較表",
+        "file": "06_comparison.png",
+        "captured": true
+      },
+      {
+        "id": "07_faq",
+        "label": "FAQ",
+        "file": "07_faq.png",
+        "captured": true
+      },
+      {
+        "id": "08_summary",
+        "label": "まとめ",
+        "file": "08_summary.png",
+        "captured": true
+      },
+      {
+        "id": "09_cta",
+        "label": "CTA",
+        "file": "09_cta.png",
+        "captured": true
+      }
+    ]
+  },
+  "page_errors": [],
+  "quality_gate_results": {
+    "factbox_count": 0,
+    "editorial_comment_count": 9,
+    "empty_editorial_comments": 0,
+    "positive_review_count": 6,
+    "comparison_table_exists": true,
+    "comparison_table_cb_row": false
+  },
+  "review_structure": {
+    "pattern": "REVIEW→EC→REVIEW→EC→REVIEW→EC→REVIEW→EC→REVIEW→EC→REVIEW→EC",
+    "violations": [],
+    "total": 12
+  },
+  "attention_sp_metrics": {
+    "paddingLeft": "18px",
+    "paddingRight": "18px",
+    "fontSize": "17px",
+    "lineHeight": "35.7px",
+    "leftMargin": 27,
+    "rightMargin": 27
+  },
+  "notes": [
+    "PC screenshots: 9/9件",
+    "SP screenshots: 9/9件",
+    "PageErrors: 0件",
+    "ReviewStructure violations: 0件"
+  ]
+}

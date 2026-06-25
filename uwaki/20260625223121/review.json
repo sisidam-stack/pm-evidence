@@ -1,0 +1,39 @@
+{
+  "success": true,
+  "review_path": "/Users/ishidamotoki/Applications/CroudeCode作業フォルダ/affiliate-tool/reports/evidence/uwaki/20260625223121/review.json",
+  "review_type": "A-42 AI Review Gate",
+  "reviewed_at": "2026-06-25T22:33:54.725913",
+  "site_key": "uwaki",
+  "article_commit_id": "a74d8bc",
+  "status": "BLOCKER",
+  "score": 24,
+  "blockers": [
+    "A-34 BLOCKER: SP Attention左余白 19px（20px以上必要）",
+    "A-31 BLOCKER: 口コミ→EC構造違反 4件: ['EC-EC連続 at [0]', 'EC-EC連続 at [1]']",
+    "A34_attention_sp_margin BLOCKER: SP Attention余白不足"
+  ],
+  "majors": [
+    "A-34 MAJOR: SP Attention文字サイズ 14.7033px（16px推奨）",
+    "A38_headline_relevance MAJOR: 見出しと本文不一致（H2直下に不適切コンテンツ）"
+  ],
+  "minors": [],
+  "ai_comment": null,
+  "ai_error": null,
+  "evidence_ref": {
+    "url": "https://uwaki-chousa-pro.com",
+    "captured_at": "2026-06-25T13:31:45.754Z",
+    "quality_gates": {
+      "A28_public_html_truth": "PASS",
+      "A30_comparison_duplication": "PASS",
+      "A31_editorial_comment": "PASS",
+      "A34_attention_sp_margin": "BLOCKER",
+      "A38_headline_relevance": "FAIL",
+      "A40_evidence_generated": "PASS",
+      "A41_evidence_published": "PASS",
+      "page_errors": 0,
+      "review_violations": 4,
+      "attention_sp_leftMargin": 19
+    }
+  },
+  "pm_approval_ready": false
+}

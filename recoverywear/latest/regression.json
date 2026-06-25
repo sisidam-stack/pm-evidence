@@ -1,0 +1,29 @@
+{
+  "status": "BLOCKER",
+  "site_key": "recoverywear",
+  "curr_timestamp": "20260625225324",
+  "prev_timestamp": "20260625223251",
+  "regressions": [
+    {
+      "gate": "attention_sp_leftMargin",
+      "prev": 17,
+      "curr": 27,
+      "type": "numeric_increase",
+      "severity": "BLOCKER"
+    }
+  ],
+  "blockers": [
+    {
+      "gate": "attention_sp_leftMargin",
+      "prev": 17,
+      "curr": 27,
+      "type": "numeric_increase",
+      "severity": "BLOCKER"
+    }
+  ],
+  "majors": [],
+  "regression_count": 1,
+  "checked_at": "2026-06-25T22:53:48.240246",
+  "post_allowed": false,
+  "_rule": "品質後退（BLOCKER/MAJOR）がある場合、投稿禁止。"
+}

@@ -1,0 +1,35 @@
+{
+  "success": true,
+  "review_path": "/Users/ishidamotoki/Applications/CroudeCode作業フォルダ/affiliate-tool/reports/evidence/tokyo/20260625222509/review.json",
+  "review_type": "A-42 AI Review Gate",
+  "reviewed_at": "2026-06-25T22:33:54.610847",
+  "site_key": "tokyo",
+  "article_commit_id": "a74d8bc",
+  "status": "BLOCKER",
+  "score": 60,
+  "blockers": [
+    "A-34 BLOCKER: SP Attention左余白 1px（20px以上必要）",
+    "A34_attention_sp_margin BLOCKER: SP Attention余白不足"
+  ],
+  "majors": [],
+  "minors": [],
+  "ai_comment": null,
+  "ai_error": null,
+  "evidence_ref": {
+    "url": "https://tokyo-chikudenchi.net",
+    "captured_at": "2026-06-25T13:25:37.335Z",
+    "quality_gates": {
+      "A28_public_html_truth": "PASS",
+      "A30_comparison_duplication": "PASS",
+      "A31_editorial_comment": "PASS",
+      "A34_attention_sp_margin": "BLOCKER",
+      "A38_headline_relevance": "PASS",
+      "A40_evidence_generated": "PASS",
+      "A41_evidence_published": "PASS",
+      "page_errors": 0,
+      "review_violations": 0,
+      "attention_sp_leftMargin": 1
+    }
+  },
+  "pm_approval_ready": false
+}

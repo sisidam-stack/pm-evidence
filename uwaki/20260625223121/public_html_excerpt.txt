@@ -1,0 +1,58 @@
+
+
+=== .lp-warning ===
+<div class="lp-warning">
+<div class="lp-warning-title">重要な注意事項</div>
+<div class="lp-warning-subtitle">お読みになる前にご確認ください</div>
+<div class="lp-warning-body">
+<p>みらい探偵社®︎の対応エリアは<strong>神奈川県中心（横浜・川崎・藤沢等）</strong>です。神奈川県外での調査を希望する場合は事前に相談窓口で対応可否の確認が必要です。また、調査可否は内容・エリアによって異なるため、まずはLINE無料相談で確認することを推奨します。</p>
+</div>
+</div>
+
+=== table ===
+<table class="lp-comparison-table">
+<thead>
+<tr>
+<th>比較項目</th>
+<th>みらい探偵社®︎</th>
+<th>一般的な探偵社</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>運営会社</td>
+<td>横浜拠点・元大手探偵社下請け実績</td>
+<td>会社ごとに異なる</td>
+</tr>
+<tr>
+<td>対応エリア</td>
+<td>神奈川県中心（県外は要相談）</td>
+<td>全国対応の大手もあり</td>
+</tr>
+<tr>
+<td>相談方法</td>
+<td>LINE24時間・電話・女性カウンセラー対応</td>
+<td>電話・メールが中心</td>
+</tr>
+<tr>
+<td>料金目安</td>
+<td>1時間25,000円（経費込み）の時間制</td>
+<td>パック料金・成功報酬型など多様</td>
+</tr>
+<tr>
+<td>調査対象</td>
+<td>浮気・素行・ストーカー対策・人探しなど</td>
+<td>会社ごとに異なる</td>
+</tr>
+<tr>
+<td>報告書</td>
+<td>弁護士推奨・裁判対応品質</td>
+<td>業者により品質にばらつきあり</td>
+</tr>
+<tr>
+<td>アフターフォロー</td>
+<td>無料相談継続・弁護士紹介対応</td>
+<td>会社ごとに異なる（要確認）</td>
+</tr>
+</tbody>
+</table>

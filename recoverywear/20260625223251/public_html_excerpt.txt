@@ -1,0 +1,27 @@
+
+
+=== .lp-warning ===
+<div class="wp-block-group lp-warning is-yellow"><div class="wp-block-group__inner-container">
+
+<p class="lp-warning-title">⚠ Attention</p>
+
+
+
+<p class="lp-warning-subtitle">お読みになる前にご確認ください</p>
+
+
+
+<p>リカバリーウェアには一般医療機器の届出がないものもあり、TOJIの届出状況は2026年時点で未確認です。購入前に公式へ直接お問い合わせください。</p>
+
+
+
+<p>遠赤外線素材の体感には個人差があり、着用直後から明確な変化を感じられるとは限りません。継続使用を前提にご検討ください。</p>
+
+
+
+<p>個人の口コミ・レビューが極めて少ないため、第三者の使用感を十分に比較検討しづらい状況です。サイズ感や肌触りは実物での確認を推奨します。</p>
+
+</div></div>
+
+=== table ===
+<table><thead><tr><th>比較項目</th><th>TOJIリカバリーウェア</th><th>BAKUNE</th><th>VENEX</th></tr></thead><tbody><tr><td>価格帯（税込）</td><td>5,500円〜11,000円</td><td>約9,900円〜16,500円</td><td>約8,800円〜16,500円</td></tr><tr><td>素材の特徴</td><td>天然鉱石×日本製素材</td><td>SELFLAME®繊維</td><td>PHT繊維</td></tr><tr><td>一般医療機器届出</td><td>未確認</td><td>届出済み</td><td>届出済み</td></tr><tr><td>用途</td><td>1枚着・インナー兼用</td><td>主にパジャマ</td><td>日常着・就寝用</td></tr><tr><td>ブランドの知名度</td><td>新興ブランド</td><td>高い</td><td>高い（老舗）</td></tr><tr><td>口コミの量</td><td>極めて少ない</td><td>豊富</td><td>豊富</td></tr></tbody></table>

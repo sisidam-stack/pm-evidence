@@ -1,0 +1,27 @@
+
+
+=== .lp-warning ===
+<div class="wp-block-group lp-warning is-yellow"><div class="wp-block-group__inner-container">
+
+<p class="lp-warning-title">⚠ Attention</p>
+
+
+
+<p class="lp-warning-subtitle">お読みになる前にご確認ください</p>
+
+
+
+<p>シロアリ予防と駆除は対応業者が異なります。床下に蟻道や食害痕を発見した場合は、予防専門のテコラではなく駆除対応の業者へ速やかにご相談ください。</p>
+
+
+
+<p>築年数や基礎構造により保証内容・適用条件が異なるため、契約前に保証対象外となる箇所や免責事項を書面で必ず確認してください。</p>
+
+
+
+<p>シロアリ予防薬剤の効果持続期間は使用環境（湿度・通気性・土壌条件）によって左右されるため、保証期間内でも定期的な床下の状態確認をおすすめします。</p>
+
+</div></div>
+
+=== table ===
+<table><thead><tr><th>比較項目</th><th>テコラ</th><th>一般的なシロアリ業者</th></tr></thead><tbody><tr><td>保証期間</td><td>10年間</td><td>5年程度が一般的</td></tr><tr><td>サービス内容</td><td>シロアリ予防専門</td><td>駆除・予防の両方に対応</td></tr><tr><td>料金体系</td><td>10坪ごとの定額料金制</td><td>業者により異なる（坪単価制が多い）</td></tr><tr><td>対象住宅</td><td>2001年以降・ベタ基礎の戸建て</td><td>幅広い住宅に対応</td></tr><tr><td>割引制度</td><td>点検同日工事割引・子育て支援割引</td><td>業者により異なる</td></tr><tr><td>薬剤の効果持続期間</td><td>10年間</td><td>5年程度が一般的</td></tr></tbody></table>

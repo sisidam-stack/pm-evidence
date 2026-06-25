@@ -1,0 +1,32 @@
+{
+  "success": true,
+  "review_path": "/Users/ishidamotoki/Applications/CroudeCode作業フォルダ/affiliate-tool/reports/evidence/recoverywear/20260625225324/review.json",
+  "review_type": "A-42 AI Review Gate",
+  "reviewed_at": "2026-06-25T23:00:55.211288",
+  "site_key": "recoverywear",
+  "article_commit_id": "a74d8bc",
+  "status": "PASS",
+  "score": 100,
+  "blockers": [],
+  "majors": [],
+  "minors": [],
+  "ai_comment": null,
+  "ai_error": null,
+  "evidence_ref": {
+    "url": "https://recoverywear.net",
+    "captured_at": "2026-06-25T13:53:48.063Z",
+    "quality_gates": {
+      "A28_public_html_truth": "PASS",
+      "A30_comparison_duplication": "PASS",
+      "A31_editorial_comment": "PASS",
+      "A34_attention_sp_margin": "PASS",
+      "A38_headline_relevance": "PASS",
+      "A40_evidence_generated": "PASS",
+      "A41_evidence_published": "PASS",
+      "page_errors": 0,
+      "review_violations": 0,
+      "attention_sp_leftMargin": 27
+    }
+  },
+  "pm_approval_ready": true
+}

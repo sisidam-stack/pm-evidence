@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "site_key": "tokyo",
+  "curr_timestamp": "20260625225142",
+  "prev_timestamp": "20260625225003",
+  "regressions": [],
+  "blockers": [],
+  "majors": [],
+  "regression_count": 0,
+  "checked_at": "2026-06-25T22:52:07.306665",
+  "post_allowed": true,
+  "_rule": "品質後退（BLOCKER/MAJOR）がある場合、投稿禁止。"
+}
