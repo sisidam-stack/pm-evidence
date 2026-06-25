@@ -1,0 +1,31 @@
+{
+  "combined_status": "PASS",
+  "url": "https://hikkoshi-matome.com/",
+  "checked_at": "2026-06-26T07:47:13.455726",
+  "layer": "Layer2",
+  "a52": {
+    "gate": "A-52 Reader Journey Gate",
+    "status": "PASS",
+    "layer": "Layer2",
+    "detected_flow": [
+      "intro",
+      "pricing",
+      "suitability",
+      "bad_review",
+      "good_review",
+      "signup",
+      "caution",
+      "comparison",
+      "faq",
+      "summary"
+    ],
+    "warnings": []
+  },
+  "a54": {
+    "gate": "A-54 Reader Intent Gate",
+    "status": "PASS",
+    "layer": "Layer2",
+    "warnings": []
+  },
+  "warnings": []
+}

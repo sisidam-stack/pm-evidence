@@ -62,6 +62,6 @@
       "resolution": "FAQ〜まとめ前にDLセクション追加。/evidence/hikkoshi-matome-com/latest/chec"
     }
   ],
-  "checked_at": "2026-06-26T07:34:44.460771",
+  "checked_at": "2026-06-26T07:47:09.089607",
   "note": "coverage = (resolved+verified+acknowledged) / total。partial は complete 扱いしない。"
 }

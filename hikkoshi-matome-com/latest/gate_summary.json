@@ -1,0 +1,272 @@
+{
+  "gate": "Phase E-1 Gate Runner",
+  "site_key": "hikkoshi-matome-com",
+  "url": "https://hikkoshi-matome.com/",
+  "run_at": "2026-06-26T07:48:15.131295",
+  "overall_status": "WARNING",
+  "can_submit": true,
+  "layer1_fail": false,
+  "layer1_warning": true,
+  "gates": [
+    {
+      "id": "A-40",
+      "name": "Evidence Share Gate",
+      "layer": 1,
+      "severity": "BLOCKER",
+      "status": "PASS",
+      "detail": "PASS"
+    },
+    {
+      "id": "A-42",
+      "name": "AI Review Gate",
+      "layer": 1,
+      "severity": "BLOCKER",
+      "status": "PASS",
+      "detail": "score=100"
+    },
+    {
+      "id": "A-46",
+      "name": "Regression Gate",
+      "layer": 1,
+      "severity": "BLOCKER",
+      "status": "PASS",
+      "detail": "PASS"
+    },
+    {
+      "id": "A-47",
+      "name": "Visible Text Duplicate Gate",
+      "layer": 1,
+      "severity": "BLOCKER",
+      "status": "PASS",
+      "detail": "ok"
+    },
+    {
+      "id": "A-50",
+      "name": "Section Completeness Gate",
+      "layer": 1,
+      "severity": "BLOCKER",
+      "status": "WARNING",
+      "detail": "WARNING"
+    },
+    {
+      "id": "A-51",
+      "name": "Information Consolidation Gate",
+      "layer": 1,
+      "severity": "WARNING",
+      "status": "WARNING",
+      "detail": "WARNING"
+    },
+    {
+      "id": "A-53",
+      "name": "Download Asset Gate",
+      "layer": 1,
+      "severity": "BLOCKER",
+      "status": "PASS",
+      "detail": "items=12"
+    },
+    {
+      "id": "A-53-DL",
+      "name": "DL動作確認 Gate",
+      "layer": 1,
+      "severity": "BLOCKER",
+      "status": "PASS",
+      "detail": "items=24"
+    },
+    {
+      "id": "A-55",
+      "name": "PM Coverage Gate",
+      "layer": 1,
+      "severity": "BLOCKER",
+      "status": "PASS",
+      "detail": "coverage=100%"
+    },
+    {
+      "id": "structure",
+      "name": "Structure Check + A-59",
+      "layer": 1,
+      "severity": "BLOCKER",
+      "status": "PASS",
+      "detail": "ok"
+    },
+    {
+      "id": "A-58",
+      "name": "Section Role Duplication Gate",
+      "layer": 1,
+      "severity": "WARNING",
+      "status": "WARNING",
+      "detail": "warnings=1"
+    },
+    {
+      "id": "A-48",
+      "name": "Reader Flow Gate",
+      "layer": 2,
+      "severity": "WARNING",
+      "status": "PASS",
+      "detail": "warnings=0"
+    },
+    {
+      "id": "A-49",
+      "name": "PM Resolution Gate",
+      "layer": 2,
+      "severity": "WARNING",
+      "status": "PASS",
+      "detail": "warnings=0"
+    },
+    {
+      "id": "A-52",
+      "name": "Reader Journey Gate",
+      "layer": 2,
+      "severity": "WARNING",
+      "status": "PASS",
+      "detail": "warnings=0"
+    },
+    {
+      "id": "A-54",
+      "name": "Reader Intent Gate",
+      "layer": 2,
+      "severity": "WARNING",
+      "status": "PASS",
+      "detail": "warnings=0"
+    },
+    {
+      "id": "Vision",
+      "name": "Vision Review Gate",
+      "layer": 2,
+      "severity": "WARNING",
+      "status": "WARNING",
+      "detail": "warnings=13"
+    }
+  ],
+  "layer1_gates": [
+    {
+      "id": "A-40",
+      "name": "Evidence Share Gate",
+      "layer": 1,
+      "severity": "BLOCKER",
+      "status": "PASS",
+      "detail": "PASS"
+    },
+    {
+      "id": "A-42",
+      "name": "AI Review Gate",
+      "layer": 1,
+      "severity": "BLOCKER",
+      "status": "PASS",
+      "detail": "score=100"
+    },
+    {
+      "id": "A-46",
+      "name": "Regression Gate",
+      "layer": 1,
+      "severity": "BLOCKER",
+      "status": "PASS",
+      "detail": "PASS"
+    },
+    {
+      "id": "A-47",
+      "name": "Visible Text Duplicate Gate",
+      "layer": 1,
+      "severity": "BLOCKER",
+      "status": "PASS",
+      "detail": "ok"
+    },
+    {
+      "id": "A-50",
+      "name": "Section Completeness Gate",
+      "layer": 1,
+      "severity": "BLOCKER",
+      "status": "WARNING",
+      "detail": "WARNING"
+    },
+    {
+      "id": "A-51",
+      "name": "Information Consolidation Gate",
+      "layer": 1,
+      "severity": "WARNING",
+      "status": "WARNING",
+      "detail": "WARNING"
+    },
+    {
+      "id": "A-53",
+      "name": "Download Asset Gate",
+      "layer": 1,
+      "severity": "BLOCKER",
+      "status": "PASS",
+      "detail": "items=12"
+    },
+    {
+      "id": "A-53-DL",
+      "name": "DL動作確認 Gate",
+      "layer": 1,
+      "severity": "BLOCKER",
+      "status": "PASS",
+      "detail": "items=24"
+    },
+    {
+      "id": "A-55",
+      "name": "PM Coverage Gate",
+      "layer": 1,
+      "severity": "BLOCKER",
+      "status": "PASS",
+      "detail": "coverage=100%"
+    },
+    {
+      "id": "structure",
+      "name": "Structure Check + A-59",
+      "layer": 1,
+      "severity": "BLOCKER",
+      "status": "PASS",
+      "detail": "ok"
+    },
+    {
+      "id": "A-58",
+      "name": "Section Role Duplication Gate",
+      "layer": 1,
+      "severity": "WARNING",
+      "status": "WARNING",
+      "detail": "warnings=1"
+    }
+  ],
+  "layer2_gates": [
+    {
+      "id": "A-48",
+      "name": "Reader Flow Gate",
+      "layer": 2,
+      "severity": "WARNING",
+      "status": "PASS",
+      "detail": "warnings=0"
+    },
+    {
+      "id": "A-49",
+      "name": "PM Resolution Gate",
+      "layer": 2,
+      "severity": "WARNING",
+      "status": "PASS",
+      "detail": "warnings=0"
+    },
+    {
+      "id": "A-52",
+      "name": "Reader Journey Gate",
+      "layer": 2,
+      "severity": "WARNING",
+      "status": "PASS",
+      "detail": "warnings=0"
+    },
+    {
+      "id": "A-54",
+      "name": "Reader Intent Gate",
+      "layer": 2,
+      "severity": "WARNING",
+      "status": "PASS",
+      "detail": "warnings=0"
+    },
+    {
+      "id": "Vision",
+      "name": "Vision Review Gate",
+      "layer": 2,
+      "severity": "WARNING",
+      "status": "WARNING",
+      "detail": "warnings=13"
+    }
+  ]
+}

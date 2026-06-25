@@ -1,0 +1,181 @@
+{
+  "success": true,
+  "vision_review_path": "/Users/ishidamotoki/Applications/CroudeCode作業フォルダ/affiliate-tool/reports/evidence/hikkoshi-matome-com/20260626074644/vision_review.json",
+  "review_type": "A-42v2 Vision Review Gate",
+  "reviewed_at": "2026-06-26T07:48:15.101317",
+  "risk": "Medium",
+  "warnings": [
+    {
+      "id": "W001",
+      "type": "duplicate_content",
+      "description": "比較表（06_comparison.png）の「WEB受付」と「WEB受付時間」が別行として存在しているが、両行とも同一の値（電気の手続きサポートセンター:24時間、ライフラインの窓口:対応あり、引っ越しサポートNAVI:24時間年中無休）を表示しており、実質的に重複した行になっている。読者が「2つの違いは何か」と困惑する可能性がある。",
+      "screenshot": "06_comparison.png",
+      "approx_bbox": {
+        "x": 57,
+        "y": 390,
+        "w": 1170,
+        "h": 100
+      }
+    },
+    {
+      "id": "W002",
+      "type": "abbreviation",
+      "description": "03_attention.png（およびsp版）の本文中で「キャッシュバック」と記載されているが、FV画像（01_fv.png）やまとめ（08_summary.png）では「CB」等の略語は使われていないものの、比較表（06_comparison.png）の項目名が「キャンペーン・キャッシュバック」と省略なく記載されている一方、Attentionボックス内では条件の詳細説明なく「キャッシュバックの受取には契約継続期間や申請手続きなど複数の条件がある」とのみ記載されており、具体的な条件（期間・金額・申請方法）への導線・説明が一切なく、読者が条件の全体像を把握できないまま注意喚起だけされる構造になっている。",
+      "screenshot": "03_attention.png",
+      "approx_bbox": {
+        "x": 57,
+        "y": 60,
+        "w": 1170,
+        "h": 80
+      }
+    },
+    {
+      "id": "W003",
+      "type": "layout_issue",
+      "description": "05_good_reviews.png において、口コミ吹き出しボックスと編集部見解ボックスが交互に並んでいるが、口コミと編集部見解の間に視覚的な区切り（ラベルや背景色の差異）が薄く、どこまでが引用口コミでどこからが編集部コメントか、初見の読者が瞬時に判別しにくいレイアウトになっている。特にモバイル表示では混同リスクが高い。",
+      "screenshot": "05_good_reviews.png",
+      "approx_bbox": {
+        "x": 57,
+        "y": 340,
+        "w": 1170,
+        "h": 420
+      }
+    },
+    {
+      "id": "W004",
+      "type": "duplicate_content",
+      "description": "08_summary.png のまとめ本文末尾に「『利用前の注意点』セクションで対応エリア・キャッシュバック条件・解約条件などを事前にご確認ください。」と誘導があるが、該当セクション（利用前の注意点）のスクリーンショットが本セット内に存在せず、リンクや誘導先が宙に浮いた状態になっている。読者がまとめを読んだ後に参照先を見つけられない可能性がある。",
+      "screenshot": "08_summary.png",
+      "approx_bbox": {
+        "x": 57,
+        "y": 195,
+        "w": 1170,
+        "h": 40
+      }
+    },
+    {
+      "id": "W001",
+      "type": "duplicate_content",
+      "description": "比較表の「WEB受付」と「WEB受付時間」の2行が同一内容（電気の手続きサポートセンター：24時間、ライフラインの窓口：対応あり、引っ越しサポートNAVI：24時間年中無休）で重複している。読者が同じ情報を2回確認することになり、混乱を招く可能性がある。",
+      "screenshot": "06_comparison.png",
+      "approx_bbox": {
+        "x": 57,
+        "y": 390,
+        "w": 1170,
+        "h": 120
+      }
+    },
+    {
+      "id": "W002",
+      "type": "abbreviation",
+      "description": "03_attention.png内で「キャッシュバック」を前提とした注意書きが記載されているが、直前セクションでキャッシュバックの正式な説明・定義が見当たらない。読者が初めて目にした場合、何のキャッシュバックか文脈が不明瞭になる可能性がある。",
+      "screenshot": "03_attention.png",
+      "approx_bbox": {
+        "x": 57,
+        "y": 90,
+        "w": 1170,
+        "h": 60
+      }
+    },
+    {
+      "id": "W003",
+      "type": "layout_issue",
+      "description": "sp_03_attention.png（SP375px表示）でAttentionボックス内の本文テキストが行ごとに不自然な位置で改行されており（例：「お読みになる前にご確認くださ／い」「適用漏れがないよう契約前に条件の全体像を把握／してください。」）、単語・文節の途中で折り返しが発生している箇所がある。読み づらさや不完全な印象を与える可能性がある。",
+      "screenshot": "sp_03_attention.png",
+      "approx_bbox": {
+        "x": 0,
+        "y": 0,
+        "w": 375,
+        "h": 520
+      }
+    },
+    {
+      "id": "W004",
+      "type": "duplicate_content",
+      "description": "08_summary.png のまとめ本文とCTAボックス内のキャッチコピー「引越し時の電気・ガス・ネット手続きを一括サポート」およびボタンテキストが、ページ内の他CTAと同一文言である可能性がある。同一ページ内でCTAが複数回出現すること自体は一般的だが、まとめセクション直後に配置されたCTAがFVや他セクションのCTAと完全同一文言であれば、重複感が生じる。スクリーンショット範囲内での確認では08_summary内に1箇所のみのため低優先だが注意が必要。",
+      "screenshot": "08_summary.png",
+      "approx_bbox": {
+        "x": 57,
+        "y": 310,
+        "w": 1170,
+        "h": 220
+      }
+    },
+    {
+      "id": "W001",
+      "type": "duplicate_content",
+      "description": "比較表の「WEB受付」と「WEB受付時間」の2行が同一内容（24時間／対応あり／24時間年中無休）で重複している。読者が同じ情報を2度読むことになり混乱を招く可能性がある。",
+      "screenshot": "06_comparison.png",
+      "approx_bbox": {
+        "x": 57,
+        "y": 390,
+        "w": 1170,
+        "h": 130
+      }
+    },
+    {
+      "id": "W002",
+      "type": "abbreviation",
+      "description": "比較表内で「△（申し込み時確認）」と記載されているが、△の意味（一部対応・条件付き対応）について本文中に説明がなく、読者が意味を正確に理解できない可能性がある。",
+      "screenshot": "06_comparison.png",
+      "approx_bbox": {
+        "x": 316,
+        "y": 310,
+        "w": 350,
+        "h": 45
+      }
+    },
+    {
+      "id": "W003",
+      "type": "other",
+      "description": "悪い口コミセクションにて「独立した第三者口コミは確認できませんでした」と記載されているにもかかわらず、良い口コミセクションでは公式サイト掲載の口コミを「口コミ・評判」として紹介している。セクション見出しの「良い口コミ・評判」と内容（公式掲載のみ）が乖離しており、読者が中立的な口コミと誤認する恐れがある。",
+      "screenshot": "05_good_reviews.png",
+      "approx_bbox": {
+        "x": 57,
+        "y": 0,
+        "w": 1170,
+        "h": 900
+      }
+    },
+    {
+      "id": "W004",
+      "type": "layout_issue",
+      "description": "SPレイアウト（sp_03_attention.png）のAttentionボックスにおいて、本文テキストがボックス外枠に対して余白がほぼなく密着気味に配置されており、モバイル閲覧時に視認性・可読性が低下する恐れがある。",
+      "screenshot": "sp_03_attention.png",
+      "approx_bbox": {
+        "x": 0,
+        "y": 0,
+        "w": 375,
+        "h": 520
+      }
+    },
+    {
+      "id": "W005",
+      "type": "other",
+      "description": "まとめセクションのCTAボタン上部に「引越し時の電気・ガス・ネット手続きを一括サポート」というリード文があり、その直下にボタン、さらに「※完全無料・今すぐ確認できます」という補足テキストが続く構成だが、ボタンとその前後テキストがオレンジ背景ボックス内に混在しており、ボタンのクリック領域と説明テキストの区別が視覚的に曖昧になっている。",
+      "screenshot": "08_summary.png",
+      "approx_bbox": {
+        "x": 57,
+        "y": 320,
+        "w": 1170,
+        "h": 230
+      }
+    }
+  ],
+  "warning_count": 13,
+  "runs_completed": 3,
+  "run_risks": [
+    "Medium",
+    "Medium",
+    "Medium"
+  ],
+  "run_scores": [
+    2,
+    2,
+    2
+  ],
+  "median_score": 2.0,
+  "post_blocked_by_vision": false,
+  "pm_vision_ready": true,
+  "note": "Vision Review は WARNING 提供のみ。投稿可否の最終判断は Layer1 ルールベース + PMレビュー。"
+}
