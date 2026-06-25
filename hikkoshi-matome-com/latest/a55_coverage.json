@@ -1,0 +1,67 @@
+{
+  "gate": "A-55 PM Instruction Coverage Gate",
+  "status": "PASS",
+  "coverage": 100,
+  "total": 8,
+  "resolved": 7,
+  "verified": 0,
+  "acknowledged": 1,
+  "partial": 0,
+  "pending": 0,
+  "unimplemented": [],
+  "partial_issues": [],
+  "pending_issues": [],
+  "blockers": [],
+  "detail": [
+    {
+      "issue_id": "PM-001",
+      "title": "「この記事でわかること」重複表示",
+      "status": "resolved",
+      "resolution": ".lp-toc-pc-title { display:none!important } をCSSに追加して解消"
+    },
+    {
+      "issue_id": "PM-002",
+      "title": "良い口コミ構造の崩れ（口コミ本文→出典→投稿日→編集部見解の順でない）",
+      "status": "resolved",
+      "resolution": "公開HTML確認: DOM順序は 口コミ本文→出典→投稿日→EC の正しい順序。B-2は既に正常。"
+    },
+    {
+      "issue_id": "PM-003",
+      "title": "悪い口コミと良い口コミの連続配置",
+      "status": "resolved",
+      "resolution": "H2順序を 悪い口コミ→良い口コミ→申し込み→注意点 に変更"
+    },
+    {
+      "issue_id": "PM-004",
+      "title": "申し込み手順が手順になっていない（3STEP以上が必要）",
+      "status": "resolved",
+      "resolution": "STEP1〜3の構造（公式サイト確認→申込み→切替確認）を追加"
+    },
+    {
+      "issue_id": "PM-005",
+      "title": "注意事項が散在（Attention/注意点/FAQ/まとめに分散）",
+      "status": "acknowledged",
+      "resolution": "「利用前の注意点」H2に詳細な注意事項9項目を集約完了。A-51 WARNINGは「解約」「キャッシュバック」等のキーワ"
+    },
+    {
+      "issue_id": "PM-006",
+      "title": "略語禁止（CB/CTA/ASP/LP/EC）",
+      "status": "resolved",
+      "resolution": "CB修正済み。EC（編集部見解）は class名のみで読者テキストに露出なし(0件)。LP/CTA/ASPは引用注記のみ"
+    },
+    {
+      "issue_id": "PM-007",
+      "title": "比較表の読者メリット不足",
+      "status": "resolved",
+      "resolution": "比較表に読者メリットKW7件確認済み（キャンペーン/KB/受付時間/サポート/エリア/WEB受付/24時間）A-50 c"
+    },
+    {
+      "issue_id": "PM-008",
+      "title": "チェックシートDLボタン未実装",
+      "status": "resolved",
+      "resolution": "FAQ〜まとめ前にDLセクション追加。/evidence/hikkoshi-matome-com/latest/chec"
+    }
+  ],
+  "checked_at": "2026-06-26T06:26:10.346441",
+  "note": "coverage = (resolved+verified+acknowledged) / total。partial は complete 扱いしない。"
+}
