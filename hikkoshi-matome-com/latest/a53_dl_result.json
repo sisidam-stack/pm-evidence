@@ -1,0 +1,11 @@
+{
+  "gate": "A-53 DL動作確認（Playwright）",
+  "status": "PASS",
+  "article_url": "https://hikkoshi-matome.com/",
+  "dl_url": "https://sisidam-stack.github.io/pm-evidence/hikkoshi-matome-com/latest/checklist.html",
+  "checklist_items": 24,
+  "blockers": [],
+  "warnings": [],
+  "checked_at": "2026-06-25T22:10:54.463Z",
+  "note": "DLボタン存在 + HTTP200 + 項目数10件以上 + 印刷可能 を確認"
+}
