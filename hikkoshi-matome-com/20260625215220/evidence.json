@@ -1,7 +1,7 @@
 {
   "site_key": "hikkoshi-matome-com",
   "url": "https://hikkoshi-matome.com",
-  "captured_at": "2026-06-25T12:55:31.565Z",
+  "captured_at": "2026-06-25T12:52:46.484Z",
   "commit_id": "7d26ac9",
   "article_commit_id": "7d26ac9",
   "implementation_commit_id": "7d26ac9",
@@ -14,7 +14,7 @@
     "A30_comparison_duplication": "PASS",
     "A31_editorial_comment": "PASS",
     "A34_attention_sp_margin": "PASS",
-    "A38_headline_relevance": "PASS",
+    "A38_headline_relevance": "manual_check_required",
     "A40_evidence_generated": "PASS",
     "A41_evidence_published": "PASS",
     "page_errors": 0,

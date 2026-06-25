@@ -1,10 +1,10 @@
 {
   "hikkoshi-matome-com": {
     "site_key": "hikkoshi-matome-com",
-    "timestamp": "20260625213609",
+    "timestamp": "20260625215456",
     "url": "https://hikkoshi-matome.com",
-    "commit_id": "6e775dd",
-    "captured_at": "2026-06-25T12:36:38.261Z",
+    "commit_id": "7d26ac9",
+    "captured_at": "2026-06-25T12:55:31.565Z",
     "pc_screenshots": 9,
     "sp_screenshots": 9,
     "index_html": "/evidence/hikkoshi-matome-com/latest/index.html",
@@ -15,10 +15,10 @@
   },
   "latest": {
     "site_key": "hikkoshi-matome-com",
-    "timestamp": "20260625213609",
+    "timestamp": "20260625215456",
     "url": "https://hikkoshi-matome.com",
-    "commit_id": "6e775dd",
-    "captured_at": "2026-06-25T12:36:38.261Z",
+    "commit_id": "7d26ac9",
+    "captured_at": "2026-06-25T12:55:31.565Z",
     "pc_screenshots": 9,
     "sp_screenshots": 9,
     "index_html": "/evidence/hikkoshi-matome-com/latest/index.html",
