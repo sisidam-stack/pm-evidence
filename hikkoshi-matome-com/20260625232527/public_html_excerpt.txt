@@ -1,0 +1,53 @@
+
+
+=== .lp-warning ===
+<div class="wp-block-group lp-warning is-yellow"><div class="wp-block-group__inner-container">
+
+<p class="lp-warning-title wp-block-paragraph">⚠ Attention</p>
+
+
+
+<p class="lp-warning-subtitle wp-block-paragraph">お読みになる前にご確認ください</p>
+
+
+
+<p class="wp-block-paragraph">キャッシュバックの受取には契約継続期間や申請手続きなど複数の条件があるため、適用漏れがないよう契約前に条件の全体像を把握してください。</p>
+
+
+
+<p class="wp-block-paragraph">提携先以外の電力・ガス会社のプランは提案対象外となる場合があるため、代行提案と並行して自身でも他社比較を行うことをおすすめします。</p>
+
+
+
+<p class="wp-block-paragraph">手続き完了まで数日かかる場合があるため、引越し日が決まったら早めにご相談ください。</p>
+
+</div></div>
+
+=== .lp-review-meta ===
+<div class="lp-review-meta" data-source-type="official_review" data-source-label="電気の手続きサポートセンター公式" data-source-url="https://denki-tetsuzuki.web-supportcenter.com/voice.html" data-verified-at="2026-06-24">
+  <div class="lp-review-source"><a href="https://denki-tetsuzuki.web-supportcenter.com/voice.html" target="_blank" rel="noopener noreferrer">電気の手続きサポートセンター ご利用者の声</a></div>
+  <div class="lp-review-date" style="font-size:0.75em;color:#9ca3af;">投稿日：不明（公式サイト掲載）</div>
+  <!-- verified_at:2026-06-24 (管理情報) -->
+</div>
+
+=== table ===
+<table><thead><tr><th>比較項目</th><th>電気の手続きサポートセンター</th><th>ライフラインの窓口</th><th>引っ越しサポートNAVI</th></tr></thead><tbody><tr><td>サービス種別</td><td>電気・ガス・ネット手続き代行</td><td>電気・ガス・水道・ネット受付窓口</td><td>電気・ガス・ネット回線手続き代行</td></tr><tr><td>利用料</td><td>無料</td><td>無料（事業者から手数料）</td><td>無料</td></tr><tr><td>電気手続き</td><td>✓</td><td>✓</td><td>✓</td></tr><tr><td>ガス手続き</td><td>✓</td><td>✓</td><td>✓</td></tr><tr><td>ネット回線</td><td>✓</td><td>✓</td><td>✓</td></tr><tr><td>水道手続き</td><td>△（申し込み時確認）</td><td>✓</td><td>調査時点で確認できず</td></tr><tr><td>WEB受付</td><td>24時間</td><td>対応あり</td><td>24時間年中無休</td></tr><tr><td>対応エリア</td><td>9エリア（北海道〜九州）</td><td>要確認</td><td>電力会社により異なる</td></tr><tr><td>法人対応</td><td>✓（専用フォームあり）</td><td>調査時点で確認できず</td><td>調査時点で確認できず</td></tr><tr><td>キャンペーン・キャッシュバック</td><td>最大70,000円CB（条件あり）</td><td>調査時点で確認できず</td><td>調査時点で確認できず</td></tr>
+<tr><td>WEB受付時間</td><td>24時間</td><td>対応あり</td><td>24時間年中無休</td></tr>
+</tbody></table>
+
+=== .lp-fact-box ===
+<div class="lp-fact-box" style="background:#f0fdf4;border:1px solid #86efac;border-left:4px solid #16a34a;border-radius:6px;padding:12px 16px;margin:16px 0;">
+  <div class="lp-fact-title" style="font-weight:bold;font-size:0.88em;color:#15803d;margin-bottom:8px;">📋 公式サイト確認情報（2026年6月確認）</div>
+  <div class="lp-fact-body" style="font-size:0.88em;color:#166534;line-height:1.8;">
+    <ul style="margin:4px 0;padding-left:1.2em;">
+      <li>電気＋ガス＋インターネットまとめ加入：最大70,000円キャッシュバック</li>
+      <li>電気＋ガスまとめ加入：最大10,000円キャッシュバック</li>
+      <li>電気＋ガスまとめ：月々最大20%割引</li>
+      <li>キャッシュバック申請受付期間：お申し込み月を含む12ヵ月後の1ヵ月間</li>
+      <li>振込時期：キャッシュバック申請月の翌月末</li>
+      <li>継続利用条件：利用開始月から24ヵ月間のご利用</li>
+      <li>申告必須：担当オペレーターへキャッシュバック希望を申告すること</li>
+    </ul>
+  </div>
+  <div class="lp-fact-source" style="font-size:0.75em;color:#4ade80;margin-top:8px;">
+    出典：<a href="https://denki-tetsuzuki.web-supportcenter.com/campaign.html" target="_blank" rel="noopener noreferrer" style="color:#16a34a;text-decoration:underline

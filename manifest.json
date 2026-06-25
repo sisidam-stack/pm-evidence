@@ -1,10 +1,10 @@
 {
   "hikkoshi-matome-com": {
     "site_key": "hikkoshi-matome-com",
-    "timestamp": "20260625221915",
+    "timestamp": "20260625233756",
     "url": "https://hikkoshi-matome.com",
-    "commit_id": "41860a5",
-    "captured_at": "2026-06-25T13:19:40.675Z",
+    "commit_id": "9613471",
+    "captured_at": "2026-06-25T14:38:23.520Z",
     "pc_screenshots": 9,
     "sp_screenshots": 9,
     "index_html": "/evidence/hikkoshi-matome-com/latest/index.html",
@@ -14,18 +14,18 @@
     "screenshots_sp": "/evidence/hikkoshi-matome-com/latest/screenshots/sp/"
   },
   "latest": {
-    "site_key": "uwaki",
-    "timestamp": "20260625230013",
-    "url": "https://uwaki-chousa-pro.com",
-    "commit_id": "a74d8bc",
-    "captured_at": "2026-06-25T14:00:38.322Z",
+    "site_key": "hikkoshi-matome-com",
+    "timestamp": "20260625233756",
+    "url": "https://hikkoshi-matome.com",
+    "commit_id": "9613471",
+    "captured_at": "2026-06-25T14:38:23.520Z",
     "pc_screenshots": 9,
     "sp_screenshots": 9,
-    "index_html": "/evidence/uwaki/latest/index.html",
-    "evidence_json": "/evidence/uwaki/latest/evidence.json",
-    "zip": "/evidence/uwaki/latest/evidence.zip",
-    "screenshots_pc": "/evidence/uwaki/latest/screenshots/pc/",
-    "screenshots_sp": "/evidence/uwaki/latest/screenshots/sp/"
+    "index_html": "/evidence/hikkoshi-matome-com/latest/index.html",
+    "evidence_json": "/evidence/hikkoshi-matome-com/latest/evidence.json",
+    "zip": "/evidence/hikkoshi-matome-com/latest/evidence.zip",
+    "screenshots_pc": "/evidence/hikkoshi-matome-com/latest/screenshots/pc/",
+    "screenshots_sp": "/evidence/hikkoshi-matome-com/latest/screenshots/sp/"
   },
   "tokyo": {
     "site_key": "tokyo",
