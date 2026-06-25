@@ -1,0 +1,30 @@
+{
+  "hikkoshi-matome-com": {
+    "site_key": "hikkoshi-matome-com",
+    "timestamp": "20260625213609",
+    "url": "https://hikkoshi-matome.com",
+    "commit_id": "6e775dd",
+    "captured_at": "2026-06-25T12:36:38.261Z",
+    "pc_screenshots": 9,
+    "sp_screenshots": 9,
+    "index_html": "/evidence/hikkoshi-matome-com/latest/index.html",
+    "evidence_json": "/evidence/hikkoshi-matome-com/latest/evidence.json",
+    "zip": "/evidence/hikkoshi-matome-com/latest/evidence.zip",
+    "screenshots_pc": "/evidence/hikkoshi-matome-com/latest/screenshots/pc/",
+    "screenshots_sp": "/evidence/hikkoshi-matome-com/latest/screenshots/sp/"
+  },
+  "latest": {
+    "site_key": "hikkoshi-matome-com",
+    "timestamp": "20260625213609",
+    "url": "https://hikkoshi-matome.com",
+    "commit_id": "6e775dd",
+    "captured_at": "2026-06-25T12:36:38.261Z",
+    "pc_screenshots": 9,
+    "sp_screenshots": 9,
+    "index_html": "/evidence/hikkoshi-matome-com/latest/index.html",
+    "evidence_json": "/evidence/hikkoshi-matome-com/latest/evidence.json",
+    "zip": "/evidence/hikkoshi-matome-com/latest/evidence.zip",
+    "screenshots_pc": "/evidence/hikkoshi-matome-com/latest/screenshots/pc/",
+    "screenshots_sp": "/evidence/hikkoshi-matome-com/latest/screenshots/sp/"
+  }
+}
