@@ -1,8 +1,10 @@
 {
   "gate": "pre_submit_check (Phase E-1 Registry参照版)",
   "site_key": "hikkoshi-matome-com",
-  "checked_at": "2026-06-26T08:49:28.172240",
+  "checked_at": "2026-06-26T08:57:29.870701",
   "can_submit": true,
+  "pm_review_required": true,
+  "pm_approved": false,
   "gate_summary_ref": {
     "overall_status": "WARNING",
     "can_submit": true,
