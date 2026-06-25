@@ -1,0 +1,268 @@
+{
+  "site_key": "hikkoshi-matome-com",
+  "url": "https://hikkoshi-matome.com",
+  "captured_at": "2026-06-25T14:56:09.486Z",
+  "commit_id": "17d5e18",
+  "article_commit_id": "17d5e18",
+  "implementation_commit_id": "17d5e18",
+  "review_target": {
+    "url": "https://hikkoshi-matome.com",
+    "article_version": "2026-06-25"
+  },
+  "quality_gates": {
+    "A28_public_html_truth": "PASS",
+    "A30_comparison_duplication": "PASS",
+    "A31_editorial_comment": "PASS",
+    "A34_attention_sp_margin": "PASS",
+    "A38_headline_relevance": "PASS",
+    "A40_evidence_generated": "PASS",
+    "A41_evidence_published": "PASS",
+    "page_errors": 0,
+    "review_violations": 0,
+    "attention_sp_leftMargin": 27
+  },
+  "viewport": [
+    "pc",
+    "sp"
+  ],
+  "screenshots": {
+    "pc": [
+      {
+        "id": "01_fv",
+        "label": "FV（ファーストビュー）",
+        "file": "01_fv.png",
+        "captured": true,
+        "bbox": null
+      },
+      {
+        "id": "02_keypoints",
+        "label": "この記事でわかること",
+        "file": "02_keypoints.png",
+        "captured": true,
+        "bbox": {
+          "x": 0,
+          "y": 1289,
+          "width": 1280,
+          "height": 125
+        }
+      },
+      {
+        "id": "03_attention",
+        "label": "Attention",
+        "file": "03_attention.png",
+        "captured": true,
+        "bbox": {
+          "x": 0,
+          "y": 2820,
+          "width": 1280,
+          "height": 368
+        }
+      },
+      {
+        "id": "04_bad_reviews",
+        "label": "悪い口コミ・評判",
+        "file": "04_bad_reviews.png",
+        "captured": true,
+        "bbox": {
+          "x": 0,
+          "y": 5968,
+          "width": 1280,
+          "height": 326
+        }
+      },
+      {
+        "id": "05_good_reviews",
+        "label": "良い口コミ・評判",
+        "file": "05_good_reviews.png",
+        "captured": true,
+        "bbox": {
+          "x": 0,
+          "y": 6681,
+          "width": 1280,
+          "height": 900
+        }
+      },
+      {
+        "id": "06_comparison",
+        "label": "比較表",
+        "file": "06_comparison.png",
+        "captured": true,
+        "bbox": {
+          "x": 0,
+          "y": 8354,
+          "width": 1280,
+          "height": 622
+        }
+      },
+      {
+        "id": "07_faq",
+        "label": "FAQ",
+        "file": "07_faq.png",
+        "captured": true,
+        "bbox": {
+          "x": 0,
+          "y": 9112,
+          "width": 1280,
+          "height": 900
+        }
+      },
+      {
+        "id": "08_summary",
+        "label": "まとめ",
+        "file": "08_summary.png",
+        "captured": true,
+        "bbox": {
+          "x": 0,
+          "y": 10203,
+          "width": 1280,
+          "height": -10207
+        }
+      },
+      {
+        "id": "09_cta",
+        "label": "CTA",
+        "file": "09_cta.png",
+        "captured": true,
+        "bbox": {
+          "x": 0,
+          "y": 1018,
+          "width": 1280,
+          "height": 235
+        }
+      }
+    ],
+    "sp": [
+      {
+        "id": "01_fv",
+        "label": "FV（ファーストビュー）",
+        "file": "01_fv.png",
+        "captured": true,
+        "bbox": null
+      },
+      {
+        "id": "02_keypoints",
+        "label": "この記事でわかること",
+        "file": "02_keypoints.png",
+        "captured": true,
+        "bbox": {
+          "x": 0,
+          "y": 1049,
+          "width": 375,
+          "height": 179
+        }
+      },
+      {
+        "id": "03_attention",
+        "label": "Attention",
+        "file": "03_attention.png",
+        "captured": true,
+        "bbox": {
+          "x": 0,
+          "y": 3106,
+          "width": 375,
+          "height": 685
+        }
+      },
+      {
+        "id": "04_bad_reviews",
+        "label": "悪い口コミ・評判",
+        "file": "04_bad_reviews.png",
+        "captured": true,
+        "bbox": {
+          "x": 0,
+          "y": 8970,
+          "width": 375,
+          "height": 506
+        }
+      },
+      {
+        "id": "05_good_reviews",
+        "label": "良い口コミ・評判",
+        "file": "05_good_reviews.png",
+        "captured": true,
+        "bbox": {
+          "x": 0,
+          "y": 10106,
+          "width": 375,
+          "height": 900
+        }
+      },
+      {
+        "id": "06_comparison",
+        "label": "比較表",
+        "file": "06_comparison.png",
+        "captured": true,
+        "bbox": {
+          "x": 0,
+          "y": 12903,
+          "width": 375,
+          "height": 900
+        }
+      },
+      {
+        "id": "07_faq",
+        "label": "FAQ",
+        "file": "07_faq.png",
+        "captured": true,
+        "bbox": {
+          "x": 0,
+          "y": 14236,
+          "width": 375,
+          "height": 900
+        }
+      },
+      {
+        "id": "08_summary",
+        "label": "まとめ",
+        "file": "08_summary.png",
+        "captured": true,
+        "bbox": {
+          "x": 0,
+          "y": 15665,
+          "width": 375,
+          "height": -15669
+        }
+      },
+      {
+        "id": "09_cta",
+        "label": "CTA",
+        "file": "09_cta.png",
+        "captured": true,
+        "bbox": {
+          "x": 0,
+          "y": 711,
+          "width": 375,
+          "height": 302
+        }
+      }
+    ]
+  },
+  "page_errors": [],
+  "quality_gate_results": {
+    "factbox_count": 1,
+    "editorial_comment_count": 5,
+    "empty_editorial_comments": 0,
+    "positive_review_count": 5,
+    "comparison_table_exists": true,
+    "comparison_table_cb_row": true
+  },
+  "review_structure": {
+    "pattern": "REVIEW→EC→REVIEW→EC→REVIEW→EC→REVIEW→EC→REVIEW→EC",
+    "violations": [],
+    "total": 10
+  },
+  "attention_sp_metrics": {
+    "paddingLeft": "18px",
+    "paddingRight": "18px",
+    "fontSize": "17px",
+    "lineHeight": "35.7px",
+    "leftMargin": 27,
+    "rightMargin": 27
+  },
+  "notes": [
+    "PC screenshots: 9/9件",
+    "SP screenshots: 9/9件",
+    "PageErrors: 0件",
+    "ReviewStructure violations: 0件"
+  ]
+}
