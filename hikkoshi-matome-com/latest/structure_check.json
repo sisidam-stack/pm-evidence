@@ -1,7 +1,7 @@
 {
   "status": "PASS",
   "url": "https://hikkoshi-matome.com/",
-  "checked_at": "2026-06-26T07:18:45.449684",
+  "checked_at": "2026-06-26T07:26:47.589201",
   "blocker_count": 0,
   "warning_count": 0,
   "blockers": [],
@@ -36,6 +36,10 @@
       "items": []
     },
     "review_card_dom_order": {
+      "count": 0,
+      "items": []
+    },
+    "pm_rejected_phrases": {
       "count": 0,
       "items": []
     },
