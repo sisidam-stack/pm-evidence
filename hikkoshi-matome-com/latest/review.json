@@ -1,0 +1,34 @@
+{
+  "review_type": "A-42 AI Review Gate",
+  "reviewed_at": "2026-06-25T21:47:45.648932",
+  "site_key": "hikkoshi-matome-com",
+  "article_commit_id": "6e775dd",
+  "status": "MAJOR",
+  "score": 90,
+  "blockers": [],
+  "majors": [
+    "A-34 MAJOR: SP Attention左余白 23px（24px推奨）"
+  ],
+  "minors": [
+    "A38_headline_relevance: 手動確認が必要（見出しと本文不一致）"
+  ],
+  "ai_comment": null,
+  "ai_error": null,
+  "evidence_ref": {
+    "url": "https://hikkoshi-matome.com",
+    "captured_at": "2026-06-25T12:36:38.261Z",
+    "quality_gates": {
+      "A28_public_html_truth": "PASS",
+      "A30_comparison_duplication": "PASS",
+      "A31_editorial_comment": "PASS",
+      "A34_attention_sp_margin": "PASS",
+      "A38_headline_relevance": "manual_check_required",
+      "A40_evidence_generated": "PASS",
+      "A41_evidence_published": "PASS",
+      "page_errors": 0,
+      "review_violations": 0,
+      "attention_sp_leftMargin": 23
+    }
+  },
+  "pm_approval_ready": false
+}
