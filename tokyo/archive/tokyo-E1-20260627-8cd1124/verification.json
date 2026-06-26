@@ -17,5 +17,8 @@
   },
   "pm_review_status": "READY",
   "pm_reviewed_at": null,
-  "pm_review_bundle": null
+  "pm_review_bundle": null,
+  "archive_url": "https://sisidam-stack.github.io/pm-evidence/tokyo/archive/tokyo-E1-20260627-8cd1124/",
+  "archive_index_url": "https://sisidam-stack.github.io/pm-evidence/tokyo/archive/tokyo-E1-20260627-8cd1124/index.html",
+  "latest_url": "https://sisidam-stack.github.io/pm-evidence/tokyo/latest/"
 }
