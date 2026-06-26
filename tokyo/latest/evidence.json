@@ -1,13 +1,13 @@
 {
   "site_key": "tokyo",
-  "url": "https://tokyo-chikudenchi.net",
-  "captured_at": "2026-06-25T20:05:45.198Z",
-  "commit_id": "100f481",
-  "article_commit_id": "100f481",
-  "implementation_commit_id": "100f481",
+  "url": "https://www.tokyo-chikudenchi.net/",
+  "captured_at": "2026-06-26T20:53:53.532Z",
+  "commit_id": "8cd1124",
+  "article_commit_id": "8cd1124",
+  "implementation_commit_id": "c94d745",
   "review_target": {
-    "url": "https://tokyo-chikudenchi.net",
-    "article_version": "2026-06-25"
+    "url": "https://www.tokyo-chikudenchi.net/",
+    "article_version": "2026-06-26"
   },
   "quality_gates": {
     "A28_public_html_truth": "PASS",
@@ -41,7 +41,7 @@
         "captured": true,
         "bbox": {
           "x": 0,
-          "y": 1243,
+          "y": 1265,
           "width": 1280,
           "height": 98
         }
@@ -53,7 +53,7 @@
         "captured": true,
         "bbox": {
           "x": 0,
-          "y": 2702,
+          "y": 2769,
           "width": 1280,
           "height": 368
         }
@@ -65,7 +65,7 @@
         "captured": true,
         "bbox": {
           "x": 0,
-          "y": 7136,
+          "y": 5683,
           "width": 1280,
           "height": 900
         }
@@ -77,7 +77,7 @@
         "captured": true,
         "bbox": {
           "x": 0,
-          "y": 8132,
+          "y": 6680,
           "width": 1280,
           "height": 900
         }
@@ -89,9 +89,9 @@
         "captured": true,
         "bbox": {
           "x": 0,
-          "y": 9269,
+          "y": 9469,
           "width": 1280,
-          "height": 416
+          "height": 467
         }
       },
       {
@@ -101,7 +101,7 @@
         "captured": true,
         "bbox": {
           "x": 0,
-          "y": 9979,
+          "y": 10730,
           "width": 1280,
           "height": 900
         }
@@ -111,7 +111,12 @@
         "label": "まとめ",
         "file": "08_summary.png",
         "captured": true,
-        "bbox": null
+        "bbox": {
+          "x": 0,
+          "y": 10450,
+          "width": 1280,
+          "height": 276
+        }
       },
       {
         "id": "09_cta",
@@ -120,7 +125,7 @@
         "captured": true,
         "bbox": {
           "x": 0,
-          "y": 1018,
+          "y": 1040,
           "width": 1280,
           "height": 189
         }
@@ -141,7 +146,7 @@
         "captured": true,
         "bbox": {
           "x": 0,
-          "y": 1000,
+          "y": 1096,
           "width": 375,
           "height": 283
         }
@@ -153,7 +158,7 @@
         "captured": true,
         "bbox": {
           "x": 0,
-          "y": 3464,
+          "y": 3577,
           "width": 375,
           "height": 721
         }
@@ -165,7 +170,7 @@
         "captured": true,
         "bbox": {
           "x": 0,
-          "y": 11653,
+          "y": 9254,
           "width": 375,
           "height": 900
         }
@@ -177,7 +182,7 @@
         "captured": true,
         "bbox": {
           "x": 0,
-          "y": 13218,
+          "y": 10895,
           "width": 375,
           "height": 900
         }
@@ -189,9 +194,9 @@
         "captured": true,
         "bbox": {
           "x": 0,
-          "y": 15145,
+          "y": 15685,
           "width": 375,
-          "height": 596
+          "height": 638
         }
       },
       {
@@ -201,7 +206,7 @@
         "captured": true,
         "bbox": {
           "x": 0,
-          "y": 16106,
+          "y": 17610,
           "width": 375,
           "height": 900
         }
@@ -211,7 +216,12 @@
         "label": "まとめ",
         "file": "08_summary.png",
         "captured": true,
-        "bbox": null
+        "bbox": {
+          "x": 0,
+          "y": 17008,
+          "width": 375,
+          "height": 598
+        }
       },
       {
         "id": "09_cta",
@@ -220,7 +230,7 @@
         "captured": true,
         "bbox": {
           "x": 0,
-          "y": 711,
+          "y": 808,
           "width": 375,
           "height": 252
         }
@@ -254,5 +264,41 @@
     "SP screenshots: 9/9件",
     "PageErrors: 0件",
     "ReviewStructure violations: 0件"
-  ]
+  ],
+  "live_html_hash": "0e1336bcdfb1554ac1667f90d1f95d70",
+  "evidence_bundle_id": "tokyo-E1-20260627-8cd1124",
+  "live_dom_check": {
+    "status": "PASS",
+    "fetched_at": "2026-06-26T20:53:53.530Z",
+    "public_url": "https://www.tokyo-chikudenchi.net/",
+    "live_html_hash": "0e1336bcdfb1554ac1667f90d1f95d70",
+    "html_size": 83163,
+    "ng_words_checked": [
+      "長期保証で満足",
+      "長期保証で安心",
+      "10年保証",
+      "比較・仕様まとめ",
+      "引越し日",
+      "電気・ガス・ネット等",
+      "全国対応です",
+      "未確認断定"
+    ],
+    "ng_words_found": [],
+    "h2_list": [
+      "スマートソーラーの基本情報・特徴",
+      "スマートソーラーの料金・保証・支払い方法",
+      "スマートソーラーが向いている人・向いていない人",
+      "スマートソーラーの悪い口コミ",
+      "スマートソーラーの良い口コミ・評判",
+      "スマートソーラーの申し込み手順",
+      "スマートソーラーを利用する前の注意点",
+      "スマートソーラーの比較・仕様",
+      "まとめ",
+      "よくある質問"
+    ],
+    "matome_h2_exists": true,
+    "compare_h2_has_matome": false,
+    "checklist_item_count": 16,
+    "checklist_error": null
+  }
 }
