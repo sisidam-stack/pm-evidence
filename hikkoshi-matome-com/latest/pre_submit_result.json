@@ -1,7 +1,7 @@
 {
   "gate": "pre_submit_check (Phase E-1 Registry参照版)",
   "site_key": "hikkoshi-matome-com",
-  "checked_at": "2026-06-26T08:57:29.870701",
+  "checked_at": "2026-06-26T09:11:10.594959",
   "can_submit": true,
   "pm_review_required": true,
   "pm_approved": false,
@@ -9,7 +9,7 @@
     "overall_status": "WARNING",
     "can_submit": true,
     "layer1_fail": false,
-    "run_at": "2026-06-26T07:48:15.131295"
+    "run_at": "2026-06-26T09:11:10.539015"
   },
   "pm_review_checklist": [
     {
@@ -20,7 +20,7 @@
     {
       "label": "latest/index.html更新済",
       "ok": true,
-      "detail": "commit=de30f29"
+      "detail": "commit=221787f"
     },
     {
       "label": "PM Issue pending=0",

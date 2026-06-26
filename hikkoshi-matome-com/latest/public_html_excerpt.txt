@@ -2,7 +2,6 @@
 
 === .lp-warning ===
 <div class="wp-block-group lp-warning is-yellow"><div class="wp-block-group__inner-container">
-
 <p class="lp-warning-title wp-block-paragraph">⚠ Attention</p>
 
 
@@ -11,16 +10,19 @@
 
 
 
-<p class="wp-block-paragraph">キャッシュバックの受取には契約継続期間や申請手続きなど複数の条件があるため、適用漏れがないよう契約前に条件の全体像を把握してください。</p>
+<p class="wp-block-paragraph">・キャッシュバック特典には継続利用期間・申請期限など複数の条件があります。</p>
 
 
 
-<p class="wp-block-paragraph">提携先以外の電力・ガス会社のプランは提案対象外となる場合があるため、代行提案と並行して自身でも他社比較を行うことをおすすめします。</p>
+<p class="wp-block-paragraph">・沖縄・離島・すでに電力会社変更済みの場合は対象外となる場合があります。</p>
 
 
 
-<p class="wp-block-paragraph">手続き完了まで数日かかる場合があるため、引越し日が決まったら早めにご相談ください。</p>
+<p class="wp-block-paragraph">・提案されたプランが最安値とは限りません。申込み前に他社比較を行うことをおすすめします。</p>
 
+
+
+<p class="wp-block-paragraph">詳細な注意事項は「<a href="#利用前の注意点">利用前の注意点</a>」にまとめています。</p>
 </div></div>
 
 === .lp-review-meta ===

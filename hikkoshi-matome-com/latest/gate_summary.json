@@ -2,7 +2,7 @@
   "gate": "Phase E-1 Gate Runner",
   "site_key": "hikkoshi-matome-com",
   "url": "https://hikkoshi-matome.com/",
-  "run_at": "2026-06-26T07:48:15.131295",
+  "run_at": "2026-06-26T09:11:10.539015",
   "overall_status": "WARNING",
   "can_submit": true,
   "layer1_fail": false,
@@ -134,7 +134,7 @@
       "layer": 2,
       "severity": "WARNING",
       "status": "WARNING",
-      "detail": "warnings=13"
+      "detail": "warnings=12"
     }
   ],
   "layer1_gates": [
@@ -266,7 +266,7 @@
       "layer": 2,
       "severity": "WARNING",
       "status": "WARNING",
-      "detail": "warnings=13"
+      "detail": "warnings=12"
     }
   ]
 }

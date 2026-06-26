@@ -1,13 +1,13 @@
 {
   "site_key": "hikkoshi-matome-com",
   "url": "https://hikkoshi-matome.com/",
-  "captured_at": "2026-06-25T22:46:58.104Z",
-  "commit_id": "de30f29",
-  "article_commit_id": "de30f29",
-  "implementation_commit_id": "de30f29",
+  "captured_at": "2026-06-26T00:09:50.385Z",
+  "commit_id": "221787f",
+  "article_commit_id": "221787f",
+  "implementation_commit_id": "221787f",
   "review_target": {
     "url": "https://hikkoshi-matome.com/",
-    "article_version": "2026-06-25"
+    "article_version": "2026-06-26"
   },
   "quality_gates": {
     "A28_public_html_truth": "PASS",
@@ -55,7 +55,7 @@
           "x": 0,
           "y": 2774,
           "width": 1280,
-          "height": 368
+          "height": 429
         }
       },
       {
@@ -65,7 +65,7 @@
         "captured": true,
         "bbox": {
           "x": 0,
-          "y": 5921,
+          "y": 5983,
           "width": 1280,
           "height": 326
         }
@@ -77,7 +77,7 @@
         "captured": true,
         "bbox": {
           "x": 0,
-          "y": 6252,
+          "y": 6313,
           "width": 1280,
           "height": 900
         }
@@ -89,7 +89,7 @@
         "captured": true,
         "bbox": {
           "x": 0,
-          "y": 9279,
+          "y": 9646,
           "width": 1280,
           "height": 622
         }
@@ -101,7 +101,7 @@
         "captured": true,
         "bbox": {
           "x": 0,
-          "y": 10036,
+          "y": 10403,
           "width": 1280,
           "height": 900
         }
@@ -113,7 +113,7 @@
         "captured": true,
         "bbox": {
           "x": 0,
-          "y": 11153,
+          "y": 11520,
           "width": 1280,
           "height": 900
         }
@@ -160,7 +160,7 @@
           "x": 0,
           "y": 3060,
           "width": 375,
-          "height": 685
+          "height": 675
         }
       },
       {
@@ -170,7 +170,7 @@
         "captured": true,
         "bbox": {
           "x": 0,
-          "y": 8924,
+          "y": 8914,
           "width": 375,
           "height": 506
         }
@@ -182,7 +182,7 @@
         "captured": true,
         "bbox": {
           "x": 0,
-          "y": 9434,
+          "y": 9424,
           "width": 375,
           "height": 900
         }
@@ -194,7 +194,7 @@
         "captured": true,
         "bbox": {
           "x": 0,
-          "y": 14845,
+          "y": 15480,
           "width": 375,
           "height": 900
         }
@@ -206,7 +206,7 @@
         "captured": true,
         "bbox": {
           "x": 0,
-          "y": 16178,
+          "y": 16814,
           "width": 375,
           "height": 900
         }
@@ -218,7 +218,7 @@
         "captured": true,
         "bbox": {
           "x": 0,
-          "y": 17730,
+          "y": 18366,
           "width": 375,
           "height": 900
         }
