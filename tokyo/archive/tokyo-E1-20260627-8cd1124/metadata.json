@@ -1,0 +1,31 @@
+{
+  "review_id": "TKY-E1-20260627-02",
+  "evidence_bundle_id": "tokyo-E1-20260627-8cd1124",
+  "site_key": "tokyo",
+  "public_url": "https://www.tokyo-chikudenchi.net/",
+  "commit_id": "8cd1124",
+  "generated_at": "2026-06-26T21:27:38.750Z",
+  "fetched_at": "2026-06-26T21:27:38.747Z",
+  "github_pages_url": "https://sisidam-stack.github.io/pm-evidence/tokyo/latest/index.html",
+  "screenshot_pc_path": "https://sisidam-stack.github.io/pm-evidence/tokyo/latest/pc/",
+  "screenshot_sp_path": "https://sisidam-stack.github.io/pm-evidence/tokyo/latest/sp/",
+  "live_html_hash": "0e1336bcdfb1554ac1667f90d1f95d70",
+  "screenshot_pc_hash": "",
+  "screenshot_sp_hash": "",
+  "ng_words_found": [],
+  "ng_check_status": "PASS",
+  "checklist_items": 16,
+  "h2_list": [
+    "スマートソーラーの基本情報・特徴",
+    "スマートソーラーの料金・保証・支払い方法",
+    "スマートソーラーが向いている人・向いていない人",
+    "スマートソーラーの悪い口コミ",
+    "スマートソーラーの良い口コミ・評判",
+    "スマートソーラーの申し込み手順",
+    "スマートソーラーを利用する前の注意点",
+    "スマートソーラーの比較・仕様",
+    "まとめ",
+    "よくある質問"
+  ],
+  "pm_approval_block": null
+}

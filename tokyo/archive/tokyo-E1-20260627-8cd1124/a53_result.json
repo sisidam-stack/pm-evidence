@@ -1,0 +1,12 @@
+{
+  "gate": "A-53 Download Asset Gate",
+  "status": "PASS",
+  "layer": "Layer1",
+  "site_key": "tokyo",
+  "service_name": "スマートソーラー（東京都蓄電池）",
+  "checklist_path": "/Users/ishidamotoki/Applications/CroudeCode作業フォルダ/affiliate-tool/public/evidence/tokyo/latest/checklist.html",
+  "item_count": 8,
+  "file_size_bytes": 6229,
+  "generated_at": "2026-06-26T05:29:30.536438",
+  "blockers": []
+}

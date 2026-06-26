@@ -1,0 +1,27 @@
+
+
+=== .lp-warning ===
+<div class="wp-block-group lp-warning is-yellow"><div class="wp-block-group__inner-container">
+
+<p class="lp-warning-title">⚠ Attention</p>
+
+
+
+<p class="lp-warning-subtitle">お読みになる前にご確認ください</p>
+
+
+
+<p>蓄電池の保証年数・範囲は契約前に必ず書面で取得し、口頭説明だけで判断しないようにしてください。</p>
+
+
+
+<p>東京都の太陽光・蓄電池補助金は年度途中で予算上限に達し受付終了となる場合があるため、申請時期の見極めが重要です。</p>
+
+
+
+<p>対応エリアは東京都内の戸建て住宅に限定されており、都外や集合住宅の方は別の販売店・メーカーでの見積もり取得をおすすめします。</p>
+
+</div></div>
+
+=== table ===
+<table><thead><tr><th>比較項目</th><th>スマートソーラー</th><th>一般的な蓄電池販売業者</th></tr></thead><tbody><tr><td>販売形態</td><td>メーカー直販（ワンストップ）</td><td>代理店・販売店経由が多い</td></tr><tr><td>蓄電池容量</td><td>11.5kWh〜11.8kWh（大容量のみ）</td><td>4kWh〜16kWhなど幅広い選択肢</td></tr><tr><td>対応エリア</td><td>東京都・戸建て住宅限定</td><td>全国対応の業者が多い</td></tr><tr><td>補助金申請サポート</td><td>東京都の制度に特化した自社対応</td><td>業者により対応範囲が異なる</td></tr><tr><td>停電時出力</td><td>ハイブリッド3.5kW／単機能4.0kW</td><td>5.0kW以上の製品もあり</td></tr><tr><td>200V対応</td><td>全負荷・200V対応</td><td>製品により異なる</td></tr><tr><td>AI制御</td><td>搭載</td><td>製品により異なる</td></tr></tbody></table>

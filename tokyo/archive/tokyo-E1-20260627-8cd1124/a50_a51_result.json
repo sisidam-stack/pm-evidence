@@ -1,0 +1,68 @@
+{
+  "combined_status": "BLOCKER",
+  "url": "https://tokyo-chikudenchi.net",
+  "checked_at": "2026-06-26T05:29:45.146017",
+  "a50": {
+    "gate": "A-50 Section Completeness Gate",
+    "status": "BLOCKER",
+    "layer": "Layer1",
+    "blockers": [
+      "A-50 BLOCKER: 「スマートソーラーの悪い口コミ・注意点」に口コミまたは調査ボックスがありません"
+    ],
+    "warnings": [],
+    "checks": {
+      "chuui_items": {
+        "ok": true,
+        "count": 40,
+        "h2": "スマートソーラーの悪い口コミ・注意点"
+      },
+      "mouikomi_steps": {
+        "ok": true,
+        "count": 6,
+        "h2": "スマートソーラーの申し込み手順"
+      },
+      "bad_review": {
+        "ok": false,
+        "h2": "スマートソーラーの悪い口コミ・注意点"
+      },
+      "comparison_merit": {
+        "ok": true,
+        "found_keywords": [
+          "サポート",
+          "対応エリア",
+          "無料"
+        ],
+        "h2": "スマートソーラーの比較・仕様まとめ"
+      }
+    }
+  },
+  "a51": {
+    "gate": "A-51 Information Consolidation Gate",
+    "status": "WARNING",
+    "layer": "Layer1",
+    "blockers": [],
+    "warnings": [
+      "A-51 WARNING: 「注意事項」が3箇所に分散（スマートソーラーの料金・保証・支払い方法・スマートソーラーを利用する前の確認ポイン・よくある質問）—集約を検討"
+    ],
+    "topic_locations": {
+      "対応エリア": [
+        "スマートソーラーの基本情報・特徴",
+        "スマートソーラーの比較・仕様まとめ"
+      ],
+      "注意事項": [
+        "スマートソーラーの料金・保証・支払い方法",
+        "スマートソーラーを利用する前の確認ポイン",
+        "よくある質問"
+      ],
+      "適用除外": [
+        "よくある質問"
+      ]
+    }
+  },
+  "blockers": [
+    "A-50 BLOCKER: 「スマートソーラーの悪い口コミ・注意点」に口コミまたは調査ボックスがありません"
+  ],
+  "warnings": [
+    "A-51 WARNING: 「注意事項」が3箇所に分散（スマートソーラーの料金・保証・支払い方法・スマートソーラーを利用する前の確認ポイン・よくある質問）—集約を検討"
+  ]
+}

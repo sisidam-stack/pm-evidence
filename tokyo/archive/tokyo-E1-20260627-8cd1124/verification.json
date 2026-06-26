@@ -1,0 +1,21 @@
+{
+  "bundle_id": "tokyo-E1-20260627-8cd1124",
+  "commit_id": "8cd1124",
+  "generated_at": "2026-06-26T21:27:38.750Z",
+  "public_url": "https://www.tokyo-chikudenchi.net/",
+  "site_key": "tokyo",
+  "live_html_hash": "0e1336bcdfb1554ac1667f90d1f95d70",
+  "ng_check_status": "PASS",
+  "checklist_items": 16,
+  "files": {
+    "metadata.json": "30f2824360ea2409318a93808e4a9978",
+    "live-dom-check.json": "dfa03fc08949b10142074e8b8f172392",
+    "live-public.html": "0e1336bcdfb1554ac1667f90d1f95d70",
+    "evidence.json": "046c11ec5d72dc07069b3b4ae9ccdb49",
+    "pc/01_fv.png": "4b25c75dd2a83fcfaa884f36f0d6d678",
+    "sp/01_fv.png": "6c85470c21870d7f4d6da618953e843a"
+  },
+  "pm_review_status": "READY",
+  "pm_reviewed_at": null,
+  "pm_review_bundle": null
+}
