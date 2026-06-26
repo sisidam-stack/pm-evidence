@@ -3,177 +3,166 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>スマートソーラー（東京都蓄電池） 問い合わせ・面談チェックリスト</title>
+<title>スマートソーラー（東京都蓄電池）申込前チェックリスト</title>
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-body {
-  font-family: 'Noto Sans JP', 'Hiragino Sans', 'Meiryo', sans-serif;
-  font-size: 14px;
-  line-height: 1.7;
-  color: #1f2937;
-  background: #f9fafb;
-  padding: 20px;
-  max-width: 720px;
-  margin: 0 auto;
-}
-.header {
-  background: linear-gradient(135deg, #1d4ed8, #3b82f6);
-  color: #fff;
-  padding: 20px 24px;
-  border-radius: 10px;
-  margin-bottom: 20px;
-}
+body { font-family: 'Noto Sans JP', 'Hiragino Sans', 'Meiryo', sans-serif; font-size: 14px; line-height: 1.7; color: #1f2937; background: #f9fafb; padding: 20px; max-width: 720px; margin: 0 auto; }
+.header { background: linear-gradient(135deg, #1d4ed8, #3b82f6); color: #fff; padding: 20px 24px; border-radius: 10px; margin-bottom: 20px; }
 .header h1 { font-size: 1.25rem; font-weight: bold; margin-bottom: 4px; }
 .header .meta { font-size: .8rem; opacity: .85; }
-.section-title {
-  font-size: .8rem;
-  font-weight: bold;
-  color: #6b7280;
-  text-transform: uppercase;
-  letter-spacing: .05em;
-  margin: 20px 0 8px;
-  padding-bottom: 4px;
-  border-bottom: 1px solid #e5e7eb;
-}
-.check-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  padding: 10px 12px;
-  background: #fff;
-  border: 1px solid #e5e7eb;
-  border-radius: 6px;
-  margin-bottom: 6px;
-  cursor: pointer;
-  transition: background .15s;
-}
+.section-title { font-size: .8rem; font-weight: bold; color: #6b7280; text-transform: uppercase; letter-spacing: .05em; margin: 20px 0 8px; padding-bottom: 4px; border-bottom: 1px solid #e5e7eb; }
+.check-item { display: flex; align-items: flex-start; gap: 10px; padding: 10px 12px; background: #fff; border: 1px solid #e5e7eb; border-radius: 6px; margin-bottom: 6px; cursor: pointer; transition: background .15s; }
 .check-item:hover { background: #f0f9ff; }
 .check-box { width: 18px; height: 18px; cursor: pointer; flex-shrink: 0; margin-top: 2px; accent-color: #3b82f6; }
 label { display: flex; flex-wrap: wrap; gap: 4px 8px; cursor: pointer; flex: 1; }
-.check-num {
-  background: #dbeafe;
-  color: #1d4ed8;
-  font-size: .75rem;
-  font-weight: bold;
-  border-radius: 3px;
-  padding: 0 5px;
-  white-space: nowrap;
-}
-.check-cat {
-  font-size: .8rem;
-  color: #6b7280;
-  white-space: nowrap;
-}
+.check-num { background: #dbeafe; color: #1d4ed8; font-size: .75rem; font-weight: bold; border-radius: 3px; padding: 0 5px; white-space: nowrap; }
+.check-cat { font-size: .8rem; color: #6b7280; white-space: nowrap; }
 .check-text { font-size: .88rem; color: #1f2937; }
 input:checked + label .check-text { text-decoration: line-through; color: #9ca3af; }
-.footer {
-  text-align: center;
-  font-size: .75rem;
-  color: #9ca3af;
-  margin-top: 20px;
-  padding-top: 12px;
-  border-top: 1px solid #e5e7eb;
-}
-.print-btn {
-  display: block;
-  width: 100%;
-  padding: 10px;
-  background: #3b82f6;
-  color: #fff;
-  border: none;
-  border-radius: 6px;
-  font-size: .9rem;
-  cursor: pointer;
-  margin-top: 16px;
-}
+.footer { text-align: center; font-size: .75rem; color: #9ca3af; margin-top: 20px; padding-top: 12px; border-top: 1px solid #e5e7eb; }
+.print-btn { display: block; width: 100%; padding: 10px; background: #3b82f6; color: #fff; border: none; border-radius: 6px; font-size: .9rem; cursor: pointer; margin-top: 16px; }
 .print-btn:hover { background: #2563eb; }
-
-@media print {
-  body { background: #fff; padding: 0; max-width: 100%; }
-  .header { background: #1d4ed8 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-  .check-box { -webkit-print-color-adjust: exact; }
-  .print-btn { display: none; }
-  .check-item { break-inside: avoid; }
-}
+@media print { body { background: #fff; padding: 0; max-width: 100%; } .header { background: #1d4ed8 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; } .check-box { -webkit-print-color-adjust: exact; } .print-btn { display: none; } .check-item { break-inside: avoid; } }
 </style>
 </head>
 <body>
 <div class="header">
   <h1>📋 スマートソーラー（東京都蓄電池）</h1>
-  <div class="meta">問い合わせ・面談時チェックリスト｜2026年06月26日 作成</div>
+  <div class="meta">太陽光・蓄電池 申込前チェックリスト｜2026年06月26日 作成</div>
 </div>
-
-<div class="section-title">確認事項（全8項目）</div>
+<div class="section-title">確認事項（全16項目）</div>
 
         <div class="check-item">
           <input type="checkbox" id="chk1" class="check-box">
           <label for="chk1">
             <span class="check-num">01</span>
-            <span class="check-cat">対応エリア確認</span>
-            <span class="check-text">対応エリア（都道府県・電力会社）を確認した</span>
+            <span class="check-cat">補助金対象確認</span>
+            <span class="check-text">東京都の太陽光・蓄電池補助金の対象となる住宅・条件を確認した</span>
           </label>
         </div>
         <div class="check-item">
           <input type="checkbox" id="chk2" class="check-box">
           <label for="chk2">
             <span class="check-num">02</span>
-            <span class="check-cat">手続き対象確認</span>
-            <span class="check-text">手続き対象（電気・ガス・ネット等）を確認した</span>
+            <span class="check-cat">屋根条件確認</span>
+            <span class="check-text">屋根の形状・強度・面積・向き（南向き推奨）が太陽光設置に適しているか確認した</span>
           </label>
         </div>
         <div class="check-item">
           <input type="checkbox" id="chk3" class="check-box">
           <label for="chk3">
             <span class="check-num">03</span>
-            <span class="check-cat">キャッシュバック条件</span>
-            <span class="check-text">キャッシュバック・特典の受け取り条件・時期を確認した</span>
+            <span class="check-cat">年間電気使用量</span>
+            <span class="check-text">直近1年間の電気使用量（kWh）を電力会社の明細または検針票で確認した</span>
           </label>
         </div>
         <div class="check-item">
           <input type="checkbox" id="chk4" class="check-box">
           <label for="chk4">
             <span class="check-num">04</span>
-            <span class="check-cat">適用条件確認</span>
-            <span class="check-text">申込み対象の条件（年齢・世帯数・再契約等）を確認した</span>
+            <span class="check-cat">太陽光の有無</span>
+            <span class="check-text">既存の太陽光発電システムの有無・設置容量（kW）・設置年数を確認した</span>
           </label>
         </div>
         <div class="check-item">
           <input type="checkbox" id="chk5" class="check-box">
           <label for="chk5">
             <span class="check-num">05</span>
-            <span class="check-cat">手続き完了予定日</span>
-            <span class="check-text">手続き完了予定日・切替時期を確認した</span>
+            <span class="check-cat">固定買取終了時期</span>
+            <span class="check-text">固定価格買取制度（FIT）の終了時期・売電単価の変化を確認した</span>
           </label>
         </div>
         <div class="check-item">
           <input type="checkbox" id="chk6" class="check-box">
           <label for="chk6">
             <span class="check-num">06</span>
-            <span class="check-cat">必要書類確認</span>
-            <span class="check-text">申込みに必要な書類・情報（検針票等）を確認した</span>
+            <span class="check-cat">蓄電池容量の確認</span>
+            <span class="check-text">希望する蓄電容量（kWh）と世帯人数・電力使用パターンが合っているか確認した</span>
           </label>
         </div>
         <div class="check-item">
           <input type="checkbox" id="chk7" class="check-box">
           <label for="chk7">
             <span class="check-num">07</span>
-            <span class="check-cat">解約条件確認</span>
-            <span class="check-text">解約・途中解約の条件・違約金を確認した</span>
+            <span class="check-cat">停電対策ニーズ</span>
+            <span class="check-text">停電時の自立運転・必要な電力量・対象機器（冷蔵庫・照明等）を確認した</span>
           </label>
         </div>
         <div class="check-item">
           <input type="checkbox" id="chk8" class="check-box">
           <label for="chk8">
             <span class="check-num">08</span>
-            <span class="check-cat">他社比較</span>
-            <span class="check-text">類似サービスと比較検討した</span>
+            <span class="check-cat">設置希望時期</span>
+            <span class="check-text">設置工事の希望時期・補助金申請締め切りとのスケジュールを確認した</span>
           </label>
         </div>
-
+        <div class="check-item">
+          <input type="checkbox" id="chk9" class="check-box">
+          <label for="chk9">
+            <span class="check-num">09</span>
+            <span class="check-cat">保証内容の書面確認</span>
+            <span class="check-text">機器保証・工事保証の期間・範囲を口頭だけでなく書面で確認した</span>
+          </label>
+        </div>
+        <div class="check-item">
+          <input type="checkbox" id="chk10" class="check-box">
+          <label for="chk10">
+            <span class="check-num">10</span>
+            <span class="check-cat">費用・支払い方法</span>
+            <span class="check-text">総費用・頭金・月額ローン・金利・支払い期間を書面で確認した</span>
+          </label>
+        </div>
+        <div class="check-item">
+          <input type="checkbox" id="chk11" class="check-box">
+          <label for="chk11">
+            <span class="check-num">11</span>
+            <span class="check-cat">補助金申請代行</span>
+            <span class="check-text">補助金申請を業者が代行するか・申請費用が別途かかるかを確認した</span>
+          </label>
+        </div>
+        <div class="check-item">
+          <input type="checkbox" id="chk12" class="check-box">
+          <label for="chk12">
+            <span class="check-num">12</span>
+            <span class="check-cat">施工業者の確認</span>
+            <span class="check-text">実際の施工業者（下請け含む）の実績・保険加入状況を確認した</span>
+          </label>
+        </div>
+        <div class="check-item">
+          <input type="checkbox" id="chk13" class="check-box">
+          <label for="chk13">
+            <span class="check-num">13</span>
+            <span class="check-cat">クーリングオフ</span>
+            <span class="check-text">クーリングオフ期間（訪問販売の場合8日間）と手続き方法を確認した</span>
+          </label>
+        </div>
+        <div class="check-item">
+          <input type="checkbox" id="chk14" class="check-box">
+          <label for="chk14">
+            <span class="check-num">14</span>
+            <span class="check-cat">アプリ・モニタリング</span>
+            <span class="check-text">発電量・蓄電量の確認アプリの有無・操作方法を確認した</span>
+          </label>
+        </div>
+        <div class="check-item">
+          <input type="checkbox" id="chk15" class="check-box">
+          <label for="chk15">
+            <span class="check-num">15</span>
+            <span class="check-cat">担当者・連絡先</span>
+            <span class="check-text">対応した担当者名・連絡先・アフターサポート窓口を書面で確認した</span>
+          </label>
+        </div>
+        <div class="check-item">
+          <input type="checkbox" id="chk16" class="check-box">
+          <label for="chk16">
+            <span class="check-num">16</span>
+            <span class="check-cat">他社見積り比較</span>
+            <span class="check-text">複数の蓄電池販売業者から見積りを取り、費用・保証・容量を比較した</span>
+          </label>
+        </div>
 <button class="print-btn" onclick="window.print()">🖨️ 印刷 / PDFで保存</button>
-
 <div class="footer">
-  このチェックリストは スマートソーラー（東京都蓄電池） の申込み前確認用です。
+  このチェックリストはスマートソーラー（東京都蓄電池）の申込前確認用です。
   情報は 2026年06月26日 時点のものです。最新情報は公式サイトでご確認ください。
 </div>
 </body>
