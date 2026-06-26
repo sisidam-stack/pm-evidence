@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "fetched_at": "2026-06-26T22:38:08.013Z",
+  "public_url": "https://www.tokyo-chikudenchi.net/",
+  "live_html_hash": "6dcdff5fcadaf583ebf3852de1e4dddb",
+  "html_size": 83620,
+  "ng_words_checked": [
+    "長期保証で満足",
+    "長期保証で安心",
+    "10年保証",
+    "比較・仕様まとめ",
+    "引越し日",
+    "電気・ガス・ネット等",
+    "全国対応です",
+    "未確認断定"
+  ],
+  "ng_words_found": [],
+  "h2_list": [
+    "スマートソーラーの基本情報・特徴",
+    "スマートソーラーの料金・保証・支払い方法",
+    "スマートソーラーが向いている人・向いていない人",
+    "スマートソーラーの悪い口コミ",
+    "スマートソーラーの良い口コミ・評判",
+    "スマートソーラーの申し込み手順",
+    "スマートソーラーを利用する前の注意点",
+    "スマートソーラーの比較・仕様",
+    "よくある質問"
+  ],
+  "matome_h2_exists": false,
+  "compare_h2_has_matome": false,
+  "checklist_item_count": 16,
+  "checklist_error": null
+}
