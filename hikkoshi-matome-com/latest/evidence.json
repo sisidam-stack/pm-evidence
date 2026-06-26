@@ -1,12 +1,12 @@
 {
   "site_key": "hikkoshi-matome-com",
-  "url": "https://hikkoshi-matome.com/",
-  "captured_at": "2026-06-26T00:09:50.385Z",
-  "commit_id": "221787f",
-  "article_commit_id": "221787f",
-  "implementation_commit_id": "221787f",
+  "url": "https://hikkoshi-matome.com",
+  "captured_at": "2026-06-26T00:15:39.402Z",
+  "commit_id": "6ace93a",
+  "article_commit_id": "6ace93a",
+  "implementation_commit_id": "6ace93a",
   "review_target": {
-    "url": "https://hikkoshi-matome.com/",
+    "url": "https://hikkoshi-matome.com",
     "article_version": "2026-06-26"
   },
   "quality_gates": {
