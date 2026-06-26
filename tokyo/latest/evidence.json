@@ -1,10 +1,10 @@
 {
   "site_key": "tokyo",
   "url": "https://www.tokyo-chikudenchi.net/",
-  "captured_at": "2026-06-26T20:53:53.532Z",
+  "captured_at": "2026-06-26T21:27:38.750Z",
   "commit_id": "8cd1124",
   "article_commit_id": "8cd1124",
-  "implementation_commit_id": "c94d745",
+  "implementation_commit_id": "8cd1124",
   "review_target": {
     "url": "https://www.tokyo-chikudenchi.net/",
     "article_version": "2026-06-26"
@@ -269,7 +269,7 @@
   "evidence_bundle_id": "tokyo-E1-20260627-8cd1124",
   "live_dom_check": {
     "status": "PASS",
-    "fetched_at": "2026-06-26T20:53:53.530Z",
+    "fetched_at": "2026-06-26T21:27:38.747Z",
     "public_url": "https://www.tokyo-chikudenchi.net/",
     "live_html_hash": "0e1336bcdfb1554ac1667f90d1f95d70",
     "html_size": 83163,
