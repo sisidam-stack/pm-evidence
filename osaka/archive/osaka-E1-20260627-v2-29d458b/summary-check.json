@@ -1,0 +1,12 @@
+{
+  "gate": "Summary Gate",
+  "layer": "B",
+  "status": "PASS",
+  "coverage": {
+    "matome_h2_count": 0,
+    "has_lp_summary": true,
+    "has_summary_box": true
+  },
+  "issues": [],
+  "checked_at": "2026-06-27T06:35:02.270Z"
+}

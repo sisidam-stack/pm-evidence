@@ -1,0 +1,56 @@
+{
+  "gate": "AI Reader Gate",
+  "layer": "D",
+  "status": "PASS",
+  "model_used": "gpt-4o",
+  "input_type": "HTML text (live-public.html)",
+  "issues": [
+    {
+      "severity": "MAJOR",
+      "location": "冒頭部分",
+      "issue": "同じ内容が冒頭で繰り返されており、冗長に感じる。"
+    },
+    {
+      "severity": "MINOR",
+      "location": "テコラの基本情報・特徴",
+      "issue": "対象エリアや対象住宅の説明が一部重複している。"
+    },
+    {
+      "severity": "MINOR",
+      "location": "保証内容（メーカー保証・工事保証・保証年数・注意点）",
+      "issue": "築年数による保証内容の違いをさらに詳しく説明すると親切。"
+    },
+    {
+      "severity": "MAJOR",
+      "location": "対象エリア・対象住宅、FAQセクション",
+      "issue": "2001年以前の住宅が対象外である点が繰り返されており、文章が冗長。"
+    },
+    {
+      "severity": "INFO",
+      "location": "記事全体",
+      "issue": "公式サイトや担当者への確認を推奨する提案が非常に多く、簡潔にまとめられると良い。"
+    }
+  ],
+  "reader_summary": "内容は充実しているが繰り返しが多く読みにくい。",
+  "blocker_count": 0,
+  "major_count": 2,
+  "minor_count": 2,
+  "info_count": 1,
+  "checked_at": "2026-06-27T06:35:18.244Z",
+  "top3_issues": [
+    "1. [MAJOR] 冒頭部分: 同じ内容が冒頭で繰り返されており、冗長に感じる。",
+    "2. [MAJOR] 対象エリア・対象住宅、FAQセクション: 2001年以前の住宅が対象外である点が繰り返されており、文章が冗長。",
+    "3. [MINOR] テコラの基本情報・特徴: 対象エリアや対象住宅の説明が一部重複している。"
+  ],
+  "reader_score": 50,
+  "score_judgment": "50点 要改善（KPI目標: 70→85→90）",
+  "score_breakdown": {
+    "blocker": 0,
+    "major": 2,
+    "minor": 2,
+    "info": 1,
+    "formula": "100 - (0×100) - (2×20) - (2×5) = 50"
+  },
+  "calibration_note": "スコア閾値（90/80）は仮設定。数十件収集後にPM承認結果と比較してキャリブレーション予定。",
+  "note": "AI Reader はアシスタント。BLOCKER=0かつScore>=90でPASS。PMが最終承認判断。"
+}

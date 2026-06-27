@@ -1,0 +1,80 @@
+{
+  "status": "PASS",
+  "total_links": 10,
+  "checked": 10,
+  "broken_count": 0,
+  "broken_links": [],
+  "results": [
+    {
+      "url": "https://osaka-shiroari.net/",
+      "final_url": null,
+      "status": 200,
+      "ok": true,
+      "has_error_content": false
+    },
+    {
+      "url": "https://osaka-shiroari.net/feed/",
+      "final_url": null,
+      "status": 200,
+      "ok": true,
+      "has_error_content": false
+    },
+    {
+      "url": "https://osaka-shiroari.net/comments/feed/",
+      "final_url": null,
+      "status": 200,
+      "ok": true,
+      "has_error_content": false
+    },
+    {
+      "url": "https://osaka-shiroari.net/wp-content/themes/swell/build/css/noscript.css",
+      "final_url": null,
+      "status": 200,
+      "ok": true,
+      "has_error_content": false
+    },
+    {
+      "url": "https://osaka-shiroari.net/wp-json/",
+      "final_url": null,
+      "status": 200,
+      "ok": true,
+      "has_error_content": false
+    },
+    {
+      "url": "https://osaka-shiroari.net/wp-json/wp/v2/pages/21",
+      "final_url": null,
+      "status": 200,
+      "ok": true,
+      "has_error_content": false
+    },
+    {
+      "url": "https://osaka-shiroari.net/wp-content/themes/swell/build/css/print.css",
+      "final_url": null,
+      "status": 200,
+      "ok": true,
+      "has_error_content": false
+    },
+    {
+      "url": "https://osaka-shiroari.net/lp-20260621232255/",
+      "final_url": null,
+      "status": 200,
+      "ok": true,
+      "has_error_content": false
+    },
+    {
+      "url": "https://px.a8.net/svt/ejp?a8mat=4B1LPR+490HKA+5UZ0+5YJRM",
+      "final_url": "https://tecola.jp/index.php?trc=a8KKc2026text_catchandname&a8=um8TvmNQPnbOA84aBJCQ-VbTDQB9UlljzJCldB",
+      "status": 200,
+      "ok": true,
+      "has_error_content": false
+    },
+    {
+      "url": "https://tecola.jp/",
+      "final_url": null,
+      "status": 200,
+      "ok": true,
+      "has_error_content": false
+    }
+  ],
+  "checked_at": "2026-06-27T06:35:18.241Z"
+}
