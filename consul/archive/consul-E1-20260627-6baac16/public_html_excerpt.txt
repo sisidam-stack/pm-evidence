@@ -1,0 +1,41 @@
+
+
+=== .lp-warning ===
+<div class="wp-block-group lp-warning is-yellow"><div class="wp-block-group__inner-container">
+
+<p class="lp-warning-title wp-block-paragraph">⚠ Attention</p>
+
+
+
+<p class="lp-warning-subtitle wp-block-paragraph">お読みになる前にご確認ください</p>
+
+
+
+<p class="wp-block-paragraph">転職エージェントの担当者との相性はサービスの満足度を大きく左右するため、初回面談で違和感があれば担当変更や他社との併用を早めに検討しましょう。</p>
+
+
+
+<p class="wp-block-paragraph">特化型エージェントは非公開求人の割合が高い傾向があるため、求人の全体像は登録・面談後でないと把握できない点をあらかじめご了承ください。</p>
+
+
+
+<p class="wp-block-paragraph">転職活動では複数エージェントの併用が一般的ですが、同一企業への重複応募はトラブルの原因となるため応募管理を徹底してください。</p>
+
+</div></div>
+
+=== table ===
+<table><thead><tr>
+<th>比較項目</th>
+<th>Groovement Agent</th>
+<th>アクシスコンサルティング（競合A）</th>
+<th>ムービン（競合B）</th>
+</tr></thead><tbody>
+<tr><td>対象領域</td><td>DX・コンサル転職特化</td><td>コンサル転職特化</td><td>外資・コンサル転職</td></tr>
+<tr><td>対応エリア</td><td>全国（首都圏中心）</td><td>全国</td><td>首都圏中心</td></tr>
+<tr><td>非公開求人</td><td>あり</td><td>あり（多数）</td><td>あり</td></tr>
+<tr><td>キャリア相談</td><td>あり（丁寧なサポート）</td><td>あり</td><td>あり</td></tr>
+<tr><td>料金</td><td>無料（転職者負担なし）</td><td>無料</td><td>無料</td></tr>
+<tr><td>求人数</td><td>要確認（公式LP確認）</td><td>多数（業界最大級）</td><td>要確認</td></tr>
+<tr><td>対象層</td><td>DX・IT系コンサル希望者</td><td>コンサル全般</td><td>外資・上位コンサル希望者</td></tr>
+<tr><td>面接対策</td><td>あり</td><td>あり（特化）</td><td>あり</td></tr>
+</tbody></table>

@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "checked": 2,
+  "results": [
+    {
+      "url": "https://px.a8.net/svt/ejp?a8mat=4B40FD+AGVIKA+4SXU+NTJWY",
+      "type": "cta",
+      "final_url": "https://groovement-agent.com/?a8=UnOGgnV4Ry-Pqa-c-0qX3JdYu4wTq1LGJ0qo1wYBcSe4RaO_vam1MaW4FywcmcWqES2yYbOdinOGZs000000224",
+      "title": "ハイクラス×DX特化のコンサル・スタートアップ転職支援｜Groovement Agent",
+      "valid": true,
+      "reasons": []
+    },
+    {
+      "url": "https://sisidam-stack.github.io/pm-evidence/consul/latest/checklist.html",
+      "type": "checklist",
+      "final_url": "https://sisidam-stack.github.io/pm-evidence/consul/latest/checklist.html",
+      "title": "Groovement Agent コンサル転職エージェント選びチェックリスト",
+      "valid": true,
+      "reasons": []
+    }
+  ],
+  "checked_at": "2026-06-27T11:40:33.439Z"
+}

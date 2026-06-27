@@ -1,0 +1,56 @@
+{
+  "gate": "AI Reader Gate",
+  "layer": "D",
+  "status": "PASS",
+  "model_used": "gpt-4o",
+  "input_type": "HTML text (live-public.html)",
+  "issues": [
+    {
+      "severity": "MAJOR",
+      "location": "記事の冒頭からの繰り返し",
+      "issue": "同じ内容が複数回繰り返されており、冗長に感じる。"
+    },
+    {
+      "severity": "MAJOR",
+      "location": "各セクションの冒頭",
+      "issue": "同じフレーズや情報が何度も使われており、読者に新しい情報を提供できていない。"
+    },
+    {
+      "severity": "MINOR",
+      "location": "記事内の箇条書き部分",
+      "issue": "箇条書きの項目が多く、一度に情報が多すぎるため、整理が必要。"
+    },
+    {
+      "severity": "INFO",
+      "location": "注意事項セクション",
+      "issue": "内容が一般論に留まっており、具体的なGroovement Agentへの関連が薄い。"
+    },
+    {
+      "severity": "MAJOR",
+      "location": "良い口コミ・評判セクション",
+      "issue": "情報の具体性に欠け、他の部分と重複している印象があるため、整理が必要。"
+    }
+  ],
+  "reader_summary": "情報がやや重複しており、読みにくく感じる部分が目立つ。",
+  "blocker_count": 0,
+  "major_count": 3,
+  "minor_count": 1,
+  "info_count": 1,
+  "checked_at": "2026-06-27T11:40:48.629Z",
+  "top3_issues": [
+    "1. [MAJOR] 記事の冒頭からの繰り返し: 同じ内容が複数回繰り返されており、冗長に感じる。",
+    "2. [MAJOR] 各セクションの冒頭: 同じフレーズや情報が何度も使われており、読者に新しい情報を提供できていない。",
+    "3. [MAJOR] 良い口コミ・評判セクション: 情報の具体性に欠け、他の部分と重複している印象があるため、整理が必要。"
+  ],
+  "reader_score": 35,
+  "score_judgment": "35点 要改善（KPI目標: 70→85→90）",
+  "score_breakdown": {
+    "blocker": 0,
+    "major": 3,
+    "minor": 1,
+    "info": 1,
+    "formula": "100 - (0×100) - (3×20) - (1×5) = 35"
+  },
+  "calibration_note": "スコア閾値（90/80）は仮設定。数十件収集後にPM承認結果と比較してキャリブレーション予定。",
+  "note": "AI Reader はアシスタント。BLOCKER=0かつScore>=90でPASS。PMが最終承認判断。"
+}

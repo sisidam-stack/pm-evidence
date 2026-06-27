@@ -1,0 +1,23 @@
+{
+  "bundle_id": "consul-E1-20260627-6baac16",
+  "commit_id": "6baac16",
+  "generated_at": "2026-06-27T11:40:48.624Z",
+  "public_url": "https://www.consul-tenshoku.com",
+  "site_key": "consul",
+  "live_html_hash": "affccd6a5257da0008dc380a42aed2c9",
+  "ng_check_status": "PASS",
+  "checklist_items": 16,
+  "files": {
+    "metadata.json": "62d6c3e357c9912e5ac1bd8d1ef1e5a4",
+    "live-dom-check.json": "257ac2f71833357bf3e6cf87484d9ac0",
+    "live-public.html": "affccd6a5257da0008dc380a42aed2c9",
+    "evidence.json": "c28ea5dbff1a0227c04c8984641a9a1f",
+    "pc/01_fv.png": "36523f7b27d06aca0fbb08273d10aa63",
+    "sp/01_fv.png": "917bae4c62420c33ee50abb51b228958"
+  },
+  "pm_review_status": "READY",
+  "pm_reviewed_at": null,
+  "pm_review_bundle": null,
+  "evidence_bundle_id": "consul-E1-20260627-6baac16",
+  "archive_url": "https://sisidam-stack.github.io/pm-evidence/consul/archive/consul-E1-20260627-6baac16/"
+}

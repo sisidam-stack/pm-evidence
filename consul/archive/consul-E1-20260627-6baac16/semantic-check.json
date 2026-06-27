@@ -1,0 +1,28 @@
+{
+  "gate": "Semantic QA",
+  "layer": "C",
+  "status": "PASS",
+  "results": {
+    "context_validation": {
+      "status": "PASS",
+      "layer_responsibility": "Layer B(構造) + Layer C(意味) の分離: Layer CはLayer Bの構造PASSを前提に意味内容を検証",
+      "coverage": {
+        "block_pattern": "review→editor→review→editor→review→editor→review→editor→review→editor→review→editor",
+        "review_count": 6,
+        "editor_count": 6
+      },
+      "violations": [],
+      "note": "Layer C: 空コメント検出済み。意味一致確認はv3.1でClaude API統合予定。"
+    },
+    "editorial_consistency": {
+      "status": "PASS",
+      "coverage": {
+        "total_ec": 6,
+        "empty_ec": 0
+      },
+      "violations": []
+    }
+  },
+  "issues": [],
+  "checked_at": "2026-06-27T11:40:23.031Z"
+}
