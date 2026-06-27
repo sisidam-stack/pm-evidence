@@ -1,0 +1,31 @@
+{
+  "status": "PASS",
+  "checked": 3,
+  "results": [
+    {
+      "url": "https://px.a8.net/svt/ejp?a8mat=4B1FHN+6OJ56A+5RFI+5YJRM",
+      "type": "cta",
+      "final_url": "https://www.smartsolar.co.jp/solarchikuden/lp/vol20/?a8=BLiC0Lqg7fGYI6rCZe4MThUEOghSwErM2e4FMhs2f2-g7KioJKUEbKiE5KbMUMl5",
+      "title": "【スマートソーラー公式】夏の電気代自家発電応援キャンペーン！",
+      "valid": true,
+      "reasons": []
+    },
+    {
+      "url": "https://www.google.com/maps/search/?api=1&#038;query=%E3%82%B9%E3%83%9E%E3%83%BC%E3%83%88%E3%82%BD%E",
+      "type": "gbp",
+      "final_url": "https://www.google.com/maps/search/?api=1&#038;query=%E3%82%B9%E3%83%9E%E3%83%BC%E3%83%88%E3%82%BD%E3%83%BC%E3%83%A9%E3%",
+      "title": "Google マップ",
+      "valid": true,
+      "reasons": []
+    },
+    {
+      "url": "https://sisidam-stack.github.io/pm-evidence/tokyo/latest/checklist.html",
+      "type": "checklist",
+      "final_url": "https://sisidam-stack.github.io/pm-evidence/tokyo/latest/checklist.html",
+      "title": "スマートソーラー（東京都蓄電池）申込前チェックリスト",
+      "valid": true,
+      "reasons": []
+    }
+  ],
+  "checked_at": "2026-06-27T00:52:33.863Z"
+}
