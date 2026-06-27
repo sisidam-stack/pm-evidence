@@ -1,0 +1,41 @@
+
+
+=== .lp-warning ===
+<div class="wp-block-group lp-warning is-yellow"><div class="wp-block-group__inner-container">
+
+<p class="lp-warning-title">⚠ Attention</p>
+
+
+
+<p class="lp-warning-subtitle">お読みになる前にご確認ください</p>
+
+
+
+<p>蓄電池の保証年数・範囲は契約前に必ず書面で取得し、口頭説明だけで判断しないようにしてください。</p>
+
+
+
+<p>東京都の太陽光・蓄電池補助金は年度途中で予算上限に達し受付終了となる場合があるため、申請時期の見極めが重要です。</p>
+
+
+
+<p>対応エリアは東京都内の戸建て住宅に限定されており、都外や集合住宅の方は別の販売店・メーカーでの見積もり取得をおすすめします。</p>
+
+</div></div>
+
+=== table ===
+<table><thead><tr>
+<th>比較項目</th>
+<th>スマートソーラー</th>
+<th>グリーン電力（競合A）</th>
+<th>エネルギー工房（競合B）</th>
+</tr></thead><tbody>
+<tr><td>対応エリア</td><td>東京都内（戸建て）</td><td>東京・神奈川・千葉・埼玉</td><td>東京・関東全域</td></tr>
+<tr><td>蓄電池容量</td><td>11.5kWh〜（大容量）</td><td>6.5kWh〜（選択肢が広い）</td><td>5.0kWh〜（小容量から対応）</td></tr>
+<tr><td>太陽光+蓄電池セット</td><td>あり（推奨プラン）</td><td>あり</td><td>蓄電池単体も可</td></tr>
+<tr><td>東京都補助金対応</td><td>あり・申請代行サポート</td><td>あり（自己申請サポート）</td><td>要確認</td></tr>
+<tr><td>機器保証</td><td>メーカー保証（書面確認推奨）</td><td>最長15年保証</td><td>工事保証10年</td></tr>
+<tr><td>工事保証</td><td>あり（期間要確認）</td><td>10年</td><td>5年</td></tr>
+<tr><td>無料見積もり</td><td>あり</td><td>あり</td><td>あり</td></tr>
+<tr><td>アプリ監視</td><td>あり（発電量・蓄電量）</td><td>あり</td><td>なし</td></tr>
+</tbody></table>
