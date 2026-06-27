@@ -1,0 +1,89 @@
+{
+  "gate": "Review Source Gate",
+  "status": "PASS",
+  "total_cites": 9,
+  "results": [
+    {
+      "href": "https://tecola.jp/",
+      "httpStatus": 200,
+      "nofollow": true,
+      "target_blank": true,
+      "noopener": true,
+      "is_top_page": true,
+      "issues": []
+    },
+    {
+      "href": "https://tecola.jp/",
+      "httpStatus": 200,
+      "nofollow": true,
+      "target_blank": true,
+      "noopener": true,
+      "is_top_page": true,
+      "issues": []
+    },
+    {
+      "href": "https://tecola.jp/",
+      "httpStatus": 200,
+      "nofollow": true,
+      "target_blank": true,
+      "noopener": true,
+      "is_top_page": true,
+      "issues": []
+    },
+    {
+      "href": "https://tecola.jp/",
+      "httpStatus": 200,
+      "nofollow": true,
+      "target_blank": true,
+      "noopener": true,
+      "is_top_page": true,
+      "issues": []
+    },
+    {
+      "href": "https://tecola.jp/",
+      "httpStatus": 200,
+      "nofollow": true,
+      "target_blank": true,
+      "noopener": true,
+      "is_top_page": true,
+      "issues": []
+    },
+    {
+      "href": "https://tecola.jp/",
+      "httpStatus": 200,
+      "nofollow": true,
+      "target_blank": true,
+      "noopener": true,
+      "is_top_page": true,
+      "issues": []
+    },
+    {
+      "href": "https://tecola.jp/",
+      "httpStatus": 200,
+      "nofollow": true,
+      "target_blank": true,
+      "noopener": true,
+      "is_top_page": true,
+      "issues": []
+    },
+    {
+      "href": "https://tecola.jp/",
+      "httpStatus": 200,
+      "nofollow": true,
+      "target_blank": true,
+      "noopener": true,
+      "is_top_page": true,
+      "issues": []
+    },
+    {
+      "href": "https://tecola.jp/",
+      "httpStatus": 200,
+      "nofollow": true,
+      "target_blank": true,
+      "noopener": true,
+      "is_top_page": true,
+      "issues": []
+    }
+  ],
+  "checked_at": "2026-06-27T07:01:38.939Z"
+}

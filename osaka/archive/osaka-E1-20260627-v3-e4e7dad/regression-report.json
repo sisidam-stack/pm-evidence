@@ -1,0 +1,101 @@
+{
+  "gate": "Regression Validation",
+  "layer": "E",
+  "status": "PASS",
+  "patterns_checked": [
+    {
+      "id": "RGP-001",
+      "name": "まとめ重複",
+      "gate": "Summary Gate",
+      "detected": false,
+      "expected": "FAIL",
+      "regression_pass": true,
+      "details": "まとめH2が0個"
+    },
+    {
+      "id": "RGP-002",
+      "name": "編集部コメント3連続（口コミなし）",
+      "gate": "Review Pairing Gate",
+      "detected": false,
+      "expected": "FAIL",
+      "regression_pass": true,
+      "details": "Review Pairing: PASS"
+    },
+    {
+      "id": "RGP-003",
+      "name": "二次情報口コミ（まとめサイト）",
+      "gate": "Review Source Gate",
+      "detected": false,
+      "expected": "FAIL",
+      "regression_pass": true,
+      "details": "二次情報ドメイン検出: "
+    },
+    {
+      "id": "RGP-004",
+      "name": "Google Maps 検索ページリンク（invalid coord）",
+      "gate": "Destination Validation Gate",
+      "detected": false,
+      "expected": "FAIL",
+      "regression_pass": true,
+      "details": "座標付きGoogle Maps URL"
+    },
+    {
+      "id": "RGP-005",
+      "name": "チェックリスト件数不一致",
+      "gate": "Live DOM Check",
+      "detected": false,
+      "expected": "FAIL",
+      "regression_pass": true,
+      "details": "checklist_items=16"
+    },
+    {
+      "id": "RGP-006",
+      "name": "口コミCite リンクなし",
+      "gate": "Review Source Gate",
+      "detected": false,
+      "expected": "FAIL",
+      "regression_pass": true,
+      "details": "href無しcite: 0件"
+    },
+    {
+      "id": "RGP-007",
+      "name": "特徴カード保証対象未明記",
+      "gate": "Human Visual Gate",
+      "detected": false,
+      "expected": "FAIL",
+      "regression_pass": true,
+      "details": "曖昧保証表現: "
+    },
+    {
+      "id": "RGP-008",
+      "name": "注意事項番号重複",
+      "gate": "Structural QA",
+      "detected": false,
+      "expected": "FAIL",
+      "regression_pass": true,
+      "details": "重複番号: "
+    },
+    {
+      "id": "RGP-009",
+      "name": "CTA削除",
+      "gate": "CTA Flow Gate",
+      "detected": false,
+      "expected": "FAIL",
+      "regression_pass": true,
+      "details": "CTAリンク0件"
+    },
+    {
+      "id": "RGP-010",
+      "name": "比較表2社のみ（Gold Standard：3社）",
+      "gate": "Structural QA",
+      "detected": false,
+      "expected": "FAIL",
+      "regression_pass": true,
+      "details": "比較表ヘッダー列数: 5"
+    }
+  ],
+  "failures": [],
+  "checked_at": "2026-06-27T07:11:05.194Z",
+  "patterns_total": 10,
+  "patterns_pass": 10
+}

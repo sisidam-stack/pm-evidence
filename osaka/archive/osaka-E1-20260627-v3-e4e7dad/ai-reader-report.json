@@ -1,0 +1,56 @@
+{
+  "gate": "AI Reader Gate",
+  "layer": "D",
+  "status": "PASS",
+  "model_used": "gpt-4o",
+  "input_type": "HTML text (live-public.html)",
+  "issues": [
+    {
+      "severity": "MAJOR",
+      "location": "記事全体",
+      "issue": "同じ情報が何度も繰り返されており、冗長な印象を与える。"
+    },
+    {
+      "severity": "MAJOR",
+      "location": "料金・保証内容の説明",
+      "issue": "料金についての具体的な数値がなく、具体例が求められる。"
+    },
+    {
+      "severity": "MINOR",
+      "location": "「テコラの良い口コミ・評判」セクション",
+      "issue": "ポジティブな口コミが多すぎて偏り感がある。"
+    },
+    {
+      "severity": "MINOR",
+      "location": "対象住宅条件の説明",
+      "issue": "2001年以降の住宅とあるが、具体的な理由が説明されていない。"
+    },
+    {
+      "severity": "INFO",
+      "location": "記事の冒頭",
+      "issue": "記事がアフィリエイト広告を含むとの説明が適切に記載されている。"
+    }
+  ],
+  "reader_summary": "情報が網羅されているが、繰り返しが多すぎる。",
+  "blocker_count": 0,
+  "major_count": 2,
+  "minor_count": 2,
+  "info_count": 1,
+  "checked_at": "2026-06-27T07:10:50.994Z",
+  "top3_issues": [
+    "1. [MAJOR] 記事全体: 同じ情報が何度も繰り返されており、冗長な印象を与える。",
+    "2. [MAJOR] 料金・保証内容の説明: 料金についての具体的な数値がなく、具体例が求められる。",
+    "3. [MINOR] 「テコラの良い口コミ・評判」セクション: ポジティブな口コミが多すぎて偏り感がある。"
+  ],
+  "reader_score": 50,
+  "score_judgment": "50点 要改善（KPI目標: 70→85→90）",
+  "score_breakdown": {
+    "blocker": 0,
+    "major": 2,
+    "minor": 2,
+    "info": 1,
+    "formula": "100 - (0×100) - (2×20) - (2×5) = 50"
+  },
+  "calibration_note": "スコア閾値（90/80）は仮設定。数十件収集後にPM承認結果と比較してキャリブレーション予定。",
+  "note": "AI Reader はアシスタント。BLOCKER=0かつScore>=90でPASS。PMが最終承認判断。"
+}

@@ -1,0 +1,23 @@
+{
+  "status": "FAIL",
+  "checked": 2,
+  "results": [
+    {
+      "url": "https://px.a8.net/svt/ejp?a8mat=4B1LPR+490HKA+5UZ0+5YJRM",
+      "type": "cta",
+      "final_url": "https://tecola.jp/index.php?trc=a8KKc2026text_catchandname&a8=SG_fMGlctDy5p_I0QOAcsJyf1cQLC88EoOA8NQ6wDwictJ_YrJTBRJAGsV",
+      "title": "大阪の白蟻対策業者なら10年保証付きシロアリ予防のテコラ",
+      "valid": true,
+      "reasons": []
+    },
+    {
+      "url": "https://sisidam-stack.github.io/pm-evidence/osaka/latest/checklist.html",
+      "type": "checklist",
+      "valid": false,
+      "reasons": [
+        "page.goto: net::ERR_NETWORK_CHANGED at https://sisidam-stack.github.io/pm-eviden"
+      ]
+    }
+  ],
+  "checked_at": "2026-06-27T07:02:36.616Z"
+}
