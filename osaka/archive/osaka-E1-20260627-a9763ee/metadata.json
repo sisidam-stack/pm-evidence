@@ -1,0 +1,30 @@
+{
+  "review_id": "OSK-E1-20260627-01",
+  "evidence_bundle_id": "osaka-E1-20260627-a9763ee",
+  "site_key": "osaka",
+  "public_url": "https://osaka-shiroari.net",
+  "commit_id": "a9763ee",
+  "generated_at": "2026-06-27T05:59:12.025Z",
+  "fetched_at": "2026-06-27T05:58:56.008Z",
+  "github_pages_url": "https://sisidam-stack.github.io/pm-evidence/osaka/latest/index.html",
+  "screenshot_pc_path": "https://sisidam-stack.github.io/pm-evidence/osaka/latest/pc/",
+  "screenshot_sp_path": "https://sisidam-stack.github.io/pm-evidence/osaka/latest/sp/",
+  "live_html_hash": "72524615e6fdf782d46c3fd73ccff1c1",
+  "screenshot_pc_hash": "",
+  "screenshot_sp_hash": "",
+  "ng_words_found": [],
+  "ng_check_status": "PASS",
+  "checklist_items": 16,
+  "h2_list": [
+    "テコラの基本情報・特徴",
+    "テコラの料金・保証・支払い方法",
+    "テコラが向いている人・向いていない人",
+    "テコラの悪い口コミ・注意点",
+    "テコラの良い口コミ・評判",
+    "テコラの申し込み手順",
+    "テコラを利用する前の注意点",
+    "テコラの比較・仕様",
+    "よくある質問"
+  ],
+  "pm_approval_block": null
+}

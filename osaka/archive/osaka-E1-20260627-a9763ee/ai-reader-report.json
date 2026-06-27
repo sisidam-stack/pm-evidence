@@ -1,0 +1,51 @@
+{
+  "gate": "AI Reader Gate",
+  "layer": "D",
+  "status": "PASS",
+  "model_used": "gpt-4o",
+  "input_type": "HTML text (live-public.html)",
+  "issues": [
+    {
+      "severity": "MAJOR",
+      "location": "記事冒頭",
+      "issue": "同じタイトルが複数回繰り返されており、冗長。"
+    },
+    {
+      "severity": "MAJOR",
+      "location": "注意点セクション",
+      "issue": "予防と駆除の違いがあり、読者にとって混同しやすい表現がある。"
+    },
+    {
+      "severity": "MINOR",
+      "location": "内容全般",
+      "issue": "情報が繰り返されており、冗長で読みづらいところがある。"
+    },
+    {
+      "severity": "INFO",
+      "location": "口コミセクション",
+      "issue": "具体的な価格情報があれば、他社との比較が容易になる。"
+    }
+  ],
+  "reader_summary": "情報は充実しているが、繰り返し内容が多い。",
+  "blocker_count": 0,
+  "major_count": 2,
+  "minor_count": 1,
+  "info_count": 1,
+  "checked_at": "2026-06-27T05:59:12.029Z",
+  "top3_issues": [
+    "1. [MAJOR] 記事冒頭: 同じタイトルが複数回繰り返されており、冗長。",
+    "2. [MAJOR] 注意点セクション: 予防と駆除の違いがあり、読者にとって混同しやすい表現がある。",
+    "3. [MINOR] 内容全般: 情報が繰り返されており、冗長で読みづらいところがある。"
+  ],
+  "reader_score": 55,
+  "score_judgment": "55点 要改善（KPI目標: 70→85→90）",
+  "score_breakdown": {
+    "blocker": 0,
+    "major": 2,
+    "minor": 1,
+    "info": 1,
+    "formula": "100 - (0×100) - (2×20) - (1×5) = 55"
+  },
+  "calibration_note": "スコア閾値（90/80）は仮設定。数十件収集後にPM承認結果と比較してキャリブレーション予定。",
+  "note": "AI Reader はアシスタント。BLOCKER=0かつScore>=90でPASS。PMが最終承認判断。"
+}

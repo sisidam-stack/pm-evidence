@@ -1,0 +1,10 @@
+{
+  "gate": "FAQ Flow Gate",
+  "layer": "B",
+  "status": "PASS",
+  "coverage": {
+    "faq_h2_exists": true
+  },
+  "issues": [],
+  "checked_at": "2026-06-27T05:58:56.012Z"
+}

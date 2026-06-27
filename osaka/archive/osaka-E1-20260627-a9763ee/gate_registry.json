@@ -1,0 +1,189 @@
+{
+  "framework_version": "3.0",
+  "bundle_id": "osaka-2026-06-27T0559",
+  "generated_at": "2026-06-27T05:59:21.688Z",
+  "gate_registry": {
+    "live_dom_check": {
+      "layer": "A",
+      "name": "Live DOM Check",
+      "status": "PASS",
+      "executed_at": "2026-06-27T05:59:21.688Z",
+      "evidence": "live-dom-check.json",
+      "reason": null,
+      "coverage": null
+    },
+    "review_source_gate": {
+      "layer": "A",
+      "name": "Review Source Gate",
+      "status": "PASS",
+      "executed_at": "2026-06-27T05:59:21.688Z",
+      "evidence": "review-source-gate.json",
+      "reason": null,
+      "coverage": {
+        "total_cites": 9
+      }
+    },
+    "review_source_check": {
+      "layer": "A",
+      "name": "Review Source Check v2",
+      "status": "PASS",
+      "executed_at": "2026-06-27T05:59:21.688Z",
+      "evidence": "review-source-check.json",
+      "reason": null,
+      "coverage": null
+    },
+    "link_destination_check": {
+      "layer": "A",
+      "name": "Link Destination Gate",
+      "status": "PASS",
+      "executed_at": "2026-06-27T05:59:21.688Z",
+      "evidence": "link-destination-check.json",
+      "reason": null,
+      "coverage": {
+        "checked": 10,
+        "broken": 0
+      }
+    },
+    "destination_validation": {
+      "layer": "A",
+      "name": "Destination Validation Gate",
+      "status": "PASS",
+      "executed_at": "2026-06-27T05:59:21.688Z",
+      "evidence": "destination-validation.json",
+      "reason": null,
+      "coverage": null
+    },
+    "review_pairing": {
+      "layer": "B",
+      "name": "Review Pairing Gate",
+      "status": "PASS",
+      "executed_at": "2026-06-27T05:59:21.688Z",
+      "evidence": "review-pairing-check.json",
+      "reason": null,
+      "coverage": {
+        "required_review_count": 3,
+        "bad_review_count": 3,
+        "bad_editor_count": 3,
+        "bad_pattern": "review→editor→review→editor→review→editor",
+        "good_review_count": 6,
+        "good_editor_count": 6,
+        "good_pattern": "review→editor→review→editor→review→editor→review→editor→review→editor→review→editor",
+        "total_review": 9,
+        "total_editor": 9
+      }
+    },
+    "reader_flow": {
+      "layer": "B",
+      "name": "Reader Flow Gate",
+      "status": "PASS",
+      "executed_at": "2026-06-27T05:59:21.688Z",
+      "evidence": "reader-flow-check.json",
+      "reason": null,
+      "coverage": {
+        "h2_count": 9,
+        "h2_list": [
+          "テコラの基本情報・特徴",
+          "テコラの料金・保証・支払い方法",
+          "テコラが向いている人・向いていない人",
+          "テコラの悪い口コミ・注意点",
+          "テコラの良い口コミ・評判",
+          "テコラの申し込み手順",
+          "テコラを利用する前の注意点",
+          "テコラの比較・仕様",
+          "よくある質問"
+        ],
+        "matome_via_h2": false,
+        "matome_via_lp_summary": true
+      }
+    },
+    "summary_gate": {
+      "layer": "B",
+      "name": "Summary Gate",
+      "status": "PASS",
+      "executed_at": "2026-06-27T05:59:21.688Z",
+      "evidence": "summary-check.json",
+      "reason": null,
+      "coverage": {
+        "matome_h2_count": 0,
+        "has_lp_summary": true,
+        "has_summary_box": true
+      }
+    },
+    "cta_flow": {
+      "layer": "B",
+      "name": "CTA Flow Gate",
+      "status": "PASS",
+      "executed_at": "2026-06-27T05:59:21.688Z",
+      "evidence": "cta-flow-check.json",
+      "reason": null,
+      "coverage": {
+        "cta_count": 4
+      }
+    },
+    "faq_flow": {
+      "layer": "B",
+      "name": "FAQ Flow Gate",
+      "status": "PASS",
+      "executed_at": "2026-06-27T05:59:21.688Z",
+      "evidence": "faq-flow-check.json",
+      "reason": null,
+      "coverage": {
+        "faq_h2_exists": true
+      }
+    },
+    "context_validation": {
+      "layer": "C",
+      "name": "Context Validation Gate",
+      "status": "PASS",
+      "executed_at": "2026-06-27T05:59:21.688Z",
+      "evidence": "semantic-check.json",
+      "reason": null,
+      "coverage": null
+    },
+    "editorial_consistency": {
+      "layer": "C",
+      "name": "Editorial Consistency Gate",
+      "status": "PASS",
+      "executed_at": "2026-06-27T05:59:21.688Z",
+      "evidence": "semantic-check.json",
+      "reason": null,
+      "coverage": null
+    },
+    "ai_reader": {
+      "layer": "D",
+      "name": "AI Reader Gate",
+      "status": "PASS",
+      "executed_at": "2026-06-27T05:59:21.688Z",
+      "evidence": "ai-reader-report.json",
+      "reason": null,
+      "coverage": null
+    },
+    "reader_journey": {
+      "layer": "D",
+      "name": "Reader Journey Gate",
+      "status": "PASS",
+      "executed_at": "2026-06-27T05:59:21.688Z",
+      "evidence": "reader-journey-check.json",
+      "reason": null,
+      "coverage": null
+    },
+    "regression_validation": {
+      "layer": "E",
+      "name": "Regression Validation",
+      "status": "PASS",
+      "executed_at": "2026-06-27T05:59:21.688Z",
+      "evidence": "regression-report.json",
+      "reason": null,
+      "coverage": null
+    }
+  },
+  "all_gates_executed": true,
+  "pm_approval_allowed": true,
+  "layers_executed": [
+    "Layer A",
+    "Layer B",
+    "Layer C",
+    "Layer D",
+    "Layer E"
+  ]
+}

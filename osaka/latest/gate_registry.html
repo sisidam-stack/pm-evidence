@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="UTF-8">
+<title>Gate Registry Dashboard: osaka</title>
+<style>
+body{font-family:sans-serif;max-width:1100px;margin:0 auto;padding:20px;background:#f9fafb}
+h1{color:#1f2937;border-bottom:3px solid #3b82f6;padding-bottom:8px}
+.overall{padding:16px 20px;border-radius:8px;margin:16px 0;background:#dcfce7;border-left:4px solid #16a34a}
+table{border-collapse:collapse;width:100%;background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.1)}
+th{background:#f3f4f6;padding:10px 12px;text-align:left;font-size:.85em;color:#6b7280}
+</style></head>
+<body>
+<h1>🗂 Gate Registry Dashboard — osaka</h1>
+<div class="overall">
+  <strong style="color:#16a34a">✅ 全Gate実行済み</strong>
+  &nbsp;|&nbsp; FAIL: 0件 &nbsp;|&nbsp; NOT_EXECUTED: 0件
+  &nbsp;|&nbsp; Bundle: <code>osaka-2026-06-27T0559</code>
+  &nbsp;|&nbsp; PM承認: <strong>可能</strong>
+</div>
+<table>
+<tr><th>Layer</th><th>Gate</th><th>Status</th><th>Evidence</th></tr>
+<tr>
+      <td style="padding:8px;border-bottom:1px solid #e5e7eb"><strong>Layer A</strong></td>
+      <td style="padding:8px;border-bottom:1px solid #e5e7eb">Live DOM Check</td>
+      <td style="padding:8px;border-bottom:1px solid #e5e7eb;background:#dcfce7;color:#16a34a;font-weight:bold">✅ PASS</td>
+      <td style="padding:8px;border-bottom:1px solid #e5e7eb"><a href="live-dom-check.json" style="color:#1d4ed8;font-size:.8em">live-dom-check.json</a></td>
+    </tr>
+<tr>
+      <td style="padding:8px;border-bottom:1px solid #e5e7eb"><strong>Layer A</strong></td>
+      <td style="padding:8px;border-bottom:1px solid #e5e7eb">Review Source Gate</td>
+      <td style="padding:8px;border-bottom:1px solid #e5e7eb;background:#dcfce7;color:#16a34a;font-weight:bold">✅ PASS</td>
+      <td style="padding:8px;border-bottom:1px solid #e5e7eb"><a href="review-source-gate.json" style="color:#1d4ed8;font-size:.8em">review-source-gate.json</a><br><small style="color:#9ca3af">{"total_cites":9}</small></td>
+    </tr>
+<tr>
+      <td style="padding:8px;border-bottom:1px solid #e5e7eb"><strong>Layer A</strong></td>
+      <td style="padding:8px;border-bottom:1px solid #e5e7eb">Review Source Check v2</td>
+      <td style="padding:8px;border-bottom:1px solid #e5e7eb;background:#dcfce7;color:#16a34a;font-weight:bold">✅ PASS</td>
+      <td style="padding:8px;border-bottom:1px solid #e5e7eb"><a href="review-source-check.json" style="color:#1d4ed8;font-size:.8em">review-source-check.json</a></td>
+    </tr>
+<tr>
+      <td style="padding:8px;border-bottom:1px solid #e5e7eb"><strong>Layer A</strong></td>
+      <td style="padding:8px;border-bottom:1px solid #e5e7eb">Link Destination Gate</td>
+      <td style="padding:8px;border-bottom:1px solid #e5e7eb;background:#dcfce7;color:#16a34a;font-weight:bold">✅ PASS</td>
+      <td style="padding:8px;border-bottom:1px solid #e5e7eb"><a href="link-destination-check.json" style="color:#1d4ed8;font-size:.8em">link-destination-check.json</a><br><small style="color:#9ca3af">{"checked":10,"broken":0}</small></td>
+    </tr>
+<tr>
+      <td style="padding:8px;border-bottom:1px solid #e5e7eb"><strong>Layer A</strong></td>
+      <td style="padding:8px;border-bottom:1px solid #e5e7eb">Destination Validation Gate</td>
+      <td style="padding:8px;border-bottom:1px solid #e5e7eb;background:#dcfce7;color:#16a34a;font-weight:bold">✅ PASS</td>
+      <td style="padding:8px;border-bottom:1px solid #e5e7eb"><a href="destination-validation.json" style="color:#1d4ed8;font-size:.8em">destination-validation.json</a></td>
+    </tr>
+<tr>
+      <td style="padding:8px;border-bottom:1px solid #e5e7eb"><strong>Layer B</strong></td>
+      <td style="padding:8px;border-bottom:1px solid #e5e7eb">Review Pairing Gate</td>
+      <td style="padding:8px;border-bottom:1px solid #e5e7eb;background:#dcfce7;color:#16a34a;font-weight:bold">✅ PASS</td>
+      <td style="padding:8px;border-bottom:1px solid #e5e7eb"><a href="review-pairing-check.json" style="color:#1d4ed8;font-size:.8em">review-pairing-check.json</a><br><small style="color:#9ca3af">{"required_review_count":3,"bad_review_count":3,"bad_editor_count":3,"bad_pattern":"review→editor→review→editor→review→editor","good_review_count":6,"good_editor_count":6,"good_pattern":"review→editor→review→editor→review→editor→review→editor→review→editor→review→editor","total_review":9,"total_editor":9}</small></td>
+    </tr>
+<tr>
+      <td style="padding:8px;border-bottom:1px solid #e5e7eb"><strong>Layer B</strong></td>
+      <td style="padding:8px;border-bottom:1px solid #e5e7eb">Reader Flow Gate</td>
+      <td style="padding:8px;border-bottom:1px solid #e5e7eb;background:#dcfce7;color:#16a34a;font-weight:bold">✅ PASS</td>
+      <td style="padding:8px;border-bottom:1px solid #e5e7eb"><a href="reader-flow-check.json" style="color:#1d4ed8;font-size:.8em">reader-flow-check.json</a><br><small style="color:#9ca3af">{"h2_count":9,"h2_list":["テコラの基本情報・特徴","テコラの料金・保証・支払い方法","テコラが向いている人・向いていない人","テコラの悪い口コミ・注意点","テコラの良い口コミ・評判","テコラの申し込み手順","テコラを利用する前の注意点","テコラの比較・仕様","よくある質問"],"matome_via_h2":false,"matome_via_lp_summary":true}</small></td>
+    </tr>
+<tr>
+      <td style="padding:8px;border-bottom:1px solid #e5e7eb"><strong>Layer B</strong></td>
+      <td style="padding:8px;border-bottom:1px solid #e5e7eb">Summary Gate</td>
+      <td style="padding:8px;border-bottom:1px solid #e5e7eb;background:#dcfce7;color:#16a34a;font-weight:bold">✅ PASS</td>
+      <td style="padding:8px;border-bottom:1px solid #e5e7eb"><a href="summary-check.json" style="color:#1d4ed8;font-size:.8em">summary-check.json</a><br><small style="color:#9ca3af">{"matome_h2_count":0,"has_lp_summary":true,"has_summary_box":true}</small></td>
+    </tr>
+<tr>
+      <td style="padding:8px;border-bottom:1px solid #e5e7eb"><strong>Layer B</strong></td>
+      <td style="padding:8px;border-bottom:1px solid #e5e7eb">CTA Flow Gate</td>
+      <td style="padding:8px;border-bottom:1px solid #e5e7eb;background:#dcfce7;color:#16a34a;font-weight:bold">✅ PASS</td>
+      <td style="padding:8px;border-bottom:1px solid #e5e7eb"><a href="cta-flow-check.json" style="color:#1d4ed8;font-size:.8em">cta-flow-check.json</a><br><small style="color:#9ca3af">{"cta_count":4}</small></td>
+    </tr>
+<tr>
+      <td style="padding:8px;border-bottom:1px solid #e5e7eb"><strong>Layer B</strong></td>
+      <td style="padding:8px;border-bottom:1px solid #e5e7eb">FAQ Flow Gate</td>
+      <td style="padding:8px;border-bottom:1px solid #e5e7eb;background:#dcfce7;color:#16a34a;font-weight:bold">✅ PASS</td>
+      <td style="padding:8px;border-bottom:1px solid #e5e7eb"><a href="faq-flow-check.json" style="color:#1d4ed8;font-size:.8em">faq-flow-check.json</a><br><small style="color:#9ca3af">{"faq_h2_exists":true}</small></td>
+    </tr>
+<tr>
+      <td style="padding:8px;border-bottom:1px solid #e5e7eb"><strong>Layer C</strong></td>
+      <td style="padding:8px;border-bottom:1px solid #e5e7eb">Context Validation Gate</td>
+      <td style="padding:8px;border-bottom:1px solid #e5e7eb;background:#dcfce7;color:#16a34a;font-weight:bold">✅ PASS</td>
+      <td style="padding:8px;border-bottom:1px solid #e5e7eb"><a href="semantic-check.json" style="color:#1d4ed8;font-size:.8em">semantic-check.json</a></td>
+    </tr>
+<tr>
+      <td style="padding:8px;border-bottom:1px solid #e5e7eb"><strong>Layer C</strong></td>
+      <td style="padding:8px;border-bottom:1px solid #e5e7eb">Editorial Consistency Gate</td>
+      <td style="padding:8px;border-bottom:1px solid #e5e7eb;background:#dcfce7;color:#16a34a;font-weight:bold">✅ PASS</td>
+      <td style="padding:8px;border-bottom:1px solid #e5e7eb"><a href="semantic-check.json" style="color:#1d4ed8;font-size:.8em">semantic-check.json</a></td>
+    </tr>
+<tr>
+      <td style="padding:8px;border-bottom:1px solid #e5e7eb"><strong>Layer D</strong></td>
+      <td style="padding:8px;border-bottom:1px solid #e5e7eb">AI Reader Gate</td>
+      <td style="padding:8px;border-bottom:1px solid #e5e7eb;background:#dcfce7;color:#16a34a;font-weight:bold">✅ PASS</td>
+      <td style="padding:8px;border-bottom:1px solid #e5e7eb"><a href="ai-reader-report.json" style="color:#1d4ed8;font-size:.8em">ai-reader-report.json</a></td>
+    </tr>
+<tr>
+      <td style="padding:8px;border-bottom:1px solid #e5e7eb"><strong>Layer D</strong></td>
+      <td style="padding:8px;border-bottom:1px solid #e5e7eb">Reader Journey Gate</td>
+      <td style="padding:8px;border-bottom:1px solid #e5e7eb;background:#dcfce7;color:#16a34a;font-weight:bold">✅ PASS</td>
+      <td style="padding:8px;border-bottom:1px solid #e5e7eb"><a href="reader-journey-check.json" style="color:#1d4ed8;font-size:.8em">reader-journey-check.json</a></td>
+    </tr>
+<tr>
+      <td style="padding:8px;border-bottom:1px solid #e5e7eb"><strong>Layer E</strong></td>
+      <td style="padding:8px;border-bottom:1px solid #e5e7eb">Regression Validation</td>
+      <td style="padding:8px;border-bottom:1px solid #e5e7eb;background:#dcfce7;color:#16a34a;font-weight:bold">✅ PASS</td>
+      <td style="padding:8px;border-bottom:1px solid #e5e7eb"><a href="regression-report.json" style="color:#1d4ed8;font-size:.8em">regression-report.json</a></td>
+    </tr>
+</table>
+<p style="font-size:.75em;color:#9ca3af;margin-top:16px">EQAF v3.0 Gate Registry — 2026-06-27T05:59:21.688Z</p>
+</body></html>
