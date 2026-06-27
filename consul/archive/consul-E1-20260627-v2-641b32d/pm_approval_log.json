@@ -1,0 +1,10 @@
+{
+  "review_id": "CSL-E1-20260627-V2",
+  "bundle_id": "consul-E1-20260627-v2-641b32d",
+  "pm_approved": true,
+  "pm_review_status": "APPROVED",
+  "approved_by": "PM",
+  "approved_at": "2026-06-27T23:27:07Z",
+  "framework_version": "v3.0.0",
+  "note": "EQAF Regression Registry を記事生成ロジックに統合。生成段階でPM差し戻しパターンを予防する設計が完成。docs/EQAF_REGRESSION.md 追加。"
+}

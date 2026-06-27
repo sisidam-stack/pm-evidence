@@ -15,9 +15,9 @@
     "pc/01_fv.png": "36523f7b27d06aca0fbb08273d10aa63",
     "sp/01_fv.png": "917bae4c62420c33ee50abb51b228958"
   },
-  "pm_review_status": "READY",
-  "pm_reviewed_at": null,
-  "pm_review_bundle": null,
+  "pm_review_status": "APPROVED",
+  "pm_reviewed_at": "2026-06-27T23:27:07Z",
+  "pm_review_bundle": "consul-E1-20260627-v2-641b32d",
   "evidence_bundle_id": "consul-E1-20260627-v2-641b32d",
   "archive_url": "https://sisidam-stack.github.io/pm-evidence/consul/archive/consul-E1-20260627-v2-641b32d/"
 }
