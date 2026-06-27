@@ -15,9 +15,9 @@
     "pc/01_fv.png": "336830d4748225cf94a715ca45ab8a9b",
     "sp/01_fv.png": "28a5c1f8c962899b4838cde909b05aa3"
   },
-  "pm_review_status": "READY",
-  "pm_reviewed_at": null,
-  "pm_review_bundle": null,
+  "pm_review_status": "APPROVED",
+  "pm_reviewed_at": "2026-06-27T08:33:40Z",
+  "pm_review_bundle": "osaka-E1-20260627-v3-e4e7dad",
   "evidence_bundle_id": "osaka-E1-20260627-v3-e4e7dad",
   "archive_url": "https://sisidam-stack.github.io/pm-evidence/osaka/archive/osaka-E1-20260627-v3-e4e7dad/"
 }
