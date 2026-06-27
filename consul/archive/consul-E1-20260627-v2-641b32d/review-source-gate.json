@@ -1,0 +1,62 @@
+{
+  "gate": "Review Source Gate",
+  "status": "PASS",
+  "total_cites": 6,
+  "results": [
+    {
+      "href": "https://en-hyouban.com/company/10201476572/",
+      "httpStatus": 200,
+      "nofollow": true,
+      "target_blank": true,
+      "noopener": true,
+      "is_top_page": false,
+      "issues": []
+    },
+    {
+      "href": "https://www.openwork.jp/company.php?m_id=a0C2x00000amQiw",
+      "httpStatus": 200,
+      "nofollow": true,
+      "target_blank": true,
+      "noopener": true,
+      "is_top_page": false,
+      "issues": []
+    },
+    {
+      "href": "https://www.openwork.jp/company.php?m_id=a0C2x00000amQiw",
+      "httpStatus": 200,
+      "nofollow": true,
+      "target_blank": true,
+      "noopener": true,
+      "is_top_page": false,
+      "issues": []
+    },
+    {
+      "href": "https://en-hyouban.com/company/10201476572/",
+      "httpStatus": 200,
+      "nofollow": true,
+      "target_blank": true,
+      "noopener": true,
+      "is_top_page": false,
+      "issues": []
+    },
+    {
+      "href": "https://en-hyouban.com/company/10201476572/",
+      "httpStatus": 200,
+      "nofollow": true,
+      "target_blank": true,
+      "noopener": true,
+      "is_top_page": false,
+      "issues": []
+    },
+    {
+      "href": "https://morejob.co.jp/",
+      "httpStatus": 200,
+      "nofollow": true,
+      "target_blank": true,
+      "noopener": true,
+      "is_top_page": true,
+      "issues": []
+    }
+  ],
+  "checked_at": "2026-06-27T22:31:54.341Z"
+}

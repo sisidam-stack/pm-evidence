@@ -1,0 +1,11 @@
+{
+  "gate": "Reader Consistency Gate",
+  "layer": "C",
+  "status": "PASS",
+  "coverage": {
+    "has_no_review_claim": false,
+    "review_block_count": 6
+  },
+  "issues": [],
+  "checked_at": "2026-06-27T22:31:52.302Z"
+}

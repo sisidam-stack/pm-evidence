@@ -1,0 +1,56 @@
+{
+  "gate": "AI Reader Gate",
+  "layer": "D",
+  "status": "PASS",
+  "model_used": "gpt-4o",
+  "input_type": "HTML text (live-public.html)",
+  "issues": [
+    {
+      "severity": "MAJOR",
+      "location": "冒頭から中盤にかけて",
+      "issue": "記事タイトル・テーマの繰り返しが多く、冗長に感じる。情報がループしているため、読者として流れが途切れる。"
+    },
+    {
+      "severity": "MAJOR",
+      "location": "複数箇所",
+      "issue": "「Groovement Agent（グルーブメントエージェント）の口コミや評判はどうなの？」の部分が何度も出てきており情報の重複が激しい。"
+    },
+    {
+      "severity": "MAJOR",
+      "location": "中盤",
+      "issue": "注意点に関する記述が冗長で重複しているため、情報が整理されていない印象。読者が何に注意すべきかが明確でない。"
+    },
+    {
+      "severity": "MINOR",
+      "location": "全体",
+      "issue": "アフィリエイト広告に関する説明が初めと途中で繰り返されているため、1箇所にまとめた方が情報が明確になる。"
+    },
+    {
+      "severity": "INFO",
+      "location": "後半",
+      "issue": "他社エージェントの比較表があるが、デメリット等の説明が少なく、より具体的な比較があると読者にとって参考になる。"
+    }
+  ],
+  "reader_summary": "冗長で重複した情報が多く、読みづらさが目立つ。",
+  "blocker_count": 0,
+  "major_count": 3,
+  "minor_count": 1,
+  "info_count": 1,
+  "checked_at": "2026-06-27T22:32:09.538Z",
+  "top3_issues": [
+    "1. [MAJOR] 冒頭から中盤にかけて: 記事タイトル・テーマの繰り返しが多く、冗長に感じる。情報がループしているため、読者として流れが途切れる。",
+    "2. [MAJOR] 複数箇所: 「Groovement Agent（グルーブメントエージェント）の口コミや評判はどうなの？」の部分が何度も出てきており情報の重複が激しい。",
+    "3. [MAJOR] 中盤: 注意点に関する記述が冗長で重複しているため、情報が整理されていない印象。読者が何に注意すべきかが明確でない。"
+  ],
+  "reader_score": 35,
+  "score_judgment": "35点 要改善（KPI目標: 70→85→90）",
+  "score_breakdown": {
+    "blocker": 0,
+    "major": 3,
+    "minor": 1,
+    "info": 1,
+    "formula": "100 - (0×100) - (3×20) - (1×5) = 35"
+  },
+  "calibration_note": "スコア閾値（90/80）は仮設定。数十件収集後にPM承認結果と比較してキャリブレーション予定。",
+  "note": "AI Reader はアシスタント。BLOCKER=0かつScore>=90でPASS。PMが最終承認判断。"
+}
