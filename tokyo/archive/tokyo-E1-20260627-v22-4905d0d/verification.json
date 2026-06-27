@@ -15,9 +15,9 @@
     "pc/01_fv.png": "aec0de46afc736a9698087bd56dc52f8",
     "sp/01_fv.png": "55e89786dac8a7efa92d762e543d7f2a"
   },
-  "pm_review_status": "READY",
-  "pm_reviewed_at": null,
-  "pm_review_bundle": null,
+  "pm_review_status": "APPROVED",
+  "pm_reviewed_at": "2026-06-27T01:12:00Z",
+  "pm_review_bundle": "tokyo-E1-20260627-v22-4905d0d",
   "evidence_bundle_id": "tokyo-E1-20260627-v22-4905d0d",
   "archive_url": "https://sisidam-stack.github.io/pm-evidence/tokyo/archive/tokyo-E1-20260627-v22-4905d0d/",
   "framework_version": "v2.2",
