@@ -1,5 +1,5 @@
 {
-  "bundle_id": "tokyo-2026-06-27T0030",
+  "bundle_id": "tokyo-E1-20260627-v21-b2926d1",
   "commit_id": "b2926d1",
   "generated_at": "2026-06-27T00:30:07.898Z",
   "public_url": "https://www.tokyo-chikudenchi.net/",
@@ -8,7 +8,7 @@
   "ng_check_status": "PASS",
   "checklist_items": 16,
   "files": {
-    "metadata.json": "0a4122a10da695387916ab538a1b71e6",
+    "metadata.json": "2e15e5eb647e2c228baa6045f1e21ee8",
     "live-dom-check.json": "cfc9f4b8d9480be10dc1760a6a882ef1",
     "live-public.html": "d1be87892babca297c9842b1caf7677a",
     "evidence.json": "c5ca846bf6e067d025093edc31fc02a9",
