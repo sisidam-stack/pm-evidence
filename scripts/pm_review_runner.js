@@ -83,14 +83,32 @@ async function run() {
     publicHtml = await page0.content();
     await browser.close();
 
-    const buf = Buffer.from(publicHtml, 'utf-8');
-    publicHash = crypto.createHash('md5').update(buf).digest('hex');
-    fs.writeFileSync(path.join(OUTPUT_DIR, 'pm-public.html'), publicHtml);
-    fs.writeFileSync(path.join(OUTPUT_DIR, 'pm-public.txt'),
-      publicHtml.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim().substring(0, 200000));
-    result.actual_live_html_hash = publicHash;
-    result.checks.html_fetch = 'PASS';
-    console.log(`[PM Review Runner] HTML fetched via Playwright. Size: ${publicHtml.length} chars. Hash: ${publicHash}`);
+    // CloudFlare bot チャレンジ検出
+    const isCloudflareChallenge = publicHtml.includes('One moment, please') ||
+      publicHtml.includes('cf-browser-verification') ||
+      publicHtml.includes('cf_challenge');
+    if (isCloudflareChallenge) {
+      console.warn('[PM Review Runner] WARNING: CloudFlare bot challenge detected. Azure IP ranges are blocked.');
+      result.checks.html_fetch = 'WARNING: CloudFlare challenge (Azure datacenter IP blocked)';
+      result.cloudflare_blocked = true;
+      // コンテンツ検証はスキップ（チャレンジページを検証しても意味がないため）
+      result.checks.wakaru_single = 'SKIPPED (CloudFlare blocked)';
+      result.checks.lead_single = 'SKIPPED (CloudFlare blocked)';
+      result.checks.dup_judge_absent = 'SKIPPED (CloudFlare blocked)';
+      result.checks.table_fixed = 'SKIPPED (CloudFlare blocked)';
+      result.checks.template_leak = 'SKIPPED (CloudFlare blocked)';
+      result.checks.pc_title_dom_absent = 'SKIPPED (CloudFlare blocked)';
+      // screenshots は引き続き取得（チャレンジページの画像も証跡として残す）
+    } else {
+      const buf = Buffer.from(publicHtml, 'utf-8');
+      publicHash = crypto.createHash('md5').update(buf).digest('hex');
+      fs.writeFileSync(path.join(OUTPUT_DIR, 'pm-public.html'), publicHtml);
+      fs.writeFileSync(path.join(OUTPUT_DIR, 'pm-public.txt'),
+        publicHtml.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim().substring(0, 200000));
+      result.actual_live_html_hash = publicHash;
+      result.checks.html_fetch = 'PASS';
+      console.log(`[PM Review Runner] HTML fetched. Size: ${publicHtml.length}. Hash: ${publicHash}`);
+    }
   } catch (e) {
     result.checks.html_fetch = `FAIL: ${e.message}`;
     result.blocking_reasons.push(`公開HTML取得失敗: ${e.message}`);
@@ -109,7 +127,7 @@ async function run() {
   // ── 3. DOM 独立検証 ───────────────────────────────────────────────────
   const domSummary = { checked_at: new Date().toISOString(), public_url: PUBLIC_URL };
 
-  if (publicHtml) {
+  if (publicHtml && !result.cloudflare_blocked) {
     // この記事でわかること
     const wakaruCount = (publicHtml.match(/この記事でわかること/g) || []).length;
     domSummary.wakaru_count = wakaruCount;
@@ -183,7 +201,14 @@ async function run() {
   }
 
   // ── 5. 総合判定 ─────────────────────────────────────────────────────
-  result.overall_status = result.blocking_reasons.length === 0 ? 'PASS' : 'FAIL';
+  if (result.cloudflare_blocked) {
+    result.overall_status = 'CLOUDFLARE_BLOCKED';
+    result.note = 'GitHub Actions (Azure datacenter) IP が CloudFlare にブロックされています。' +
+      'DOM 検証はスキップされました。スクリーンショットは CloudFlare チャレンジページのものです。' +
+      'PM は公開URL を直接ブラウザで確認してください: ' + PUBLIC_URL;
+  } else {
+    result.overall_status = result.blocking_reasons.length === 0 ? 'PASS' : 'FAIL';
+  }
   result.completed_at = new Date().toISOString();
 
   const resultPath = path.join(OUTPUT_DIR, 'pm-review-runner-result.json');
