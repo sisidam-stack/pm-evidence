@@ -152,7 +152,12 @@ jobs:
 
             ## 実行手順
 
-            1. 以下の環境変数を設定して `node scripts/pm_review_runner.js` を実行する:
+            1. まず以下を実行してPlaywrightをインストールする（sandbox権限が必要なため）:
+               ```
+               npx playwright install --with-deps chromium
+               ```
+
+            2. 以下の環境変数を設定して `node scripts/pm_review_runner.js` を実行する:
                - SITE_KEY=${{ needs.detect-ready.outputs.site_key }}
                - PUBLIC_URL=${{ needs.detect-ready.outputs.public_url }}
                - BUNDLE_ID=${{ needs.detect-ready.outputs.bundle_id }}

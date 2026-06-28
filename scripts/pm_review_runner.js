@@ -71,7 +71,10 @@ async function run() {
   let publicHash = '';
   try {
     const { chromium } = require('playwright');
-    const browser = await chromium.launch({ headless: true });
+    const browser = await chromium.launch({
+      headless: true,
+      args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage'],
+    });
     const ctx0 = await browser.newContext({
       userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
       viewport: { width: 1280, height: 900 },
@@ -180,9 +183,10 @@ async function run() {
   try {
     const { chromium } = require('playwright');
     console.log('[PM Review Runner] Taking screenshots...');
+    const LAUNCH_ARGS = { headless: true, args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage'] };
 
     for (const [vp, label] of [[1280, 'pc'], [375, 'sp']]) {
-      const br = await chromium.launch({ headless: true });
+      const br = await chromium.launch(LAUNCH_ARGS);
       const ctx = await br.newContext({ viewport: { width: vp, height: 900 } });
       const page = await ctx.newPage();
       await page.goto(PUBLIC_URL, { waitUntil: 'networkidle', timeout: 30000 });
