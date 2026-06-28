@@ -40,7 +40,7 @@ jobs:
   # ── READY 検知ジョブ（push トリガー時）────────────────────────────────
   detect-ready:
     name: Detect READY Bundle
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, pm-review, macos]
     outputs:
       should_run: ${{ steps.check.outputs.should_run }}
       site_key: ${{ steps.check.outputs.site_key }}
@@ -182,14 +182,13 @@ jobs:
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "**APPROVED / REJECT は ChatGPT PM のみが Artifacts を確認して判定します。**" >> $GITHUB_STEP_SUMMARY
 
-  # ── Codex PM Review Agent（Hosted Runner / 補助）─────────────────────
-  # CoreServer WAF により CLOUDFLARE_BLOCKED になる場合があります。
-  # セルフホストランナーが正本のため、このジョブは補助扱いです。
+  # ── Codex PM Review Agent（Self-Hosted Runner / Evidence Framework v2.0）──
+  # PM側 self-hosted runner のみで実行。GitHub Hosted Runner は廃止。
   pm-review-codex:
-    name: Codex PM Review Agent (Hosted / 補助)
+    name: Codex PM Review Agent
     needs: detect-ready
     if: needs.detect-ready.outputs.should_run == 'true'
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, pm-review, macos]
     timeout-minutes: 20
 
     permissions:
