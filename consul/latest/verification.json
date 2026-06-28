@@ -15,11 +15,12 @@
     "sp/01_fv.png": "46ad3fa1c689fa70b9b73f5d86045b1d",
     "live-public.html": "cc392ff824eb9ef1f1ad45c152b67851"
   },
-  "pm_review_status": "READY",
+  "pm_review_status": "SUPERSEDED",
   "pm_reviewed_at": null,
   "pm_review_bundle": null,
   "evidence_bundle_id": "consul-E1-20260628-v6-READY",
   "archive_url": "https://sisidam-stack.github.io/pm-evidence/consul/archive/consul-E1-20260628-v6-READY/",
   "supersedes": "consul-E1-20260628-v5-READY",
-  "notes": "PHP template修正: lp-toc-pc-title div削除。HTML上この記事でわかること=1回。公開Freeze中。"
+  "notes": "PHP template修正: lp-toc-pc-title div削除。HTML上この記事でわかること=1回。公開Freeze中。",
+  "superseded_reason": "PM REJECT PM-007(口コミ登録不要ソース不足) / PM-008(比較表列幅不均一)"
 }
