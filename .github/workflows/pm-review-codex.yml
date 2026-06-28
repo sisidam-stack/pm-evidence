@@ -102,9 +102,91 @@ jobs:
           echo "=== Auto-detected ==="
           echo "site_key=${SITE_KEY} bundle_id=${BUNDLE_ID} review_id=${REVIEW_ID}"
 
-  # ── Codex PM Review Agent ─────────────────────────────────────────────
+  # ── Self-hosted PM Review Agent（正本）──────────────────────────────────
+  # PM の Mac からアクセスするため CoreServer WAF を回避できる。
+  # セルフホストランナーが未登録の場合はスキップされる。
+  pm-review-self-hosted:
+    name: PM Review (Self-Hosted / 正本)
+    needs: detect-ready
+    if: needs.detect-ready.outputs.should_run == 'true'
+    runs-on: [self-hosted, pm-review, macos]
+    timeout-minutes: 20
+    continue-on-error: true
+
+    env:
+      SITE_KEY: ${{ needs.detect-ready.outputs.site_key }}
+      PUBLIC_URL: ${{ needs.detect-ready.outputs.public_url }}
+      BUNDLE_ID: ${{ needs.detect-ready.outputs.bundle_id }}
+      REVIEW_ID: ${{ needs.detect-ready.outputs.review_id }}
+      EXPECTED_LIVE_HTML_HASH: ${{ needs.detect-ready.outputs.live_html_hash }}
+      OUTPUT_DIR: ${{ github.workspace }}/pm-review-output
+      USE_PLAYWRIGHT_HTML: 'true'
+      USE_PLAYWRIGHT_SS: 'true'
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Install Playwright browsers
+        run: npx playwright install chromium
+
+      - name: Run PM Review Runner (Self-Hosted)
+        run: node scripts/pm_review_runner.js
+
+      - name: Verify result
+        run: |
+          if [ -f pm-review-output/pm-review-runner-result.json ]; then
+            STATUS=$(jq -r '.overall_status' pm-review-output/pm-review-runner-result.json)
+            CF=$(jq -r '.cloudflare_blocked // false' pm-review-output/pm-review-runner-result.json)
+            echo "overall_status: ${STATUS}"
+            echo "cloudflare_blocked: ${CF}"
+            if [ "${CF}" = "true" ]; then
+              echo "::error::CLOUDFLARE_BLOCKED: セルフホストランナーでも WAF にブロックされました"
+              exit 1
+            fi
+          fi
+
+      - name: Upload Artifacts (Self-Hosted)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pm-review-self-hosted-${{ needs.detect-ready.outputs.review_id }}-${{ github.run_id }}
+          path: pm-review-output/
+          retention-days: 30
+
+      - name: Summary (Self-Hosted)
+        if: always()
+        run: |
+          echo "## PM Review Agent（Self-Hosted 正本）" >> $GITHUB_STEP_SUMMARY
+          echo "| 項目 | 値 |" >> $GITHUB_STEP_SUMMARY
+          echo "|---|---|" >> $GITHUB_STEP_SUMMARY
+          echo "| Runner | self-hosted / pm-review / macos |" >> $GITHUB_STEP_SUMMARY
+          echo "| Review ID | ${{ needs.detect-ready.outputs.review_id }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Public URL | ${{ needs.detect-ready.outputs.public_url }} |" >> $GITHUB_STEP_SUMMARY
+          if [ -f pm-review-output/pm-review-runner-result.json ]; then
+            STATUS=$(jq -r '.overall_status' pm-review-output/pm-review-runner-result.json)
+            CF=$(jq -r '.cloudflare_blocked // false' pm-review-output/pm-review-runner-result.json)
+            BLOCKING=$(jq -r '.blocking_reasons | length' pm-review-output/pm-review-runner-result.json)
+            echo "| **Overall** | **${STATUS}** |" >> $GITHUB_STEP_SUMMARY
+            echo "| CloudFlare Blocked | ${CF} |" >> $GITHUB_STEP_SUMMARY
+            echo "| Blocking Issues | ${BLOCKING} |" >> $GITHUB_STEP_SUMMARY
+          fi
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**APPROVED / REJECT は ChatGPT PM のみが Artifacts を確認して判定します。**" >> $GITHUB_STEP_SUMMARY
+
+  # ── Codex PM Review Agent（Hosted Runner / 補助）─────────────────────
+  # CoreServer WAF により CLOUDFLARE_BLOCKED になる場合があります。
+  # セルフホストランナーが正本のため、このジョブは補助扱いです。
   pm-review-codex:
-    name: Codex PM Review Agent
+    name: Codex PM Review Agent (Hosted / 補助)
     needs: detect-ready
     if: needs.detect-ready.outputs.should_run == 'true'
     runs-on: ubuntu-latest
