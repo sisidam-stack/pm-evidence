@@ -1,0 +1,288 @@
+{
+  "version": "1.0",
+  "description": "EQAF Regression Validation Patterns - PM差し戻し事項の永久テストケース",
+  "created_at": "2026-06-27",
+  "patterns": [
+    {
+      "id": "RGP-001",
+      "name": "まとめ重複",
+      "description": "まとめH2が記事内に2箇所以上存在する",
+      "source": "tokyo Phase E-1 PM差し戻し",
+      "gate": "Summary Gate",
+      "inject": {
+        "type": "duplicate_h2",
+        "keyword": "まとめ",
+        "expected_gate_result": "FAIL"
+      }
+    },
+    {
+      "id": "RGP-002",
+      "name": "編集部コメント3連続（口コミなし）",
+      "description": "lp-editorial-comment が口コミなしで3件以上連続する",
+      "source": "tokyo Phase E-1 PM差し戻し",
+      "gate": "Review Pairing Gate",
+      "inject": {
+        "type": "editor_comment_without_review",
+        "count": 3,
+        "expected_gate_result": "FAIL"
+      }
+    },
+    {
+      "id": "RGP-003",
+      "name": "二次情報口コミ（まとめサイト）",
+      "description": "口コミ出典がまとめサイト・比較サイト等の二次情報",
+      "source": "tokyo Phase E-1 PM差し戻し - Review Source Policy v2.0",
+      "gate": "Review Source Gate",
+      "inject": {
+        "type": "secondary_source_cite",
+        "examples": [
+          "ks-reform.jp",
+          "kaitori.green-energy.co.jp"
+        ],
+        "expected_gate_result": "FAIL"
+      }
+    },
+    {
+      "id": "RGP-004",
+      "name": "Google Maps 検索ページリンク（invalid coord）",
+      "description": "口コミ出典がGoogle Maps座標付きURLで invalid coord が発生",
+      "source": "tokyo Phase E-1 PM差し戻し - Link Destination Gate",
+      "gate": "Destination Validation Gate",
+      "inject": {
+        "type": "invalid_maps_url",
+        "example": "https://www.google.com/maps/place/.../@35.6801019,139.7736527,17z",
+        "expected_gate_result": "FAIL"
+      }
+    },
+    {
+      "id": "RGP-005",
+      "name": "チェックリスト件数不一致",
+      "description": "記事本文のチェックリストタイトルと実際の項目数が不一致",
+      "source": "tokyo Phase E-1 PM差し戻し",
+      "gate": "Live DOM Check",
+      "inject": {
+        "type": "checklist_count_mismatch",
+        "expected_gate_result": "FAIL"
+      }
+    },
+    {
+      "id": "RGP-006",
+      "name": "口コミCite リンクなし",
+      "description": "口コミ出典の cite タグに href がない",
+      "source": "tokyo Phase E-1 PM差し戻し",
+      "gate": "Review Source Gate",
+      "inject": {
+        "type": "cite_without_href",
+        "expected_gate_result": "FAIL"
+      }
+    },
+    {
+      "id": "RGP-007",
+      "name": "特徴カード保証対象未明記",
+      "description": "trust_card の label が「10年保証」等で保証種別が不明",
+      "source": "tokyo Phase E-1 PM差し戻し",
+      "gate": "Human Visual Gate",
+      "inject": {
+        "type": "vague_warranty_label",
+        "examples": [
+          "10年保証",
+          "長期保証で満足"
+        ],
+        "expected_gate_result": "FAIL"
+      }
+    },
+    {
+      "id": "RGP-008",
+      "name": "注意事項番号重複",
+      "description": "利用前の注意点の番号が重複している（例: 5.が2個）",
+      "source": "tokyo Phase E-1 PM差し戻し",
+      "gate": "Structural QA",
+      "inject": {
+        "type": "duplicate_list_number",
+        "expected_gate_result": "FAIL"
+      }
+    },
+    {
+      "id": "RGP-009",
+      "name": "CTA削除",
+      "description": "CTA（アフィリエイトリンク）が0件",
+      "source": "EQAF v3.0 PM Challenge Pattern",
+      "gate": "CTA Flow Gate",
+      "inject": {
+        "type": "remove_cta",
+        "expected_gate_result": "FAIL"
+      }
+    },
+    {
+      "id": "RGP-010",
+      "name": "比較表2社のみ（Gold Standard：3社）",
+      "description": "比較表が3列（3社比較）でなく2列になっている",
+      "source": "tokyo Phase E-1 PM差し戻し",
+      "gate": "Structural QA",
+      "inject": {
+        "type": "comparison_table_less_than_3",
+        "expected_gate_result": "FAIL"
+      }
+    },
+    {
+      "id": "RV-001",
+      "name": "Template Leak（他業種テンプレ残存）",
+      "source": "consul Phase E-1 PM差し戻し BLOCKER-4",
+      "gate": "Template Leak Gate",
+      "inject": {
+        "type": "template_leak",
+        "forbidden_words": {
+          "転職記事": [
+            "製品保証",
+            "工事保証",
+            "定期点検",
+            "施工",
+            "太陽光",
+            "蓄電池",
+            "シロアリ",
+            "工事費",
+            "補助金",
+            "保証期間"
+          ],
+          "シロアリ記事": [
+            "転職",
+            "求職",
+            "エージェント",
+            "年収"
+          ],
+          "蓄電池記事": [
+            "シロアリ",
+            "防除",
+            "蓄電池以外の虫"
+          ]
+        },
+        "expected_gate_result": "FAIL"
+      }
+    },
+    {
+      "id": "RV-010",
+      "name": "Duplicate Content（重複コンテンツ）",
+      "source": "consul Phase E-1 PM差し戻し BLOCKER-1",
+      "gate": "Duplicate Content Gate",
+      "inject": {
+        "type": "duplicate_section",
+        "keywords": [
+          "この記事でわかること",
+          "まとめ",
+          "Attention",
+          "CTA"
+        ],
+        "expected_gate_result": "FAIL"
+      }
+    },
+    {
+      "id": "RV-020",
+      "name": "Reader Consistency（読者向け論理矛盾）",
+      "source": "consul Phase E-1 PM差し戻し BLOCKER-3",
+      "gate": "Reader Consistency Gate",
+      "inject": {
+        "type": "logic_contradiction",
+        "examples": [
+          {
+            "claim": "口コミがない",
+            "evidence": "口コミカード複数掲載"
+          }
+        ],
+        "expected_gate_result": "FAIL"
+      }
+    },
+    {
+      "id": "RV-030",
+      "name": "Review Source Integrity（口コミ出典完全性）",
+      "source": "consul Phase E-1 PM差し戻し BLOCKER-2",
+      "gate": "Review Source Integrity Gate",
+      "inject": {
+        "type": "cite_without_href",
+        "forbidden": [
+          "hrefなし",
+          "出典名なし",
+          "確認年なし"
+        ],
+        "expected_gate_result": "FAIL"
+      }
+    },
+    {
+      "id": "RV-031",
+      "name": "Review Source Diversity（口コミソース多様性）",
+      "source": "consul Phase E-1 PM差し戻し MAJOR-1",
+      "gate": "Review Source Diversity Gate",
+      "inject": {
+        "type": "registration_required_only",
+        "sites": [
+          "openwork.jp",
+          "en-hyouban.com"
+        ],
+        "expected_gate_result": "WARNING"
+      }
+    },
+    {
+      "id": "RV-040",
+      "name": "Comparison Table Integrity（比較表構造・列幅均一）",
+      "source": "consul Phase E-1 PM差し戻し MAJOR-2",
+      "gate": "Comparison Table Layout Gate",
+      "inject": {
+        "type": "table_no_fixed_layout",
+        "expected_gate_result": "FAIL",
+        "description": "3社以上・table-layout:fixed・列幅均一（文字数で変動禁止）・SPで横スクロール可能",
+        "column_width_rule": "比較項目25% / 各社25%×3 等で均一固定。文字数に応じた列幅変動は禁止。"
+      }
+    },
+    {
+      "id": "RV-050",
+      "name": "Reader Flow（Gold Standard順序）",
+      "source": "全案件共通",
+      "gate": "Reader Flow Gate",
+      "inject": {
+        "type": "h2_order_violation",
+        "expected_gate_result": "FAIL"
+      }
+    },
+    {
+      "id": "RV-060",
+      "name": "Fact Type Separation（情報種別混同）",
+      "source": "全案件共通",
+      "gate": "Fact Type Separation Gate",
+      "inject": {
+        "type": "fact_type_mixing",
+        "expected_gate_result": "FAIL"
+      }
+    },
+    {
+      "id": "RV-070",
+      "name": "Layout Consistency（レイアウト崩れ）",
+      "source": "全案件共通",
+      "gate": "Comparison Table Layout Gate",
+      "inject": {
+        "type": "table_layout_broken",
+        "expected_gate_result": "FAIL"
+      }
+    },
+    {
+      "id": "RV-032",
+      "name": "Review Source Accessibility（口コミ出典アクセシビリティ）",
+      "source": "consul Phase E-1 PM指摘 PM-007",
+      "gate": "Review Source Diversity Gate",
+      "inject": {
+        "type": "registration_required_only",
+        "description": "会員登録必須ソースのみで構成してはいけない。少なくとも1件以上は登録不要ソースを含める。",
+        "registration_required_sites": [
+          "openwork.jp",
+          "en-hyouban.com"
+        ],
+        "preferred_sources": [
+          "公式サイト",
+          "Googleマップ口コミ",
+          "Yahoo!知恵袋",
+          "note",
+          "ブログ・メディア"
+        ],
+        "expected_gate_result": "FAIL"
+      }
+    }
+  ]
+}
