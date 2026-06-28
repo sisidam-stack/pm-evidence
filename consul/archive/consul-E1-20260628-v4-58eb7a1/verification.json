@@ -8,9 +8,8 @@
   "ng_check_status": "PASS",
   "checklist_items": 16,
   "files": {
-    "metadata.json": "84770b4ca28632495f137405d9cb6e31",
+    "metadata.json": "32461a01c886fe920ec9d3671385fa13",
     "live-dom-check.json": "c617c9f4f506c6c59e9bb0669fcaab52",
-    "live-public.html": "6023cc88b5199cb8afde0de79a1e638d",
     "evidence.json": "1518697b2917b34322890ee9be94b801",
     "pc/01_fv.png": "d6a0aa90d392c5c95283ea5b9db6e517",
     "sp/01_fv.png": "46ad3fa1c689fa70b9b73f5d86045b1d"
