@@ -1,0 +1,217 @@
+name: PM Review Codex Agent v2.0
+
+# Evidence Framework v2.0 正式PMレビューワークフロー
+# openai/codex-action@v1 を使用した PM 独立取得・検証
+
+on:
+  workflow_dispatch:
+    inputs:
+      site_key:
+        description: 'サイトキー (consul / tokyo / osaka / uwaki / recoverywear)'
+        required: true
+        default: 'consul'
+      public_url:
+        description: '公開URL'
+        required: true
+        default: 'https://www.consul-tenshoku.com'
+      bundle_id:
+        description: 'Bundle ID'
+        required: true
+        default: 'consul-E1-20260628-v6-READY'
+      review_id:
+        description: 'Review ID'
+        required: true
+        default: 'CSL-E1-20260628-V6'
+      expected_live_html_hash:
+        description: 'Evidence Bundle の live_html_hash'
+        required: true
+        default: 'cc392ff824eb9ef1f1ad45c152b67851'
+
+  push:
+    paths:
+      - '*/archive/**/verification.json'
+      - 'consul/archive/**/verification.json'
+      - 'tokyo/archive/**/verification.json'
+      - 'osaka/archive/**/verification.json'
+      - 'uwaki/archive/**/verification.json'
+      - 'recoverywear/archive/**/verification.json'
+
+jobs:
+  # ── READY 検知ジョブ（push トリガー時）────────────────────────────────
+  detect-ready:
+    name: Detect READY Bundle
+    runs-on: ubuntu-latest
+    outputs:
+      should_run: ${{ steps.check.outputs.should_run }}
+      site_key: ${{ steps.check.outputs.site_key }}
+      public_url: ${{ steps.check.outputs.public_url }}
+      bundle_id: ${{ steps.check.outputs.bundle_id }}
+      review_id: ${{ steps.check.outputs.review_id }}
+      live_html_hash: ${{ steps.check.outputs.live_html_hash }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Detect READY or use dispatch inputs
+        id: check
+        run: |
+          # workflow_dispatch の場合は入力値をそのまま使用
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "should_run=true"                                          >> $GITHUB_OUTPUT
+            echo "site_key=${{ inputs.site_key }}"                         >> $GITHUB_OUTPUT
+            echo "public_url=${{ inputs.public_url }}"                     >> $GITHUB_OUTPUT
+            echo "bundle_id=${{ inputs.bundle_id }}"                       >> $GITHUB_OUTPUT
+            echo "review_id=${{ inputs.review_id }}"                       >> $GITHUB_OUTPUT
+            echo "live_html_hash=${{ inputs.expected_live_html_hash }}"    >> $GITHUB_OUTPUT
+            echo "Triggered by workflow_dispatch"
+            exit 0
+          fi
+
+          # push トリガーの場合は変更ファイルから READY を検知
+          CHANGED=$(git diff --name-only HEAD~1 HEAD | grep 'verification\.json' | grep 'archive/' | head -1)
+          echo "Changed: ${CHANGED}"
+          if [ -z "${CHANGED}" ]; then
+            echo "should_run=false" >> $GITHUB_OUTPUT; exit 0
+          fi
+
+          STATUS=$(jq -r '.pm_review_status // empty' "${CHANGED}" 2>/dev/null)
+          echo "pm_review_status: ${STATUS}"
+          if [ "${STATUS}" != "READY" ]; then
+            echo "should_run=false" >> $GITHUB_OUTPUT; exit 0
+          fi
+
+          BUNDLE_ID=$(jq -r '.bundle_id // .evidence_bundle_id' "${CHANGED}")
+          PUBLIC_URL=$(jq -r '.public_url' "${CHANGED}")
+          LIVE_HASH=$(jq -r '.live_html_hash' "${CHANGED}")
+          SITE_KEY=$(jq -r '.site_key // empty' "${CHANGED}")
+          [ -z "${SITE_KEY}" ] && SITE_KEY=$(echo "${CHANGED}" | cut -d'/' -f1)
+
+          METADATA="${CHANGED%verification.json}metadata.json"
+          REVIEW_ID=$([ -f "${METADATA}" ] && jq -r '.review_id // empty' "${METADATA}" || echo "${BUNDLE_ID}")
+
+          echo "should_run=true"             >> $GITHUB_OUTPUT
+          echo "site_key=${SITE_KEY}"        >> $GITHUB_OUTPUT
+          echo "public_url=${PUBLIC_URL}"    >> $GITHUB_OUTPUT
+          echo "bundle_id=${BUNDLE_ID}"      >> $GITHUB_OUTPUT
+          echo "review_id=${REVIEW_ID}"      >> $GITHUB_OUTPUT
+          echo "live_html_hash=${LIVE_HASH}" >> $GITHUB_OUTPUT
+
+          echo "=== Auto-detected ==="
+          echo "site_key=${SITE_KEY} bundle_id=${BUNDLE_ID} review_id=${REVIEW_ID}"
+
+  # ── Codex PM Review Agent ─────────────────────────────────────────────
+  pm-review-codex:
+    name: Codex PM Review Agent
+    needs: detect-ready
+    if: needs.detect-ready.outputs.should_run == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    permissions:
+      contents: write
+
+    env:
+      SITE_KEY: ${{ needs.detect-ready.outputs.site_key }}
+      PUBLIC_URL: ${{ needs.detect-ready.outputs.public_url }}
+      BUNDLE_ID: ${{ needs.detect-ready.outputs.bundle_id }}
+      REVIEW_ID: ${{ needs.detect-ready.outputs.review_id }}
+      EXPECTED_LIVE_HTML_HASH: ${{ needs.detect-ready.outputs.live_html_hash }}
+      OUTPUT_DIR: ${{ github.workspace }}/pm-review-output
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium
+
+      # ── Codex PM Review Agent 実行 ──────────────────────────────────
+      - name: Run Codex PM Review Agent
+        uses: openai/codex-action@v1
+        with:
+          prompt: |
+            あなたは PM Review Agent です。以下の手順を実行してください。
+
+            ## 実行環境
+            - site_key: ${{ needs.detect-ready.outputs.site_key }}
+            - public_url: ${{ needs.detect-ready.outputs.public_url }}
+            - bundle_id: ${{ needs.detect-ready.outputs.bundle_id }}
+            - review_id: ${{ needs.detect-ready.outputs.review_id }}
+            - expected_live_html_hash: ${{ needs.detect-ready.outputs.live_html_hash }}
+
+            ## 実行手順
+
+            1. 以下の環境変数を設定して `node scripts/pm_review_runner.js` を実行する:
+               - SITE_KEY=${{ needs.detect-ready.outputs.site_key }}
+               - PUBLIC_URL=${{ needs.detect-ready.outputs.public_url }}
+               - BUNDLE_ID=${{ needs.detect-ready.outputs.bundle_id }}
+               - REVIEW_ID=${{ needs.detect-ready.outputs.review_id }}
+               - EXPECTED_LIVE_HTML_HASH=${{ needs.detect-ready.outputs.live_html_hash }}
+               - OUTPUT_DIR=pm-review-output
+
+            2. `pm-review-output/` ディレクトリに以下のファイルが生成されることを確認する:
+               - pm-review-runner-result.json
+               - pm-review.html
+               - pm-public.html または pm-public.txt
+               - pm-pc-1280.png
+               - pm-sp-375.png
+               - pm-dom-summary.json
+
+            3. 生成されたファイルを確認し、`pm-review-runner-result.json` の内容を表示する
+
+            ## 重要な制約
+            - APPROVED / REJECT の判定は絶対に行わない（ChatGPT PM のみが判定する）
+            - CloudFlare Challenge が検出された場合は CLOUDFLARE_BLOCKED として報告する
+            - DOM 検証 SKIPPED の場合は APPROVED 不可と明示する
+
+            詳細な指示は `prompts/pm_review_agent.md` を参照すること。
+          openai-api-key: ${{ secrets.OPENAI_API_KEY }}
+
+      # Codex が失敗した場合の フォールバック実行
+      - name: Fallback - Direct PM Review Runner
+        if: failure()
+        run: node scripts/pm_review_runner.js
+
+      - name: Upload Artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pm-review-codex-${{ needs.detect-ready.outputs.review_id }}-${{ github.run_id }}
+          path: pm-review-output/
+          retention-days: 30
+
+      - name: Summary
+        if: always()
+        run: |
+          echo "## PM Review Codex Agent v2.0" >> $GITHUB_STEP_SUMMARY
+          echo "| 項目 | 値 |" >> $GITHUB_STEP_SUMMARY
+          echo "|---|---|" >> $GITHUB_STEP_SUMMARY
+          echo "| Review ID | ${{ needs.detect-ready.outputs.review_id }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Bundle ID | ${{ needs.detect-ready.outputs.bundle_id }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Public URL | ${{ needs.detect-ready.outputs.public_url }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Expected Hash | ${{ needs.detect-ready.outputs.live_html_hash }} |" >> $GITHUB_STEP_SUMMARY
+
+          if [ -f pm-review-output/pm-review-runner-result.json ]; then
+            STATUS=$(jq -r '.overall_status' pm-review-output/pm-review-runner-result.json)
+            CF=$(jq -r '.cloudflare_blocked // false' pm-review-output/pm-review-runner-result.json)
+            BLOCKING=$(jq -r '.blocking_reasons | length' pm-review-output/pm-review-runner-result.json)
+            echo "| **Overall** | **${STATUS}** |" >> $GITHUB_STEP_SUMMARY
+            echo "| CloudFlare Blocked | ${CF} |" >> $GITHUB_STEP_SUMMARY
+            echo "| Blocking Issues | ${BLOCKING} |" >> $GITHUB_STEP_SUMMARY
+          fi
+
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**PM 判定待ち。Artifacts を確認してください。**" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "APPROVED / REJECT は ChatGPT PM のみが判定します。" >> $GITHUB_STEP_SUMMARY
