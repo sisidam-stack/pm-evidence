@@ -1,0 +1,13 @@
+{
+  "gate": "Checklist Presence Gate",
+  "layer": "B",
+  "status": "PASS",
+  "coverage": {
+    "has_dl_block": true,
+    "dl_url": "https://sisidam-stack.github.io/pm-evidence/consul/latest/checklist.html",
+    "http_status": 200,
+    "item_count": 16
+  },
+  "issues": [],
+  "checked_at": "2026-06-28T00:59:53.161Z"
+}
