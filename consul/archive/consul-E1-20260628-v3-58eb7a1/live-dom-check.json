@@ -1,20 +1,20 @@
 {
-  "review_id": "CSL-E1-20260628-V3",
-  "evidence_bundle_id": "consul-E1-20260628-v3-58eb7a1",
-  "site_key": "consul",
-  "public_url": "https://www.consul-tenshoku.com/",
-  "commit_id": "58eb7a1",
-  "generated_at": "2026-06-28T00:09:12.398Z",
+  "status": "PASS",
   "fetched_at": "2026-06-28T00:08:54.813Z",
-  "github_pages_url": "https://sisidam-stack.github.io/pm-evidence/consul/latest/index.html",
-  "screenshot_pc_path": "https://sisidam-stack.github.io/pm-evidence/consul/latest/pc/",
-  "screenshot_sp_path": "https://sisidam-stack.github.io/pm-evidence/consul/latest/sp/",
+  "public_url": "https://www.consul-tenshoku.com/",
   "live_html_hash": "4ada77842f6493586964ade96fbde75b",
-  "screenshot_pc_hash": "",
-  "screenshot_sp_hash": "",
+  "html_size": 99311,
+  "ng_words_checked": [
+    "長期保証で満足",
+    "長期保証で安心",
+    "10年保証",
+    "比較・仕様まとめ",
+    "引越し日",
+    "電気・ガス・ネット等",
+    "全国対応です",
+    "未確認断定"
+  ],
   "ng_words_found": [],
-  "ng_check_status": "PASS",
-  "checklist_items": 16,
   "h2_list": [
     "Hello world!",
     "Groovement Agentの基本情報・特徴",
@@ -31,5 +31,8 @@
     "Archives",
     "Categories"
   ],
-  "pm_approval_block": null
+  "matome_h2_exists": false,
+  "compare_h2_has_matome": false,
+  "checklist_item_count": 16,
+  "checklist_error": null
 }

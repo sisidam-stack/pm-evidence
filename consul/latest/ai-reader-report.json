@@ -1,0 +1,56 @@
+{
+  "gate": "AI Reader Gate",
+  "layer": "D",
+  "status": "PASS",
+  "model_used": "gpt-4o",
+  "input_type": "HTML text (live-public.html)",
+  "issues": [
+    {
+      "severity": "MAJOR",
+      "location": "冒頭部分",
+      "issue": "冒頭が長く、同じ情報が繰り返されており、読者が混乱する可能性がある。"
+    },
+    {
+      "severity": "MAJOR",
+      "location": "利用に関する情報",
+      "issue": "Groovement Agentの料金について、明確な情報がなく、読者が不安を感じる可能性がある。"
+    },
+    {
+      "severity": "MINOR",
+      "location": "口コミ部分",
+      "issue": "口コミ情報が乏しいことが何度も繰り返されており、簡潔にまとめた方が良い。"
+    },
+    {
+      "severity": "MINOR",
+      "location": "注意点の箇所",
+      "issue": "一部文章が長く、箇条書きにすることで読みやすさが向上する可能性がある。"
+    },
+    {
+      "severity": "INFO",
+      "location": "全体構成",
+      "issue": "情報が詳細である反面、読者の関心が薄い部分を省略することで、もっとコンパクトにまとめられる。"
+    }
+  ],
+  "reader_summary": "情報が多く、やや冗長だが内容は詳細。",
+  "blocker_count": 0,
+  "major_count": 2,
+  "minor_count": 2,
+  "info_count": 1,
+  "checked_at": "2026-06-28T00:09:12.402Z",
+  "top3_issues": [
+    "1. [MAJOR] 冒頭部分: 冒頭が長く、同じ情報が繰り返されており、読者が混乱する可能性がある。",
+    "2. [MAJOR] 利用に関する情報: Groovement Agentの料金について、明確な情報がなく、読者が不安を感じる可能性がある。",
+    "3. [MINOR] 口コミ部分: 口コミ情報が乏しいことが何度も繰り返されており、簡潔にまとめた方が良い。"
+  ],
+  "reader_score": 50,
+  "score_judgment": "50点 要改善（KPI目標: 70→85→90）",
+  "score_breakdown": {
+    "blocker": 0,
+    "major": 2,
+    "minor": 2,
+    "info": 1,
+    "formula": "100 - (0×100) - (2×20) - (2×5) = 50"
+  },
+  "calibration_note": "スコア閾値（90/80）は仮設定。数十件収集後にPM承認結果と比較してキャリブレーション予定。",
+  "note": "AI Reader はアシスタント。BLOCKER=0かつScore>=90でPASS。PMが最終承認判断。"
+}
