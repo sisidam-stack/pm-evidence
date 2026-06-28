@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="UTF-8">
+<title>PM Independent Verification — FAIL</title>
+<style>
+body{font-family:sans-serif;max-width:960px;margin:0 auto;padding:20px;background:#f9fafb}
+h1{color:#1f2937;border-bottom:3px solid #dc2626;padding-bottom:8px}
+.status{font-size:2em;font-weight:bold;color:#dc2626;background:#fee2e2;padding:12px 20px;border-radius:8px;display:inline-block;margin:12px 0}
+.meta{background:#eff6ff;padding:12px 16px;border-radius:6px;margin:12px 0;font-size:.88em}
+.meta p{margin:4px 0}
+table{border-collapse:collapse;width:100%;margin:12px 0;font-size:.85em}
+th,td{border:1px solid #e5e7eb;padding:8px 12px;text-align:left}
+th{background:#f3f4f6}
+.blocking{background:#fee2e2;border-left:4px solid #dc2626;padding:12px;border-radius:4px;margin:12px 0}
+.blocking li{color:#991b1b;margin:4px 0}
+.screenshots{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:16px 0}
+.ss img{width:100%;border:1px solid #e5e7eb;border-radius:6px}
+</style></head>
+<body>
+<h1>PM Independent Verification Runner</h1>
+<div class="status">❌ FAIL</div>
+<div class="meta">
+  <p><strong>検証日時:</strong> 2026-06-28T01:03:03.731Z</p>
+  <p><strong>Bundle URL:</strong> <a href="https://sisidam-stack.github.io/pm-evidence/consul/archive/consul-E1-20260628-v4-58eb7a1/">https://sisidam-stack.github.io/pm-evidence/consul/archive/consul-E1-20260628-v4-58eb7a1/</a></p>
+  <p><strong>bundle_id:</strong> consul-E1-20260628-v4-58eb7a1 ✅</p>
+  <p><strong>commit_id:</strong> 58eb7a1 ✅</p>
+  <p><strong>公開URL:</strong> <a href="https://www.consul-tenshoku.com">https://www.consul-tenshoku.com</a></p>
+  <p><strong>hash_check:</strong> FAIL</p>
+  <p><strong>live_dom_check:</strong> PASS</p>
+  <p><strong>public_url_check:</strong> PASS</p>
+  <p><strong>screenshot_check:</strong> PASS</p>
+  <p><strong>ng_words_found:</strong> []</p>
+  <p><strong>checklist_items:</strong> 16</p>
+</div>
+<div class="blocking"><strong>ブロック理由:</strong><ul><li>ハッシュ不一致: metadata.json</li></ul></div>
+<h2>ファイル別チェック結果</h2>
+<table><tr><th>チェック項目</th><th>結果</th></tr><tr><td>index.html</td><td style="color:#16a34a;font-weight:bold">OK</td></tr>
+<tr><td>verification.json</td><td style="color:#16a34a;font-weight:bold">OK</td></tr>
+<tr><td>metadata.json</td><td style="color:#16a34a;font-weight:bold">OK</td></tr>
+<tr><td>live-dom-check.json</td><td style="color:#16a34a;font-weight:bold">OK</td></tr>
+<tr><td>live-public.html</td><td style="color:#16a34a;font-weight:bold">OK</td></tr>
+<tr><td>evidence.json</td><td style="color:#16a34a;font-weight:bold">OK</td></tr>
+<tr><td>pc/01_fv.png</td><td style="color:#16a34a;font-weight:bold">OK</td></tr>
+<tr><td>sp/01_fv.png</td><td style="color:#16a34a;font-weight:bold">OK</td></tr>
+<tr><td>bundle_id_match</td><td style="color:#16a34a;font-weight:bold">PASS</td></tr>
+<tr><td>commit_id_match</td><td style="color:#16a34a;font-weight:bold">PASS</td></tr>
+<tr><td>pm_review_status</td><td style="color:#16a34a;font-weight:bold">PASS</td></tr>
+<tr><td>ng_check_status</td><td style="color:#16a34a;font-weight:bold">PASS</td></tr>
+<tr><td>checklist_items</td><td style="color:#16a34a;font-weight:bold">PASS</td></tr>
+<tr><td>public_url_match</td><td style="color:#16a34a;font-weight:bold">PASS</td></tr>
+<tr><td>hash_check</td><td style="color:#dc2626;font-weight:bold">FAIL</td></tr>
+<tr><td>live_ng_check</td><td style="color:#16a34a;font-weight:bold">PASS</td></tr>
+<tr><td>live_html_hash_match</td><td style="color:#16a34a;font-weight:bold">PASS</td></tr>
+<tr><td>public_ng_check</td><td style="color:#16a34a;font-weight:bold">PASS</td></tr>
+<tr><td>public_html_hash</td><td style="color:#dc2626;font-weight:bold">57db75f9922de8743b3bf7b67cfe266f</td></tr>
+<tr><td>dom_diff</td><td style="color:#dc2626;font-weight:bold">DIFFERS(cache or update)</td></tr>
+<tr><td>public_url_check_detail</td><td style="color:#16a34a;font-weight:bold">PASS</td></tr>
+<tr><td>screenshot_check</td><td style="color:#16a34a;font-weight:bold">PASS</td></tr></table>
+<h2>スクリーンショット（独立取得）</h2>
+<div class="screenshots">
+  <div class="ss"><h3>PC (1280px)</h3><img src="pc-recheck.png" alt="PC"></div>
+  <div class="ss"><h3>SP (375px)</h3><img src="sp-recheck.png" alt="SP"></div>
+</div>
+<p style="font-size:.75em;color:#9ca3af;margin-top:24px">
+  PM Independent Verification Runner — 2026-06-28T01:03:03.731Z
+</p>
+</body></html>
