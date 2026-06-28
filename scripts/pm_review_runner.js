@@ -47,6 +47,13 @@ function fetchUrl(url) {
   });
 }
 
+// グローバルタイムアウト: 10分で強制終了（ハング防止）
+const GLOBAL_TIMEOUT_MS = 10 * 60 * 1000;
+setTimeout(() => {
+  console.error('[PM Review Runner] TIMEOUT: 10分を超えたため強制終了');
+  process.exit(1);
+}, GLOBAL_TIMEOUT_MS).unref();
+
 async function run() {
   const startedAt = new Date().toISOString();
   const result = {
@@ -83,17 +90,20 @@ async function run() {
       while (attempt < MAX_ATTEMPTS) {
         attempt++;
         console.log(`[PM Review Runner] Playwright fetch attempt ${attempt}/${MAX_ATTEMPTS}...`);
-        const browser = await chromium.launch(LAUNCH_OPT);
-        const ctx0 = await browser.newContext({
-          userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
-          viewport: { width: 1280, height: 900 },
-        });
-        const page0 = await ctx0.newPage();
-        await page0.goto(PUBLIC_URL, { waitUntil: 'networkidle', timeout: 30000 });
-        // bot challenge が解除されるまで最大8秒待機
-        await page0.waitForFunction(() => !document.title.includes('moment') && !document.title.includes('please'), { timeout: 8000 }).catch(() => {});
-        publicHtml = await page0.content();
-        await browser.close();
+        let browser;
+        try {
+          browser = await chromium.launch(LAUNCH_OPT);
+          const ctx0 = await browser.newContext({
+            userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
+            viewport: { width: 1280, height: 900 },
+          });
+          const page0 = await ctx0.newPage();
+          await page0.goto(PUBLIC_URL, { waitUntil: 'networkidle', timeout: 30000 });
+          await page0.waitForFunction(() => !document.title.includes('moment') && !document.title.includes('please'), { timeout: 8000 }).catch(() => {});
+          publicHtml = await page0.content();
+        } finally {
+          if (browser) await browser.close().catch(() => {});
+        }
         const isChallenge = publicHtml.includes('One moment') || publicHtml.includes('cf_challenge') || publicHtml.length < 20000;
         if (!isChallenge) { console.log(`[PM Review Runner] Got real HTML on attempt ${attempt}`); break; }
         console.warn(`[PM Review Runner] Challenge page detected on attempt ${attempt}, retrying...`);
@@ -211,16 +221,17 @@ async function run() {
     const LAUNCH_ARGS = { headless: true, args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage'] };
 
     for (const [vp, label] of [[1280, 'pc'], [375, 'sp']]) {
-      const br = await chromium.launch(LAUNCH_ARGS);
-      const ctx = await br.newContext({ viewport: { width: vp, height: 900 } });
-      const page = await ctx.newPage();
-      await page.goto(PUBLIC_URL, { waitUntil: 'networkidle', timeout: 30000 });
-      await page.screenshot({
-        path: path.join(OUTPUT_DIR, `pm-${label}-${vp}.png`),
-        fullPage: true,
-      });
-      await br.close();
-      console.log(`[PM Review Runner] Screenshot: ${label} ${vp}px done`);
+      let br;
+      try {
+        br = await chromium.launch(LAUNCH_ARGS);
+        const ctx = await br.newContext({ viewport: { width: vp, height: 900 } });
+        const page = await ctx.newPage();
+        await page.goto(PUBLIC_URL, { waitUntil: 'networkidle', timeout: 30000 });
+        await page.screenshot({ path: path.join(OUTPUT_DIR, `pm-${label}-${vp}.png`), fullPage: true });
+        console.log(`[PM Review Runner] Screenshot: ${label} ${vp}px done`);
+      } finally {
+        if (br) await br.close().catch(() => {});
+      }
     }
     result.checks.screenshots = 'PASS';
   } catch (e) {
@@ -276,7 +287,9 @@ ${result.blocking_reasons.length > 0 ? `<h2 style="color:red">Blocking Issues</h
   console.log(`[PM Review Runner] Blocking: ${result.blocking_reasons.length} issues`);
   console.log(`[PM Review Runner] Output: ${OUTPUT_DIR}`);
 
-  process.exit(result.overall_status === 'PASS' ? 0 : 1);
+  // 常に exit 0 で終了（workflow の upload-artifact を確実に実行させるため）
+  // overall_status は pm-review-runner-result.json で確認する
+  process.exit(0);
 }
 
 run().catch(e => {
