@@ -15,10 +15,11 @@
     "sp/01_fv.png": "46ad3fa1c689fa70b9b73f5d86045b1d",
     "live-public.html": "57db75f9922de8743b3bf7b67cfe266f"
   },
-  "pm_review_status": "READY",
+  "pm_review_status": "SUPERSEDED",
   "pm_reviewed_at": null,
   "pm_review_bundle": null,
   "evidence_bundle_id": "consul-E1-20260628-v5-READY",
   "archive_url": "https://sisidam-stack.github.io/pm-evidence/consul/archive/consul-E1-20260628-v5-READY/",
-  "notes": "v1.2 Final PRE_FLIGHT PASS後の正式Bundle。UTF-8バグ修正済み。公開サイトFreeze。"
+  "notes": "v1.2 Final PRE_FLIGHT PASS後の正式Bundle。UTF-8バグ修正済み。公開サイトFreeze。",
+  "superseded_reason": "PM独立レビューREJECT: RV-010/RV-020再発 / PM-001/PM-003未解消"
 }
