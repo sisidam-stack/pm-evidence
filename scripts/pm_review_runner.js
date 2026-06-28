@@ -73,19 +73,32 @@ async function run() {
   try {
     if (USE_PLAYWRIGHT_HTML) {
       const { chromium } = require('playwright');
-      const browser = await chromium.launch({
+      const LAUNCH_OPT = {
         headless: true,
         args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage'],
-      });
-      const ctx0 = await browser.newContext({
-        userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
-        viewport: { width: 1280, height: 900 },
-      });
-      const page0 = await ctx0.newPage();
-      await page0.goto(PUBLIC_URL, { waitUntil: 'networkidle', timeout: 30000 });
-      await page0.waitForFunction(() => !document.title.includes('moment'), { timeout: 15000 }).catch(() => {});
-      publicHtml = await page0.content();
-      await browser.close();
+      };
+      // ホスティング側のbot保護を回避するため最大3回リトライ
+      let attempt = 0;
+      const MAX_ATTEMPTS = 3;
+      while (attempt < MAX_ATTEMPTS) {
+        attempt++;
+        console.log(`[PM Review Runner] Playwright fetch attempt ${attempt}/${MAX_ATTEMPTS}...`);
+        const browser = await chromium.launch(LAUNCH_OPT);
+        const ctx0 = await browser.newContext({
+          userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
+          viewport: { width: 1280, height: 900 },
+        });
+        const page0 = await ctx0.newPage();
+        await page0.goto(PUBLIC_URL, { waitUntil: 'networkidle', timeout: 30000 });
+        // bot challenge が解除されるまで最大8秒待機
+        await page0.waitForFunction(() => !document.title.includes('moment') && !document.title.includes('please'), { timeout: 8000 }).catch(() => {});
+        publicHtml = await page0.content();
+        await browser.close();
+        const isChallenge = publicHtml.includes('One moment') || publicHtml.includes('cf_challenge') || publicHtml.length < 20000;
+        if (!isChallenge) { console.log(`[PM Review Runner] Got real HTML on attempt ${attempt}`); break; }
+        console.warn(`[PM Review Runner] Challenge page detected on attempt ${attempt}, retrying...`);
+        if (attempt < MAX_ATTEMPTS) await new Promise(r => setTimeout(r, 3000));
+      }
     } else {
       // HTTP-only モード（Codex/制限環境向け）
       const res = await fetchUrl(PUBLIC_URL);
