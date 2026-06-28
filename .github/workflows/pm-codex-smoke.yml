@@ -1,0 +1,83 @@
+name: PM Codex Smoke Test
+
+# Codex Action の最小疎通テスト
+# Playwright なし / ネットアクセスなし / タスクは JSON 1ファイル作成のみ
+
+on:
+  workflow_dispatch:
+
+jobs:
+  codex-smoke:
+    name: Codex Smoke Test (Self-Hosted)
+    runs-on: [self-hosted, pm-review, macos]
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Prepare input file
+        run: |
+          mkdir -p codex-smoke-output
+          echo '{"test":"Codex smoke input","readme_exists":true}' > codex-smoke-output/input.json
+
+      - name: Codex Smoke Task
+        id: codex-smoke
+        uses: openai/codex-action@v1
+        timeout-minutes: 3
+        with:
+          prompt: |
+            以下のタスクを実行してください（ネットアクセス不要・Playwright不要）。
+
+            1. `codex-smoke-output/input.json` を読む
+            2. 現在時刻を取得する
+            3. 以下の内容で `codex-smoke-output/codex-smoke-result.json` を作成する:
+
+            ```bash
+            cat > codex-smoke-output/codex-smoke-result.json << 'JSON'
+            {
+              "status": "PASS",
+              "verified_at": "$(date -u +%Y-%m-%dT%H:%M:%SZ)",
+              "agent": "Codex PM Review Agent",
+              "task": "smoke-test",
+              "message": "Codex is operational on self-hosted runner"
+            }
+            JSON
+            ```
+
+            4. ファイルを cat で表示する
+            5. 完了後 exit する
+          openai-api-key: ${{ secrets.OPENAI_API_KEY }}
+        continue-on-error: true
+
+      - name: Check result
+        id: check
+        run: |
+          if [ -f codex-smoke-output/codex-smoke-result.json ]; then
+            echo "codex_status=PASS" >> $GITHUB_OUTPUT
+            cat codex-smoke-output/codex-smoke-result.json
+          else
+            echo "codex_status=SKIPPED" >> $GITHUB_OUTPUT
+            echo '{"status":"SKIPPED","reason":"Codex did not produce output"}' > codex-smoke-output/codex-smoke-result.json
+            echo "Codex出力なし（SKIPPEDとして記録）"
+          fi
+
+      - name: Upload artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: codex-smoke-${{ github.run_id }}
+          path: codex-smoke-output/
+          retention-days: 7
+
+      - name: Summary
+        if: always()
+        run: |
+          STATUS="${{ steps.check.outputs.codex_status || 'UNKNOWN' }}"
+          echo "## PM Codex Smoke Test" >> $GITHUB_STEP_SUMMARY
+          echo "| 項目 | 結果 |" >> $GITHUB_STEP_SUMMARY
+          echo "|---|---|" >> $GITHUB_STEP_SUMMARY
+          echo "| Codex Action | openai/codex-action@v1 |" >> $GITHUB_STEP_SUMMARY
+          echo "| Runner | self-hosted / pm-review / macOS |" >> $GITHUB_STEP_SUMMARY
+          echo "| Codex Status | **${STATUS}** |" >> $GITHUB_STEP_SUMMARY
+          echo "| Task | JSON 1ファイル作成（Playwright不使用） |" >> $GITHUB_STEP_SUMMARY

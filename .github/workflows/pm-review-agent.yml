@@ -121,6 +121,60 @@ jobs:
       - name: Run PM Review Agent
         run: node scripts/pm_review_runner.js
 
+      # ── Codex 補助分析（optional・本体のPASS/FAILに影響しない）──────────
+      # Artifacts を読むだけ（Playwright・公開URL取得・DOM解析はしない）
+      - name: Codex Supplemental Analysis (Optional)
+        id: codex-analysis
+        uses: openai/codex-action@v1
+        timeout-minutes: 3
+        continue-on-error: true   # 失敗してもワークフロー全体を止めない
+        with:
+          prompt: |
+            あなたは PM Review Agent の補助分析担当です。
+            すでに pm_review_runner.js が証跡を生成しています。
+
+            以下のファイルを読み込み、PM向け所見を `pm-review-output/pm-codex-analysis.md` に出力してください。
+            ネットアクセス・Playwright・DOM解析は不要です。
+
+            読み込むファイル:
+            - pm-review-output/pm-review-runner-result.json
+            - pm-review-output/pm-dom-summary.json
+
+            出力するファイル: pm-review-output/pm-codex-analysis.md
+
+            出力形式:
+            ```
+            # Codex 補助分析レポート
+            - 分析日時: <現在時刻>
+            - review_id: <review_idの値>
+            - overall_status: <値>
+
+            ## チェック結果サマリー
+            <checks の各項目と結果を箇条書き>
+
+            ## PM向け所見
+            <blocking_reasonsが0件なら「問題なし」、あれば具体的に記載>
+
+            ## 注記
+            この分析は pm_review_runner.js の出力を基にしたCodex補助所見です。
+            APPROVED / REJECT の判定は ChatGPT PM が行います。
+            ```
+
+            ファイル作成後、内容を表示して終了してください。
+          openai-api-key: ${{ secrets.OPENAI_API_KEY }}
+
+      - name: Record Codex status
+        if: always()
+        run: |
+          if [ -f pm-review-output/pm-codex-analysis.md ]; then
+            echo "codex_status=PASS" >> $GITHUB_ENV
+            echo "Codex補助分析: 生成済み"
+          else
+            echo "codex_status=SKIPPED" >> $GITHUB_ENV
+            echo "Codex補助分析: スキップ（本体には影響なし）"
+            echo "_Codex補助分析は生成されませんでした（任意項目）_" > pm-review-output/pm-codex-analysis.md
+          fi
+
       - name: Upload Artifacts
         if: always()
         uses: actions/upload-artifact@v4
@@ -132,6 +186,7 @@ jobs:
       - name: Summary
         if: always()
         run: |
+          CODEX_STATUS="${codex_status:-UNKNOWN}"
           echo "## PM Review Agent v2.0" >> $GITHUB_STEP_SUMMARY
           echo "| 項目 | 値 |" >> $GITHUB_STEP_SUMMARY
           echo "|---|---|" >> $GITHUB_STEP_SUMMARY
@@ -147,5 +202,7 @@ jobs:
             echo "| CloudFlare Blocked | ${CF} |" >> $GITHUB_STEP_SUMMARY
             echo "| Blocking Issues | ${BLOCKING} |" >> $GITHUB_STEP_SUMMARY
           fi
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| Codex 補助分析 | ${CODEX_STATUS} （任意） |" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "**APPROVED / REJECT は ChatGPT PM のみが Artifacts を確認して判定します。**" >> $GITHUB_STEP_SUMMARY
