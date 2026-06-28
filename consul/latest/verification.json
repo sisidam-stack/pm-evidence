@@ -8,12 +8,12 @@
   "ng_check_status": "PASS",
   "checklist_items": 16,
   "files": {
-    "metadata.json": "c04011968a15f7b7227828cebab98e59",
+    "metadata.json": "cec63cfa5f8e783760406693514a8492",
     "live-dom-check.json": "f75d3e9ddbba11918d9492a86a2257ee",
-    "live-public.html": "cc392ff824eb9ef1f1ad45c152b67851",
     "evidence.json": "7d60beee58acc0628527030ab67951c7",
     "pc/01_fv.png": "d6a0aa90d392c5c95283ea5b9db6e517",
-    "sp/01_fv.png": "46ad3fa1c689fa70b9b73f5d86045b1d"
+    "sp/01_fv.png": "46ad3fa1c689fa70b9b73f5d86045b1d",
+    "live-public.html": "cc392ff824eb9ef1f1ad45c152b67851"
   },
   "pm_review_status": "READY",
   "pm_reviewed_at": null,
