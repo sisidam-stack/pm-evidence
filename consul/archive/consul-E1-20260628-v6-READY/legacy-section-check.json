@@ -1,0 +1,14 @@
+{
+  "gate": "Legacy Section Gate",
+  "layer": "B",
+  "status": "PASS",
+  "coverage": {
+    "checked_patterns": [
+      "申し込み前に確認したい点",
+      "申込前に確認したい点"
+    ],
+    "found": []
+  },
+  "issues": [],
+  "checked_at": "2026-06-28T02:09:42.085Z"
+}

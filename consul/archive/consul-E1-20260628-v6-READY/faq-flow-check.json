@@ -1,11 +1,9 @@
 {
-  "gate": "Template Leak Gate",
+  "gate": "FAQ Flow Gate",
   "layer": "B",
   "status": "PASS",
   "coverage": {
-    "site_key": "consul",
-    "checked_words": 9,
-    "found": []
+    "faq_h2_exists": true
   },
   "issues": [],
   "checked_at": "2026-06-28T02:09:42.083Z"

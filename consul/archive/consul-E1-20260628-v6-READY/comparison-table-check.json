@@ -1,0 +1,17 @@
+{
+  "gate": "Comparison Table Gate",
+  "layer": "B",
+  "status": "PASS",
+  "coverage": {
+    "company_count": 3,
+    "row_count": 8,
+    "headers": [
+      "比較項目",
+      "Groovement Agent",
+      "アクシスコンサルティング（競合A）",
+      "ムービン（競合B）"
+    ]
+  },
+  "issues": [],
+  "checked_at": "2026-06-28T02:09:42.084Z"
+}

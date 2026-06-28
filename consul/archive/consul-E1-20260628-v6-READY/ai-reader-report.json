@@ -1,0 +1,56 @@
+{
+  "gate": "AI Reader Gate",
+  "layer": "D",
+  "status": "PASS",
+  "model_used": "gpt-4o",
+  "input_type": "HTML text (live-public.html)",
+  "issues": [
+    {
+      "severity": "MAJOR",
+      "location": "記事全体",
+      "issue": "同じ内容が繰り返されているため、情報が散逸し、読者が混乱する可能性がある。"
+    },
+    {
+      "severity": "MAJOR",
+      "location": "サービスの概要説明",
+      "issue": "概念の説明が曖昧な部分があり、読者に具体的なイメージが伝わりづらい。"
+    },
+    {
+      "severity": "MINOR",
+      "location": "料金体系の説明",
+      "issue": "利用料金の明確な情報が記載されておらず、読者に不安を与える可能性がある。"
+    },
+    {
+      "severity": "MINOR",
+      "location": "口コミと評判の節",
+      "issue": "実際の利用者の声が少ない点を強調しすぎており、ポジティブな側面が埋もれてしまう。"
+    },
+    {
+      "severity": "INFO",
+      "location": "まとめ文",
+      "issue": "記事全体の要約を強化することで、読者が各要素をすぐに理解できるようにする。"
+    }
+  ],
+  "reader_summary": "情報量豊富だが繰り返し表現が多く読みづらい。",
+  "blocker_count": 0,
+  "major_count": 2,
+  "minor_count": 2,
+  "info_count": 1,
+  "checked_at": "2026-06-28T02:09:59.747Z",
+  "top3_issues": [
+    "1. [MAJOR] 記事全体: 同じ内容が繰り返されているため、情報が散逸し、読者が混乱する可能性がある。",
+    "2. [MAJOR] サービスの概要説明: 概念の説明が曖昧な部分があり、読者に具体的なイメージが伝わりづらい。",
+    "3. [MINOR] 料金体系の説明: 利用料金の明確な情報が記載されておらず、読者に不安を与える可能性がある。"
+  ],
+  "reader_score": 50,
+  "score_judgment": "50点 要改善（KPI目標: 70→85→90）",
+  "score_breakdown": {
+    "blocker": 0,
+    "major": 2,
+    "minor": 2,
+    "info": 1,
+    "formula": "100 - (0×100) - (2×20) - (2×5) = 50"
+  },
+  "calibration_note": "スコア閾値（90/80）は仮設定。数十件収集後にPM承認結果と比較してキャリブレーション予定。",
+  "note": "AI Reader はアシスタント。BLOCKER=0かつScore>=90でPASS。PMが最終承認判断。"
+}
