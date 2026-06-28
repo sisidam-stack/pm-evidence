@@ -1,0 +1,14 @@
+{
+  "name": "pm-evidence",
+  "version": "2.0.0",
+  "description": "PM Evidence Repository - Independent Verification Tools",
+  "scripts": {
+    "pm-review": "node scripts/pm_review_runner.js"
+  },
+  "dependencies": {
+    "playwright": "^1.44.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
