@@ -13,7 +13,8 @@
     "live-public.html": "4ada77842f6493586964ade96fbde75b",
     "evidence.json": "011a2119703c4e5d2aa10344ddd4d224",
     "pc/01_fv.png": "f3811e154763c16918d08e5bbd2e9b0e",
-    "sp/01_fv.png": "f9009b7beeb9858fb236466d6a7988e6"
+    "sp/01_fv.png": "f9009b7beeb9858fb236466d6a7988e6",
+    "gate_registry.json": "c52a37324b7fd08743b00f7fa7681d1e"
   },
   "pm_review_status": "READY",
   "pm_reviewed_at": null,
