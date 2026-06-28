@@ -1,0 +1,151 @@
+name: PM Review Agent v2.0
+
+# Evidence Framework v2.0
+# PM側 self-hosted runner で公開HTML取得・スクリーンショット・DOM解析を実行する。
+# Codex Action は使用しない。
+
+on:
+  workflow_dispatch:
+    inputs:
+      site_key:
+        description: 'サイトキー (consul / tokyo / osaka / uwaki / recoverywear)'
+        required: true
+        default: 'consul'
+      public_url:
+        description: '公開URL'
+        required: true
+        default: 'https://www.consul-tenshoku.com'
+      bundle_id:
+        description: 'Bundle ID'
+        required: true
+        default: 'consul-E1-20260628-v6-READY'
+      review_id:
+        description: 'Review ID'
+        required: true
+        default: 'CSL-E1-20260628-V6'
+      expected_live_html_hash:
+        description: 'Evidence Bundle の live_html_hash'
+        required: true
+        default: 'cc392ff824eb9ef1f1ad45c152b67851'
+
+  push:
+    paths:
+      - '*/archive/**/verification.json'
+
+jobs:
+  # ── READY 検知 ────────────────────────────────────────────────────────
+  detect-ready:
+    name: Detect READY Bundle
+    runs-on: [self-hosted, pm-review, macos]
+    outputs:
+      should_run: ${{ steps.check.outputs.should_run }}
+      site_key: ${{ steps.check.outputs.site_key }}
+      public_url: ${{ steps.check.outputs.public_url }}
+      bundle_id: ${{ steps.check.outputs.bundle_id }}
+      review_id: ${{ steps.check.outputs.review_id }}
+      live_html_hash: ${{ steps.check.outputs.live_html_hash }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Detect READY or use dispatch inputs
+        id: check
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "should_run=true"                                          >> $GITHUB_OUTPUT
+            echo "site_key=${{ inputs.site_key }}"                         >> $GITHUB_OUTPUT
+            echo "public_url=${{ inputs.public_url }}"                     >> $GITHUB_OUTPUT
+            echo "bundle_id=${{ inputs.bundle_id }}"                       >> $GITHUB_OUTPUT
+            echo "review_id=${{ inputs.review_id }}"                       >> $GITHUB_OUTPUT
+            echo "live_html_hash=${{ inputs.expected_live_html_hash }}"    >> $GITHUB_OUTPUT
+            exit 0
+          fi
+
+          CHANGED=$(git diff --name-only HEAD~1 HEAD | grep 'verification\.json' | grep 'archive/' | head -1)
+          if [ -z "${CHANGED}" ]; then echo "should_run=false" >> $GITHUB_OUTPUT; exit 0; fi
+
+          STATUS=$(jq -r '.pm_review_status // empty' "${CHANGED}" 2>/dev/null)
+          if [ "${STATUS}" != "READY" ]; then echo "should_run=false" >> $GITHUB_OUTPUT; exit 0; fi
+
+          BUNDLE_ID=$(jq -r '.bundle_id // .evidence_bundle_id' "${CHANGED}")
+          PUBLIC_URL=$(jq -r '.public_url' "${CHANGED}")
+          LIVE_HASH=$(jq -r '.live_html_hash' "${CHANGED}")
+          SITE_KEY=$(jq -r '.site_key // empty' "${CHANGED}")
+          [ -z "${SITE_KEY}" ] && SITE_KEY=$(echo "${CHANGED}" | cut -d'/' -f1)
+          METADATA="${CHANGED%verification.json}metadata.json"
+          REVIEW_ID=$([ -f "${METADATA}" ] && jq -r '.review_id // empty' "${METADATA}" || echo "${BUNDLE_ID}")
+
+          echo "should_run=true"             >> $GITHUB_OUTPUT
+          echo "site_key=${SITE_KEY}"        >> $GITHUB_OUTPUT
+          echo "public_url=${PUBLIC_URL}"    >> $GITHUB_OUTPUT
+          echo "bundle_id=${BUNDLE_ID}"      >> $GITHUB_OUTPUT
+          echo "review_id=${REVIEW_ID}"      >> $GITHUB_OUTPUT
+          echo "live_html_hash=${LIVE_HASH}" >> $GITHUB_OUTPUT
+
+  # ── PM Review Agent（Self-Hosted / 本番）─────────────────────────────
+  pm-review:
+    name: PM Review Agent (Self-Hosted)
+    needs: detect-ready
+    if: needs.detect-ready.outputs.should_run == 'true'
+    runs-on: [self-hosted, pm-review, macos]
+    timeout-minutes: 15
+
+    env:
+      SITE_KEY: ${{ needs.detect-ready.outputs.site_key }}
+      PUBLIC_URL: ${{ needs.detect-ready.outputs.public_url }}
+      BUNDLE_ID: ${{ needs.detect-ready.outputs.bundle_id }}
+      REVIEW_ID: ${{ needs.detect-ready.outputs.review_id }}
+      EXPECTED_LIVE_HTML_HASH: ${{ needs.detect-ready.outputs.live_html_hash }}
+      OUTPUT_DIR: ${{ github.workspace }}/pm-review-output
+      USE_PLAYWRIGHT_HTML: 'true'
+      USE_PLAYWRIGHT_SS: 'true'
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Install Playwright browsers
+        run: npx playwright install chromium
+
+      - name: Run PM Review Agent
+        run: node scripts/pm_review_runner.js
+
+      - name: Upload Artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pm-review-${{ needs.detect-ready.outputs.review_id }}-${{ github.run_id }}
+          path: pm-review-output/
+          retention-days: 30
+
+      - name: Summary
+        if: always()
+        run: |
+          echo "## PM Review Agent v2.0" >> $GITHUB_STEP_SUMMARY
+          echo "| 項目 | 値 |" >> $GITHUB_STEP_SUMMARY
+          echo "|---|---|" >> $GITHUB_STEP_SUMMARY
+          echo "| Runner | self-hosted / pm-review / macOS |" >> $GITHUB_STEP_SUMMARY
+          echo "| Review ID | ${{ needs.detect-ready.outputs.review_id }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Bundle ID | ${{ needs.detect-ready.outputs.bundle_id }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Public URL | ${{ needs.detect-ready.outputs.public_url }} |" >> $GITHUB_STEP_SUMMARY
+          if [ -f pm-review-output/pm-review-runner-result.json ]; then
+            STATUS=$(jq -r '.overall_status' pm-review-output/pm-review-runner-result.json)
+            CF=$(jq -r '.cloudflare_blocked // false' pm-review-output/pm-review-runner-result.json)
+            BLOCKING=$(jq -r '.blocking_reasons | length' pm-review-output/pm-review-runner-result.json)
+            echo "| **Overall** | **${STATUS}** |" >> $GITHUB_STEP_SUMMARY
+            echo "| CloudFlare Blocked | ${CF} |" >> $GITHUB_STEP_SUMMARY
+            echo "| Blocking Issues | ${BLOCKING} |" >> $GITHUB_STEP_SUMMARY
+          fi
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**APPROVED / REJECT は ChatGPT PM のみが Artifacts を確認して判定します。**" >> $GITHUB_STEP_SUMMARY
