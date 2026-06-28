@@ -1,0 +1,129 @@
+{
+  "status": "PASS",
+  "total_links": 17,
+  "checked": 17,
+  "broken_count": 0,
+  "broken_links": [],
+  "results": [
+    {
+      "url": "https://www.consul-tenshoku.com/",
+      "final_url": null,
+      "status": 200,
+      "ok": true,
+      "has_error_content": false
+    },
+    {
+      "url": "https://www.consul-tenshoku.com/feed/",
+      "final_url": null,
+      "status": 200,
+      "ok": true,
+      "has_error_content": false
+    },
+    {
+      "url": "https://www.consul-tenshoku.com/comments/feed/",
+      "final_url": null,
+      "status": 200,
+      "ok": true,
+      "has_error_content": false
+    },
+    {
+      "url": "https://www.consul-tenshoku.com/wp-content/themes/swell/build/css/noscript.css",
+      "final_url": null,
+      "status": 200,
+      "ok": true,
+      "has_error_content": false
+    },
+    {
+      "url": "https://www.consul-tenshoku.com/wp-json/",
+      "final_url": null,
+      "status": 200,
+      "ok": true,
+      "has_error_content": false
+    },
+    {
+      "url": "https://www.consul-tenshoku.com/wp-json/wp/v2/pages/109",
+      "final_url": null,
+      "status": 200,
+      "ok": true,
+      "has_error_content": false
+    },
+    {
+      "url": "https://www.consul-tenshoku.com/wp-content/themes/swell/build/css/print.css",
+      "final_url": null,
+      "status": 200,
+      "ok": true,
+      "has_error_content": false
+    },
+    {
+      "url": "https://www.consul-tenshoku.com/hello-world/",
+      "final_url": null,
+      "status": 200,
+      "ok": true,
+      "has_error_content": false
+    },
+    {
+      "url": "https://px.a8.net/svt/ejp?a8mat=4B40FD+AGVIKA+4SXU+NTJWY",
+      "final_url": "https://groovement-agent.com/?a8=-_VYE_Q1r5Pav4PBPIvSucHKb1DivnoYcIvRnDKGByZ1r4VlA4e_L43_z5tBeB3vLyf",
+      "status": 200,
+      "ok": true,
+      "has_error_content": false
+    },
+    {
+      "url": "https://en-hyouban.com/company/10201476572/",
+      "final_url": null,
+      "status": 200,
+      "ok": true,
+      "note": "playwright_blocked_site"
+    },
+    {
+      "url": "https://www.openwork.jp/company.php?m_id=a0C2x00000amQiw",
+      "final_url": null,
+      "status": 200,
+      "ok": true,
+      "note": "playwright_blocked_site"
+    },
+    {
+      "url": "https://morejob.co.jp/",
+      "final_url": null,
+      "status": 200,
+      "ok": true,
+      "has_error_content": false
+    },
+    {
+      "url": "https://sisidam-stack.github.io/pm-evidence/consul/latest/checklist.html",
+      "final_url": null,
+      "status": 200,
+      "ok": true,
+      "has_error_content": false
+    },
+    {
+      "url": "https://www.consul-tenshoku.com/hello-world/#comment-1",
+      "final_url": null,
+      "status": 200,
+      "ok": true,
+      "has_error_content": false
+    },
+    {
+      "url": "https://wordpress.org/",
+      "final_url": null,
+      "status": 200,
+      "ok": true,
+      "has_error_content": false
+    },
+    {
+      "url": "https://www.consul-tenshoku.com/2026/05/",
+      "final_url": "https://www.consul-tenshoku.com/",
+      "status": 200,
+      "ok": true,
+      "has_error_content": false
+    },
+    {
+      "url": "https://www.consul-tenshoku.com/category/uncategorized/",
+      "final_url": null,
+      "status": 200,
+      "ok": true,
+      "has_error_content": false
+    }
+  ],
+  "checked_at": "2026-06-28T01:37:59.477Z"
+}

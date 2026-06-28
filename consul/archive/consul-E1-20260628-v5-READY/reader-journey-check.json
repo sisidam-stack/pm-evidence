@@ -1,0 +1,32 @@
+{
+  "gate": "Reader Journey Gate",
+  "layer": "D",
+  "status": "PASS",
+  "article_type": "comparison-review",
+  "steps": [
+    {
+      "step": "FV",
+      "ok": true,
+      "note": "ページ読み込み成功"
+    },
+    {
+      "step": "比較表",
+      "ok": true
+    },
+    {
+      "step": "悪い口コミ",
+      "ok": true
+    },
+    {
+      "step": "FAQ",
+      "ok": true
+    },
+    {
+      "step": "CTA",
+      "ok": true,
+      "note": "href=https://px.a8.net/svt/ejp?a8mat=4B40FD+AGVIKA+4SXU+NTJWY"
+    }
+  ],
+  "checked_at": "2026-06-28T01:38:03.984Z",
+  "failed_steps": []
+}
