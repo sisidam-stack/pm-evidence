@@ -1,0 +1,165 @@
+name: PM Review Auto-Trigger v2.0
+
+# verification.json が push されたら READY 検知・自動実行
+on:
+  push:
+    paths:
+      - '*/archive/**/verification.json'
+      - 'consul/archive/**/verification.json'
+      - 'tokyo/archive/**/verification.json'
+      - 'osaka/archive/**/verification.json'
+      - 'uwaki/archive/**/verification.json'
+      - 'recoverywear/archive/**/verification.json'
+
+jobs:
+  detect-ready:
+    name: Detect READY Bundle
+    runs-on: ubuntu-latest
+    outputs:
+      should_run: ${{ steps.check.outputs.should_run }}
+      site_key: ${{ steps.check.outputs.site_key }}
+      public_url: ${{ steps.check.outputs.public_url }}
+      bundle_id: ${{ steps.check.outputs.bundle_id }}
+      review_id: ${{ steps.check.outputs.review_id }}
+      live_html_hash: ${{ steps.check.outputs.live_html_hash }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Check changed verification.json for READY status
+        id: check
+        run: |
+          # 変更されたverification.jsonを取得
+          CHANGED=$(git diff --name-only HEAD~1 HEAD | grep 'verification\.json' | grep 'archive/' | head -1)
+          echo "Changed file: ${CHANGED}"
+
+          if [ -z "${CHANGED}" ]; then
+            echo "should_run=false" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+
+          # pm_review_status を確認
+          STATUS=$(jq -r '.pm_review_status // empty' "${CHANGED}" 2>/dev/null)
+          echo "pm_review_status: ${STATUS}"
+
+          if [ "${STATUS}" != "READY" ]; then
+            echo "Not READY (status=${STATUS}). Skipping."
+            echo "should_run=false" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+
+          # verification.json から各値を取得
+          BUNDLE_ID=$(jq -r '.bundle_id // .evidence_bundle_id' "${CHANGED}")
+          PUBLIC_URL=$(jq -r '.public_url' "${CHANGED}")
+          LIVE_HASH=$(jq -r '.live_html_hash' "${CHANGED}")
+
+          # site_key は verification.json または path から取得
+          SITE_KEY=$(jq -r '.site_key // empty' "${CHANGED}")
+          if [ -z "${SITE_KEY}" ]; then
+            SITE_KEY=$(echo "${CHANGED}" | cut -d'/' -f1)
+          fi
+
+          # metadata.json から review_id を取得
+          METADATA_PATH=$(dirname "${CHANGED}")/metadata.json
+          REVIEW_ID=""
+          if [ -f "${METADATA_PATH}" ]; then
+            REVIEW_ID=$(jq -r '.review_id // empty' "${METADATA_PATH}")
+          fi
+          if [ -z "${REVIEW_ID}" ]; then
+            REVIEW_ID="${BUNDLE_ID}"
+          fi
+
+          echo "should_run=true"    >> $GITHUB_OUTPUT
+          echo "site_key=${SITE_KEY}"       >> $GITHUB_OUTPUT
+          echo "public_url=${PUBLIC_URL}"   >> $GITHUB_OUTPUT
+          echo "bundle_id=${BUNDLE_ID}"     >> $GITHUB_OUTPUT
+          echo "review_id=${REVIEW_ID}"     >> $GITHUB_OUTPUT
+          echo "live_html_hash=${LIVE_HASH}" >> $GITHUB_OUTPUT
+
+          echo "=== Auto-trigger params ==="
+          echo "site_key:     ${SITE_KEY}"
+          echo "public_url:   ${PUBLIC_URL}"
+          echo "bundle_id:    ${BUNDLE_ID}"
+          echo "review_id:    ${REVIEW_ID}"
+          echo "live_html_hash: ${LIVE_HASH}"
+
+  pm-review:
+    name: PM Review Runner (Auto)
+    needs: detect-ready
+    if: needs.detect-ready.outputs.should_run == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium
+
+      - name: Run PM Review Runner (Auto)
+        env:
+          SITE_KEY: ${{ needs.detect-ready.outputs.site_key }}
+          PUBLIC_URL: ${{ needs.detect-ready.outputs.public_url }}
+          BUNDLE_ID: ${{ needs.detect-ready.outputs.bundle_id }}
+          REVIEW_ID: ${{ needs.detect-ready.outputs.review_id }}
+          EXPECTED_LIVE_HTML_HASH: ${{ needs.detect-ready.outputs.live_html_hash }}
+          OUTPUT_DIR: ${{ github.workspace }}/pm-review-output
+        run: node scripts/pm_review_runner.js
+
+      - name: Upload Artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pm-review-${{ needs.detect-ready.outputs.review_id }}-${{ github.run_id }}
+          path: pm-review-output/
+          retention-days: 30
+
+      - name: Summary
+        if: always()
+        run: |
+          REVIEW_ID="${{ needs.detect-ready.outputs.review_id }}"
+          BUNDLE_ID="${{ needs.detect-ready.outputs.bundle_id }}"
+          PUBLIC_URL="${{ needs.detect-ready.outputs.public_url }}"
+          EXPECTED="${{ needs.detect-ready.outputs.live_html_hash }}"
+
+          echo "## PM Review Runner v2.0 (Auto)" >> $GITHUB_STEP_SUMMARY
+          echo "**トリガー:** verification.json push (pm_review_status=READY)" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| 項目 | 値 |" >> $GITHUB_STEP_SUMMARY
+          echo "|---|---|" >> $GITHUB_STEP_SUMMARY
+          echo "| Review ID | ${REVIEW_ID} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Bundle ID | ${BUNDLE_ID} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Public URL | ${PUBLIC_URL} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Expected Hash | ${EXPECTED} |" >> $GITHUB_STEP_SUMMARY
+
+          if [ -f pm-review-output/pm-review-runner-result.json ]; then
+            STATUS=$(jq -r '.overall_status' pm-review-output/pm-review-runner-result.json)
+            ACTUAL=$(jq -r '.actual_live_html_hash' pm-review-output/pm-review-runner-result.json)
+            BLOCKING=$(jq -r '.blocking_reasons | length' pm-review-output/pm-review-runner-result.json)
+            HASH_MATCH=$(jq -r '.checks.hash_match' pm-review-output/pm-review-runner-result.json)
+            echo "| **Overall** | **${STATUS}** |" >> $GITHUB_STEP_SUMMARY
+            echo "| Actual Hash | ${ACTUAL} |" >> $GITHUB_STEP_SUMMARY
+            echo "| Hash Match | ${HASH_MATCH} |" >> $GITHUB_STEP_SUMMARY
+            echo "| Blocking Issues | ${BLOCKING} |" >> $GITHUB_STEP_SUMMARY
+          fi
+
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Artifacts" >> $GITHUB_STEP_SUMMARY
+          echo "- pm-review-runner-result.json" >> $GITHUB_STEP_SUMMARY
+          echo "- pm-review.html" >> $GITHUB_STEP_SUMMARY
+          echo "- pm-public.html (PM独立取得)" >> $GITHUB_STEP_SUMMARY
+          echo "- pm-pc-1280.png (PM独立スクリーンショット)" >> $GITHUB_STEP_SUMMARY
+          echo "- pm-sp-375.png (PM独立スクリーンショット)" >> $GITHUB_STEP_SUMMARY
+          echo "- pm-dom-summary.json" >> $GITHUB_STEP_SUMMARY
