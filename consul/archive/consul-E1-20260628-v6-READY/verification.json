@@ -21,6 +21,5 @@
   "evidence_bundle_id": "consul-E1-20260628-v6-READY",
   "archive_url": "https://sisidam-stack.github.io/pm-evidence/consul/archive/consul-E1-20260628-v6-READY/",
   "supersedes": "consul-E1-20260628-v5-READY",
-  "notes": "PHP template修正: lp-toc-pc-title div削除。HTML上この記事でわかること=1回。公開Freeze中。",
-  "retrigger": "playwright-fix"
+  "notes": "PHP template修正: lp-toc-pc-title div削除。HTML上この記事でわかること=1回。公開Freeze中。"
 }
