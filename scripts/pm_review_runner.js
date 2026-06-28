@@ -69,7 +69,6 @@ async function run() {
   console.log('[PM Review Runner] Fetching public HTML via Playwright (CloudFlare bypass)...');
   let publicHtml = '';
   let publicHash = '';
-  let domSummary = {};
   try {
     const { chromium } = require('playwright');
     const browser = await chromium.launch({ headless: true });
