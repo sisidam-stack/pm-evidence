@@ -1,0 +1,18 @@
+{
+  "gate": "Review Pairing Gate",
+  "layer": "B",
+  "status": "PASS",
+  "coverage": {
+    "required_review_count": 3,
+    "bad_review_count": 3,
+    "bad_editor_count": 3,
+    "bad_pattern": "review→editor→review→editor→review→editor",
+    "good_review_count": 3,
+    "good_editor_count": 3,
+    "good_pattern": "review→editor→review→editor→review→editor",
+    "total_review": 6,
+    "total_editor": 6
+  },
+  "issues": [],
+  "checked_at": "2026-06-28T14:40:59.871Z"
+}

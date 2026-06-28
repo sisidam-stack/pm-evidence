@@ -1,0 +1,10 @@
+{
+  "gate": "CTA Flow Gate",
+  "layer": "B",
+  "status": "PASS",
+  "coverage": {
+    "cta_count": 4
+  },
+  "issues": [],
+  "checked_at": "2026-06-28T14:40:59.872Z"
+}

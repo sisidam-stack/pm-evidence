@@ -1,0 +1,51 @@
+{
+  "gate": "AI Reader Gate",
+  "layer": "D",
+  "status": "PASS",
+  "model_used": "gpt-4o",
+  "input_type": "HTML text (live-public.html)",
+  "issues": [
+    {
+      "severity": "MAJOR",
+      "location": "冒頭部分",
+      "issue": "冒頭にHello world!やカテゴリ情報が含まれているが、記事の導入としては不自然であり、読者を混乱させる可能性がある。"
+    },
+    {
+      "severity": "MAJOR",
+      "location": "内容の重複",
+      "issue": "記事全体でGroovement Agentの特徴やメリットを何度も繰り返し説明しており、情報が重複している部分が多い。"
+    },
+    {
+      "severity": "MINOR",
+      "location": "特徴や支援の説明",
+      "issue": "「伴走する形でサポート」という表現が多用されているが、具体的な内容が分かりにくい。具体例や実績をもう少し詳しく説明することで読者の理解が深まる。"
+    },
+    {
+      "severity": "INFO",
+      "location": "記事構成",
+      "issue": "具体的な読者設定（転職を検討中の30-40代ビジネスパーソン）に合った内容か確認し、ターゲットに即した情報を強調すると良い。"
+    }
+  ],
+  "reader_summary": "情報が充実するも重複や構成の改善余地がある。",
+  "blocker_count": 0,
+  "major_count": 2,
+  "minor_count": 1,
+  "info_count": 1,
+  "checked_at": "2026-06-28T14:41:18.189Z",
+  "top3_issues": [
+    "1. [MAJOR] 冒頭部分: 冒頭にHello world!やカテゴリ情報が含まれているが、記事の導入としては不自然であり、読者を混乱させる可能性がある。",
+    "2. [MAJOR] 内容の重複: 記事全体でGroovement Agentの特徴やメリットを何度も繰り返し説明しており、情報が重複している部分が多い。",
+    "3. [MINOR] 特徴や支援の説明: 「伴走する形でサポート」という表現が多用されているが、具体的な内容が分かりにくい。具体例や実績をもう少し詳しく説明することで読者の理解が深まる。"
+  ],
+  "reader_score": 55,
+  "score_judgment": "55点 要改善（KPI目標: 70→85→90）",
+  "score_breakdown": {
+    "blocker": 0,
+    "major": 2,
+    "minor": 1,
+    "info": 1,
+    "formula": "100 - (0×100) - (2×20) - (1×5) = 55"
+  },
+  "calibration_note": "スコア閾値（90/80）は仮設定。数十件収集後にPM承認結果と比較してキャリブレーション予定。",
+  "note": "AI Reader はアシスタント。BLOCKER=0かつScore>=90でPASS。PMが最終承認判断。"
+}

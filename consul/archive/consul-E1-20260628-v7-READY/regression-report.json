@@ -1,0 +1,191 @@
+{
+  "gate": "Regression Validation",
+  "layer": "E",
+  "status": "PASS",
+  "patterns_checked": [
+    {
+      "id": "RGP-001",
+      "name": "まとめ重複",
+      "gate": "Summary Gate",
+      "detected": false,
+      "expected": "FAIL",
+      "regression_pass": true,
+      "details": "まとめH2が1個"
+    },
+    {
+      "id": "RGP-002",
+      "name": "編集部コメント3連続（口コミなし）",
+      "gate": "Review Pairing Gate",
+      "detected": false,
+      "expected": "FAIL",
+      "regression_pass": true,
+      "details": "Review Pairing: PASS"
+    },
+    {
+      "id": "RGP-003",
+      "name": "二次情報口コミ（まとめサイト）",
+      "gate": "Review Source Gate",
+      "detected": false,
+      "expected": "FAIL",
+      "regression_pass": true,
+      "details": "二次情報ドメイン検出: "
+    },
+    {
+      "id": "RGP-004",
+      "name": "Google Maps 検索ページリンク（invalid coord）",
+      "gate": "Destination Validation Gate",
+      "detected": false,
+      "expected": "FAIL",
+      "regression_pass": true,
+      "details": "座標付きGoogle Maps URL"
+    },
+    {
+      "id": "RGP-005",
+      "name": "チェックリスト件数不一致",
+      "gate": "Live DOM Check",
+      "detected": false,
+      "expected": "FAIL",
+      "regression_pass": true,
+      "details": "checklist_items=16"
+    },
+    {
+      "id": "RGP-006",
+      "name": "口コミCite リンクなし",
+      "gate": "Review Source Gate",
+      "detected": false,
+      "expected": "FAIL",
+      "regression_pass": true,
+      "details": "href無しcite: 0件"
+    },
+    {
+      "id": "RGP-007",
+      "name": "特徴カード保証対象未明記",
+      "gate": "Human Visual Gate",
+      "detected": false,
+      "expected": "FAIL",
+      "regression_pass": true,
+      "details": "曖昧保証表現: "
+    },
+    {
+      "id": "RGP-008",
+      "name": "注意事項番号重複",
+      "gate": "Structural QA",
+      "detected": false,
+      "expected": "FAIL",
+      "regression_pass": true,
+      "details": "重複番号: "
+    },
+    {
+      "id": "RGP-009",
+      "name": "CTA削除",
+      "gate": "CTA Flow Gate",
+      "detected": false,
+      "expected": "FAIL",
+      "regression_pass": true,
+      "details": "CTAリンク0件"
+    },
+    {
+      "id": "RGP-010",
+      "name": "比較表2社のみ（Gold Standard：3社）",
+      "gate": "Structural QA",
+      "detected": false,
+      "expected": "FAIL",
+      "regression_pass": true,
+      "details": "比較表ヘッダー列数: 5"
+    },
+    {
+      "id": "RV-001",
+      "name": "Template Leak（他業種テンプレ残存）",
+      "gate": "Template Leak Gate",
+      "detected": false,
+      "expected": "FAIL",
+      "regression_pass": true,
+      "details": ""
+    },
+    {
+      "id": "RV-010",
+      "name": "Duplicate Content（重複コンテンツ）",
+      "gate": "Duplicate Content Gate",
+      "detected": false,
+      "expected": "FAIL",
+      "regression_pass": true,
+      "details": ""
+    },
+    {
+      "id": "RV-020",
+      "name": "Reader Consistency（読者向け論理矛盾）",
+      "gate": "Reader Consistency Gate",
+      "detected": false,
+      "expected": "FAIL",
+      "regression_pass": true,
+      "details": ""
+    },
+    {
+      "id": "RV-030",
+      "name": "Review Source Integrity（口コミ出典完全性）",
+      "gate": "Review Source Integrity Gate",
+      "detected": false,
+      "expected": "FAIL",
+      "regression_pass": true,
+      "details": "href無しcite: 0件"
+    },
+    {
+      "id": "RV-031",
+      "name": "Review Source Diversity（口コミソース多様性）",
+      "gate": "Review Source Diversity Gate",
+      "detected": false,
+      "expected": "WARNING",
+      "regression_pass": true,
+      "details": ""
+    },
+    {
+      "id": "RV-040",
+      "name": "Comparison Table Integrity（比較表構造・列幅均一）",
+      "gate": "Comparison Table Layout Gate",
+      "detected": false,
+      "expected": "FAIL",
+      "regression_pass": true,
+      "details": ""
+    },
+    {
+      "id": "RV-050",
+      "name": "Reader Flow（Gold Standard順序）",
+      "gate": "Reader Flow Gate",
+      "detected": false,
+      "expected": "FAIL",
+      "regression_pass": true,
+      "details": ""
+    },
+    {
+      "id": "RV-060",
+      "name": "Fact Type Separation（情報種別混同）",
+      "gate": "Fact Type Separation Gate",
+      "detected": false,
+      "expected": "FAIL",
+      "regression_pass": true,
+      "details": ""
+    },
+    {
+      "id": "RV-070",
+      "name": "Layout Consistency（レイアウト崩れ）",
+      "gate": "Comparison Table Layout Gate",
+      "detected": false,
+      "expected": "FAIL",
+      "regression_pass": true,
+      "details": ""
+    },
+    {
+      "id": "RV-032",
+      "name": "Review Source Accessibility（口コミ出典アクセシビリティ）",
+      "gate": "Review Source Diversity Gate",
+      "detected": false,
+      "expected": "FAIL",
+      "regression_pass": true,
+      "details": ""
+    }
+  ],
+  "failures": [],
+  "checked_at": "2026-06-28T14:41:26.894Z",
+  "patterns_total": 20,
+  "patterns_pass": 20
+}

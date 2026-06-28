@@ -1,0 +1,12 @@
+{
+  "gate": "Template Leak Gate",
+  "layer": "B",
+  "status": "PASS",
+  "coverage": {
+    "site_key": "consul",
+    "checked_words": 9,
+    "found": []
+  },
+  "issues": [],
+  "checked_at": "2026-06-28T14:40:59.873Z"
+}
