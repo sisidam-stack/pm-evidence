@@ -197,6 +197,42 @@ async function run() {
     result.checks.template_leak = templateLeakWords.length === 0 ? 'PASS' : `FAIL(${templateLeakWords.join(',')})`;
     if (templateLeakWords.length > 0) result.blocking_reasons.push(`テンプレ流用語: ${templateLeakWords.join(', ')}`);
 
+    // ── PM-007: Review Source Accessibility（RV-032）────────────────────
+    // 会員登録必須サイトのみで構成されていないかチェック
+    const REG_REQUIRED_SITES = ['openwork.jp', 'en-hyouban.com', 'vorkers.com'];
+    const FREE_ACCESS_SITES  = ['morejob.co.jp', 'morejob.jp', 'maps.google', 'chiebukuro', 'note.com', 'google.com/maps'];
+    const citeTexts = [...publicHtml.matchAll(/<cite[^>]*>(.*?)<\/cite>/gsi)]
+      .map(m => m[1].replace(/<[^>]+>/g,'').toLowerCase());
+    const hasRegRequired = citeTexts.some(c => REG_REQUIRED_SITES.some(s => c.includes(s)));
+    const hasFreeSource  = citeTexts.some(c => FREE_ACCESS_SITES.some(s => c.includes(s)));
+    const accessibilityPass = !hasRegRequired || hasFreeSource; // 必須のみ構成はFAIL
+    domSummary.review_source_accessibility = {
+      has_registration_required_source: hasRegRequired,
+      has_free_access_source: hasFreeSource,
+      cite_count: citeTexts.length,
+      cite_samples: citeTexts.slice(0,5),
+    };
+    result.checks.review_source_accessibility = accessibilityPass ? 'PASS' : 'FAIL(登録不要ソースが0件)';
+    if (!accessibilityPass) result.blocking_reasons.push('RV-032: 会員登録必須ソースのみ構成（登録不要ソースが0件）');
+    console.log(`[PM Review Runner] review_source_accessibility: ${result.checks.review_source_accessibility}`);
+
+    // ── PM-008: Comparison Column Uniform（RV-040拡張）──────────────────
+    // table-layout:fixed + 列幅均一（width:25%等が各th/tdに設定されているか）
+    const tableSection = publicHtml.match(/<figure[^>]*wp-block-table[^>]*>[\s\S]*?<\/figure>/i)?.[0] || '';
+    const hasTableFixed = /table-layout\s*:\s*fixed/.test(tableSection);
+    const thWidths = [...tableSection.matchAll(/<th[^>]*style="[^"]*width\s*:\s*(\d+%)[^"]*"/gi)]
+      .map(m => m[1]);
+    const hasUniformWidth = thWidths.length >= 3 && new Set(thWidths).size <= 2; // ほぼ均一
+    const columnUniformPass = hasTableFixed && (hasUniformWidth || /width\s*:\s*\d+%/.test(tableSection));
+    domSummary.comparison_column_uniform = {
+      table_layout_fixed: hasTableFixed,
+      th_widths_found: thWidths,
+      has_uniform_width: hasUniformWidth,
+    };
+    result.checks.comparison_column_uniform = columnUniformPass ? 'PASS' : 'FAIL(列幅均一指定なし)';
+    if (!columnUniformPass) result.blocking_reasons.push('RV-040: 比較表の列幅均一指定なし');
+    console.log(`[PM Review Runner] comparison_column_uniform: ${result.checks.comparison_column_uniform}`);
+
     // H2 リスト（記事コンテンツ内のみ。ウィジェット/フッター投稿リストを除外）
     // SWELL テーマは p-postList__title クラスでウィジェット内投稿タイトルに H2 を使うため除外
     // 対象: 全 H2 から class="p-postList__title" を持つもの・英語ウィジェット見出しを除外
