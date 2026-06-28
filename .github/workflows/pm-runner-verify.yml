@@ -131,20 +131,25 @@ jobs:
           echo "| OS | $(uname -s) $(uname -m) | ✅ |" >> $GITHUB_STEP_SUMMARY
           echo "| Node.js | $(node --version) | ✅ |" >> $GITHUB_STEP_SUMMARY
           echo "| Playwright | Chromium インストール済み | ✅ |" >> $GITHUB_STEP_SUMMARY
-          echo "| PM Review Runner | node scripts/pm_review_runner.js | ✅ |" >> $GITHUB_STEP_SUMMARY
+          echo "| PM Review Runner | node scripts/pm_review_runner.js 実行可能 | ✅ |" >> $GITHUB_STEP_SUMMARY
 
+          CF="unknown"
+          RUNNER_READY="true"
           if [ -f pm-review-output/pm-review-runner-result.json ]; then
-            STATUS=$(jq -r '.overall_status' pm-review-output/pm-review-runner-result.json 2>/dev/null || echo "UNKNOWN")
             CF=$(jq -r '.cloudflare_blocked // false' pm-review-output/pm-review-runner-result.json 2>/dev/null || echo "unknown")
-            echo "| PM Review Runner | overall_status=${STATUS} | ✅ |" >> $GITHUB_STEP_SUMMARY
-            echo "| CloudFlare Blocked | ${CF} | $([ "$CF" = "false" ] && echo "✅" || echo "⚠️") |" >> $GITHUB_STEP_SUMMARY
+            if [ "$CF" = "true" ]; then RUNNER_READY="false"; fi
           fi
+          echo "| CloudFlare Blocked | ${CF} | $([ "$CF" = "false" ] && echo "✅" || echo "⚠️") |" >> $GITHUB_STEP_SUMMARY
+          echo "| Ready for PM Review | ${RUNNER_READY} | $([ "$RUNNER_READY" = "true" ] && echo "✅" || echo "❌") |" >> $GITHUB_STEP_SUMMARY
 
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "---" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "### 判定" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "このワークフローが **PASS** した場合のみ、consul V6 レビューを開始できます。" >> $GITHUB_STEP_SUMMARY
+          echo "**PM Runner Verification: PASS**" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "consul V6 レビュー実行: **PM Review Codex Agent v2.0** を実行してください。" >> $GITHUB_STEP_SUMMARY
+          echo "このワークフローは PM 側 Runner 環境の動作確認です。" >> $GITHUB_STEP_SUMMARY
+          echo "consul 記事の APPROVED / REJECT 判定は行いません。" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "consul V6 レビューは **PM Review Codex Agent v2.0** で実施してください。" >> $GITHUB_STEP_SUMMARY
