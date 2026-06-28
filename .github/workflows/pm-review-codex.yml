@@ -136,12 +136,29 @@ jobs:
       - name: Install Playwright browsers
         run: npx playwright install --with-deps chromium
 
-      # ── Codex PM Review Agent 実行 ──────────────────────────────────
-      - name: Run Codex PM Review Agent
+      # ── Step A: Playwright スクリーンショット（runner ユーザーで実行）──
+      # Codex Action はカーネルサンドボックス制限で Chrome を起動できないため、
+      # スクリーンショットは通常の runner ステップで取得する。
+      - name: Playwright Screenshots (PC/SP)
+        env:
+          SITE_KEY: ${{ needs.detect-ready.outputs.site_key }}
+          PUBLIC_URL: ${{ needs.detect-ready.outputs.public_url }}
+          BUNDLE_ID: ${{ needs.detect-ready.outputs.bundle_id }}
+          REVIEW_ID: ${{ needs.detect-ready.outputs.review_id }}
+          EXPECTED_LIVE_HTML_HASH: ${{ needs.detect-ready.outputs.live_html_hash }}
+          OUTPUT_DIR: ${{ github.workspace }}/pm-review-output
+          USE_PLAYWRIGHT_HTML: 'true'
+          USE_PLAYWRIGHT_SS: 'true'
+        run: node scripts/pm_review_runner.js
+
+      # ── Step B: Codex PM Review Agent（HTTP ベース DOM 解析）──────────
+      # Codex は HTML をリモートから HTTP 取得し DOM 解析・レポート生成を担当。
+      # ブラウザ不要のため Codex サンドボックス制限を回避できる。
+      - name: Codex PM Review Agent (DOM Analysis)
         uses: openai/codex-action@v1
         with:
           prompt: |
-            あなたは PM Review Agent です。以下の手順を実行してください。
+            あなたは PM Review Agent です。以下の手順で DOM 解析と PM レビューレポートを実行してください。
 
             ## 実行環境
             - site_key: ${{ needs.detect-ready.outputs.site_key }}
@@ -150,43 +167,32 @@ jobs:
             - review_id: ${{ needs.detect-ready.outputs.review_id }}
             - expected_live_html_hash: ${{ needs.detect-ready.outputs.live_html_hash }}
 
-            ## 実行手順
+            ## 実行手順（ブラウザ不要・HTTP モード）
 
-            1. まず以下を実行してPlaywrightをインストールする（sandbox権限が必要なため）:
-               ```
-               npx playwright install --with-deps chromium
-               ```
+            以下の環境変数を設定して `node scripts/pm_review_runner.js` を HTTP モードで実行してください。
+            CloudFlare によるブロックが発生する場合は CLOUDFLARE_BLOCKED として報告してください。
 
-            2. 以下の環境変数を設定して `node scripts/pm_review_runner.js` を実行する:
-               - SITE_KEY=${{ needs.detect-ready.outputs.site_key }}
-               - PUBLIC_URL=${{ needs.detect-ready.outputs.public_url }}
-               - BUNDLE_ID=${{ needs.detect-ready.outputs.bundle_id }}
-               - REVIEW_ID=${{ needs.detect-ready.outputs.review_id }}
-               - EXPECTED_LIVE_HTML_HASH=${{ needs.detect-ready.outputs.live_html_hash }}
-               - OUTPUT_DIR=pm-review-output
+            ```bash
+            SITE_KEY="${{ needs.detect-ready.outputs.site_key }}" \
+            PUBLIC_URL="${{ needs.detect-ready.outputs.public_url }}" \
+            BUNDLE_ID="${{ needs.detect-ready.outputs.bundle_id }}" \
+            REVIEW_ID="${{ needs.detect-ready.outputs.review_id }}" \
+            EXPECTED_LIVE_HTML_HASH="${{ needs.detect-ready.outputs.live_html_hash }}" \
+            OUTPUT_DIR="pm-review-output" \
+            USE_PLAYWRIGHT_HTML="false" \
+            USE_PLAYWRIGHT_SS="false" \
+            node scripts/pm_review_runner.js
+            ```
 
-            2. `pm-review-output/` ディレクトリに以下のファイルが生成されることを確認する:
-               - pm-review-runner-result.json
-               - pm-review.html
-               - pm-public.html または pm-public.txt
-               - pm-pc-1280.png
-               - pm-sp-375.png
-               - pm-dom-summary.json
-
-            3. 生成されたファイルを確認し、`pm-review-runner-result.json` の内容を表示する
+            実行後、`pm-review-output/pm-review-runner-result.json` の内容を確認して表示してください。
 
             ## 重要な制約
             - APPROVED / REJECT の判定は絶対に行わない（ChatGPT PM のみが判定する）
             - CloudFlare Challenge が検出された場合は CLOUDFLARE_BLOCKED として報告する
-            - DOM 検証 SKIPPED の場合は APPROVED 不可と明示する
+            - DOM 検証が SKIPPED の場合は APPROVED 不可と明示する
 
             詳細な指示は `prompts/pm_review_agent.md` を参照すること。
           openai-api-key: ${{ secrets.OPENAI_API_KEY }}
-
-      # Codex が失敗した場合の フォールバック実行
-      - name: Fallback - Direct PM Review Runner
-        if: failure()
-        run: node scripts/pm_review_runner.js
 
       - name: Upload Artifacts
         if: always()

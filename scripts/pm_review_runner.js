@@ -65,26 +65,34 @@ async function run() {
   console.log(`[PM Review Runner] Starting: ${SITE_KEY} / ${BUNDLE_ID}`);
   console.log(`[PM Review Runner] Target URL: ${PUBLIC_URL}`);
 
-  // ── 1. 公開HTML 独立取得（Playwright使用・CloudFlare対応）────────────
-  console.log('[PM Review Runner] Fetching public HTML via Playwright (CloudFlare bypass)...');
+  // ── 1. 公開HTML 独立取得（環境に応じてPlaywright or HTTPフォールバック）──
+  const USE_PLAYWRIGHT_HTML = process.env.USE_PLAYWRIGHT_HTML !== 'false';
+  console.log(`[PM Review Runner] Fetching HTML (playwright=${USE_PLAYWRIGHT_HTML})...`);
   let publicHtml = '';
   let publicHash = '';
   try {
-    const { chromium } = require('playwright');
-    const browser = await chromium.launch({
-      headless: true,
-      args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage'],
-    });
-    const ctx0 = await browser.newContext({
-      userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
-      viewport: { width: 1280, height: 900 },
-    });
-    const page0 = await ctx0.newPage();
-    await page0.goto(PUBLIC_URL, { waitUntil: 'networkidle', timeout: 30000 });
-    // CloudFlare チャレンジが解決されるまで待機
-    await page0.waitForFunction(() => !document.title.includes('moment'), { timeout: 15000 }).catch(() => {});
-    publicHtml = await page0.content();
-    await browser.close();
+    if (USE_PLAYWRIGHT_HTML) {
+      const { chromium } = require('playwright');
+      const browser = await chromium.launch({
+        headless: true,
+        args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage'],
+      });
+      const ctx0 = await browser.newContext({
+        userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
+        viewport: { width: 1280, height: 900 },
+      });
+      const page0 = await ctx0.newPage();
+      await page0.goto(PUBLIC_URL, { waitUntil: 'networkidle', timeout: 30000 });
+      await page0.waitForFunction(() => !document.title.includes('moment'), { timeout: 15000 }).catch(() => {});
+      publicHtml = await page0.content();
+      await browser.close();
+    } else {
+      // HTTP-only モード（Codex/制限環境向け）
+      const res = await fetchUrl(PUBLIC_URL);
+      if (res.status !== 200) throw new Error(`HTTP ${res.status}`);
+      publicHtml = res.body.toString('utf-8');
+      console.log(`[PM Review Runner] HTTP fetch done. Size: ${publicHtml.length}`);
+    }
 
     // CloudFlare bot チャレンジ検出
     const isCloudflareChallenge = publicHtml.includes('One moment, please') ||
@@ -180,7 +188,11 @@ async function run() {
   }
 
   // ── 4. Playwright スクリーンショット（PC / SP）────────────────────────
-  try {
+  const USE_PLAYWRIGHT_SS = process.env.USE_PLAYWRIGHT_SS !== 'false';
+  if (!USE_PLAYWRIGHT_SS) {
+    result.checks.screenshots = 'SKIPPED (playwright disabled in this env)';
+    console.log('[PM Review Runner] Screenshots skipped (USE_PLAYWRIGHT_SS=false)');
+  } else try {
     const { chromium } = require('playwright');
     console.log('[PM Review Runner] Taking screenshots...');
     const LAUNCH_ARGS = { headless: true, args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage'] };
