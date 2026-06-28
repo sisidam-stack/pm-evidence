@@ -197,10 +197,17 @@ async function run() {
     result.checks.template_leak = templateLeakWords.length === 0 ? 'PASS' : `FAIL(${templateLeakWords.join(',')})`;
     if (templateLeakWords.length > 0) result.blocking_reasons.push(`テンプレ流用語: ${templateLeakWords.join(', ')}`);
 
-    // H2 リスト
-    const h2Matches = [...publicHtml.matchAll(/<h2[^>]*>(.*?)<\/h2>/gsi)];
-    domSummary.h2_list = h2Matches.map(m => m[1].replace(/<[^>]+>/g,'').trim())
-      .filter(h => !['Recent Posts','Recent Comments','Archives','Categories'].includes(h));
+    // H2 リスト（記事コンテンツ内のみ。ウィジェット/フッター投稿リストを除外）
+    // SWELL テーマは p-postList__title クラスでウィジェット内投稿タイトルに H2 を使うため除外
+    // 対象: 全 H2 から class="p-postList__title" を持つもの・英語ウィジェット見出しを除外
+    const EXCLUDE_H2_CLASSES = ['p-postList__title', 'p-postList', 'c-widget__title', 'p-relatedPosts'];
+    const EXCLUDE_H2_TEXTS = ['Recent Posts','Recent Comments','Archives','Categories','MENU'];
+    const h2Matches = [...publicHtml.matchAll(/<h2([^>]*)>(.*?)<\/h2>/gsi)];
+    domSummary.h2_list = h2Matches
+      .filter(m => !EXCLUDE_H2_CLASSES.some(cls => m[1].includes(cls)))
+      .map(m => m[2].replace(/<[^>]+>/g,'').trim())
+      .filter(h => h && !EXCLUDE_H2_TEXTS.includes(h));
+    domSummary.h2_extraction_note = 'ウィジェット投稿タイトル(p-postList__title等)を除外した記事コンテンツのみ';
 
     // lp-review 件数
     domSummary.lp_review_count = (publicHtml.match(/lp-review/g) || []).length;
