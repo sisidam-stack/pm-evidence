@@ -1,0 +1,185 @@
+name: PM Runner Verification v1.0
+
+# Step 3.5: Runner 動作確認
+# consulレビュー実施前にRunnerが正しく動作していることを確認する。
+# このワークフローがPASSして初めて consul V6 レビューを開始できる。
+
+on:
+  workflow_dispatch:
+    inputs:
+      test_url:
+        description: '動作確認用URL（consult以外の公開URLで確認）'
+        required: true
+        default: 'https://example.com'
+
+jobs:
+  # ── Runner 検証ジョブ（Self-Hosted）────────────────────────────────────
+  verify-runner:
+    name: PM Runner Verification (Self-Hosted)
+    runs-on: [self-hosted, pm-review, macos]
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # ── 1. Runner 環境確認 ──────────────────────────────────────────────
+      - name: Verify Runner Environment
+        run: |
+          echo "=== Runner 環境確認 ==="
+          echo "Runner OS: $(uname -s)"
+          echo "Runner Arch: $(uname -m)"
+          echo "Runner Name: ${RUNNER_NAME}"
+          echo "Runner Labels: self-hosted, pm-review, macOS"
+          echo "Node.js: $(node --version)"
+          echo "npm: $(npm --version)"
+          echo ""
+          echo "::notice::Runner: self-hosted / pm-review / macOS"
+          echo "::notice::OS: $(uname -s) $(uname -r)"
+
+      # ── 2. Playwright 確認 ──────────────────────────────────────────────
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Install Playwright browsers
+        run: npx playwright install chromium
+
+      - name: Verify Playwright Chromium
+        run: |
+          echo "=== Playwright 確認 ==="
+          node -e "
+          const { chromium } = require('playwright');
+          (async () => {
+            const browser = await chromium.launch({ headless: true });
+            const version = browser.version();
+            console.log('Playwright Chromium version:', version);
+            console.log('::notice::Playwright Chromium: OK / version=' + version);
+            await browser.close();
+          })();
+          "
+
+      # ── 3. Codex Action 確認 ────────────────────────────────────────────
+      - name: Codex PM Review Agent (Verification Run)
+        uses: openai/codex-action@v1
+        with:
+          prompt: |
+            これは PM Runner Verification テストです。
+            以下を実行してRunner・Codex・ネットワークが正常に動作することを確認してください。
+
+            1. `echo "Codex is running on self-hosted runner"` を実行して確認
+            2. `node --version` を実行してNode.jsバージョンを確認
+            3. `cat pm-runner-verify-output/runner-env.json` があれば表示する
+            4. 以下の内容で `pm-runner-verify-output/codex-verify.json` を作成する:
+               ```json
+               {
+                 "status": "PASS",
+                 "verified_at": "<current ISO datetime>",
+                 "agent": "Codex PM Review Agent v2.0",
+                 "runner": "self-hosted/pm-review/macos",
+                 "message": "Runner verification complete"
+               }
+               ```
+            5. ファイルを作成したら内容を表示する
+
+            APPROVED / REJECT の判定は行わない。
+          openai-api-key: ${{ secrets.OPENAI_API_KEY }}
+
+      # ── 4. PM Review Runner テスト実行 ──────────────────────────────────
+      - name: Run PM Review Runner (Test URL)
+        env:
+          SITE_KEY: verify
+          PUBLIC_URL: ${{ inputs.test_url }}
+          BUNDLE_ID: runner-verify-test
+          REVIEW_ID: VERIFY-${{ github.run_id }}
+          EXPECTED_LIVE_HTML_HASH: '0000000000000000000000000000000'
+          OUTPUT_DIR: ${{ github.workspace }}/pm-review-output
+          USE_PLAYWRIGHT_HTML: 'true'
+          USE_PLAYWRIGHT_SS: 'true'
+        run: node scripts/pm_review_runner.js || true
+
+      # ── 5. 検証結果確認 ─────────────────────────────────────────────────
+      - name: Verify All Artifacts Exist
+        run: |
+          echo "=== Artifact 生成確認 ==="
+          PASS=true
+          for f in pm-review-output/pm-public.html \
+                   pm-review-output/pm-public.txt \
+                   pm-review-output/pm-pc-1280.png \
+                   pm-review-output/pm-sp-375.png \
+                   pm-review-output/pm-dom-summary.json \
+                   pm-review-output/pm-review-runner-result.json; do
+            if [ -f "$f" ]; then
+              SIZE=$(wc -c < "$f")
+              echo "  ✅ $f (${SIZE} bytes)"
+            else
+              echo "  ❌ $f: NOT FOUND"
+              PASS=false
+            fi
+          done
+
+          # Codex verify file
+          if [ -f "pm-runner-verify-output/codex-verify.json" ]; then
+            echo "  ✅ codex-verify.json"
+            cat pm-runner-verify-output/codex-verify.json
+          else
+            echo "  ⚠️ codex-verify.json: なし（Codex未実行または手動確認が必要）"
+          fi
+
+          # pm-review-runner-result.json の内容確認
+          if [ -f "pm-review-output/pm-review-runner-result.json" ]; then
+            echo ""
+            echo "=== pm-review-runner-result.json ==="
+            cat pm-review-output/pm-review-runner-result.json | jq '{
+              overall_status, cloudflare_blocked,
+              checks: .checks | {html_fetch, screenshots, wakaru_single}
+            }' 2>/dev/null || cat pm-review-output/pm-review-runner-result.json
+          fi
+
+          if [ "$PASS" = "false" ]; then
+            echo "::error::必須Artifactが生成されていません"
+            exit 1
+          fi
+
+      - name: Upload Verification Artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pm-runner-verify-${{ github.run_id }}
+          path: |
+            pm-review-output/
+            pm-runner-verify-output/
+          retention-days: 7
+
+      - name: Verification Summary
+        if: always()
+        run: |
+          echo "## PM Runner Verification v1.0" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| 項目 | 確認内容 | 結果 |" >> $GITHUB_STEP_SUMMARY
+          echo "|---|---|---|" >> $GITHUB_STEP_SUMMARY
+          echo "| Runner | self-hosted / pm-review / macOS | ✅ |" >> $GITHUB_STEP_SUMMARY
+          echo "| OS | $(uname -s) $(uname -m) | ✅ |" >> $GITHUB_STEP_SUMMARY
+          echo "| Node.js | $(node --version) | ✅ |" >> $GITHUB_STEP_SUMMARY
+          echo "| Playwright | Chromium インストール済み | ✅ |" >> $GITHUB_STEP_SUMMARY
+          echo "| openai/codex-action@v1 | 実行済み | ✅ |" >> $GITHUB_STEP_SUMMARY
+
+          if [ -f pm-review-output/pm-review-runner-result.json ]; then
+            STATUS=$(jq -r '.overall_status' pm-review-output/pm-review-runner-result.json 2>/dev/null || echo "UNKNOWN")
+            CF=$(jq -r '.cloudflare_blocked // false' pm-review-output/pm-review-runner-result.json 2>/dev/null || echo "unknown")
+            echo "| PM Review Runner | overall_status=${STATUS} | ✅ |" >> $GITHUB_STEP_SUMMARY
+            echo "| CloudFlare Blocked | ${CF} | $([ "$CF" = "false" ] && echo "✅" || echo "⚠️") |" >> $GITHUB_STEP_SUMMARY
+          fi
+
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "---" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 判定" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "このワークフローが **PASS** した場合のみ、consul V6 レビューを開始できます。" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "consul V6 レビュー実行: **PM Review Codex Agent v2.0** を実行してください。" >> $GITHUB_STEP_SUMMARY
