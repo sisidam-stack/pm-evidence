@@ -65,21 +65,33 @@ async function run() {
   console.log(`[PM Review Runner] Starting: ${SITE_KEY} / ${BUNDLE_ID}`);
   console.log(`[PM Review Runner] Target URL: ${PUBLIC_URL}`);
 
-  // ── 1. 公開HTML 独立取得 ─────────────────────────────────────────────
-  console.log('[PM Review Runner] Fetching public HTML...');
+  // ── 1. 公開HTML 独立取得（Playwright使用・CloudFlare対応）────────────
+  console.log('[PM Review Runner] Fetching public HTML via Playwright (CloudFlare bypass)...');
   let publicHtml = '';
   let publicHash = '';
+  let domSummary = {};
   try {
-    const res = await fetchUrl(PUBLIC_URL);
-    if (res.status !== 200) throw new Error(`HTTP ${res.status}`);
-    publicHtml = res.body.toString('utf-8');
-    publicHash = crypto.createHash('md5').update(res.body).digest('hex');
+    const { chromium } = require('playwright');
+    const browser = await chromium.launch({ headless: true });
+    const ctx0 = await browser.newContext({
+      userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
+      viewport: { width: 1280, height: 900 },
+    });
+    const page0 = await ctx0.newPage();
+    await page0.goto(PUBLIC_URL, { waitUntil: 'networkidle', timeout: 30000 });
+    // CloudFlare チャレンジが解決されるまで待機
+    await page0.waitForFunction(() => !document.title.includes('moment'), { timeout: 15000 }).catch(() => {});
+    publicHtml = await page0.content();
+    await browser.close();
+
+    const buf = Buffer.from(publicHtml, 'utf-8');
+    publicHash = crypto.createHash('md5').update(buf).digest('hex');
     fs.writeFileSync(path.join(OUTPUT_DIR, 'pm-public.html'), publicHtml);
     fs.writeFileSync(path.join(OUTPUT_DIR, 'pm-public.txt'),
       publicHtml.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim().substring(0, 200000));
     result.actual_live_html_hash = publicHash;
     result.checks.html_fetch = 'PASS';
-    console.log(`[PM Review Runner] HTML fetched. Hash: ${publicHash}`);
+    console.log(`[PM Review Runner] HTML fetched via Playwright. Size: ${publicHtml.length} chars. Hash: ${publicHash}`);
   } catch (e) {
     result.checks.html_fetch = `FAIL: ${e.message}`;
     result.blocking_reasons.push(`公開HTML取得失敗: ${e.message}`);
