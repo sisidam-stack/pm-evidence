@@ -151,45 +151,67 @@ jobs:
           USE_PLAYWRIGHT_SS: 'true'
         run: node scripts/pm_review_runner.js
 
-      # ── Step B: Codex PM Review Agent（HTTP ベース DOM 解析）──────────
-      # Codex は HTML をリモートから HTTP 取得し DOM 解析・レポート生成を担当。
-      # ブラウザ不要のため Codex サンドボックス制限を回避できる。
-      - name: Codex PM Review Agent (DOM Analysis)
+      # ── Step B: Codex PM Review Agent（既取得HTMLのオフライン解析）────
+      # Step A で取得済みの pm-public.html を読み込み、ネットワーク不要でDOM解析する。
+      # Codex サンドボックスはDNSアクセス不可のため、外部通信は行わない。
+      - name: Codex PM Review Agent (Offline DOM Analysis)
         uses: openai/codex-action@v1
         with:
           prompt: |
-            あなたは PM Review Agent です。以下の手順で DOM 解析と PM レビューレポートを実行してください。
+            あなたは PM Review Agent です。Step A（Playwright）が既に公開HTMLを取得して
+            `pm-review-output/pm-public.html` に保存しています。
+            このファイルを読み込んでオフラインでDOM解析し、
+            `pm-review-output/pm-codex-analysis.json` に結果を書き込んでください。
 
-            ## 実行環境
-            - site_key: ${{ needs.detect-ready.outputs.site_key }}
-            - public_url: ${{ needs.detect-ready.outputs.public_url }}
-            - bundle_id: ${{ needs.detect-ready.outputs.bundle_id }}
-            - review_id: ${{ needs.detect-ready.outputs.review_id }}
-            - expected_live_html_hash: ${{ needs.detect-ready.outputs.live_html_hash }}
+            ## 解析対象ファイル
+            - `pm-review-output/pm-public.html` （Step A が取得した公開HTML）
+            - `pm-review-output/pm-review-runner-result.json` （Step A のRunnerが生成した結果）
 
-            ## 実行手順（ブラウザ不要・HTTP モード）
+            ## 解析手順（ネットワーク不要）
 
-            以下の環境変数を設定して `node scripts/pm_review_runner.js` を HTTP モードで実行してください。
-            CloudFlare によるブロックが発生する場合は CLOUDFLARE_BLOCKED として報告してください。
+            以下を実行して `pm-review-output/pm-public.html` を解析してください:
 
-            ```bash
-            SITE_KEY="${{ needs.detect-ready.outputs.site_key }}" \
-            PUBLIC_URL="${{ needs.detect-ready.outputs.public_url }}" \
-            BUNDLE_ID="${{ needs.detect-ready.outputs.bundle_id }}" \
-            REVIEW_ID="${{ needs.detect-ready.outputs.review_id }}" \
-            EXPECTED_LIVE_HTML_HASH="${{ needs.detect-ready.outputs.live_html_hash }}" \
-            OUTPUT_DIR="pm-review-output" \
-            USE_PLAYWRIGHT_HTML="false" \
-            USE_PLAYWRIGHT_SS="false" \
-            node scripts/pm_review_runner.js
+            ```javascript
+            const fs = require('fs');
+            const html = fs.readFileSync('pm-review-output/pm-public.html', 'utf-8');
+            const result = JSON.parse(fs.readFileSync('pm-review-output/pm-review-runner-result.json', 'utf-8'));
+
+            const analysis = {
+              agent: 'Codex PM Review Agent v2.0',
+              analyzed_at: new Date().toISOString(),
+              review_id: '${{ needs.detect-ready.outputs.review_id }}',
+              bundle_id: '${{ needs.detect-ready.outputs.bundle_id }}',
+              runner_result: result,
+              codex_checks: {
+                wakaru_count: (html.match(/この記事でわかること/g) || []).length,
+                lead_count: (html.match(/気になっている方も多い/g) || []).length,
+                dup_judge: (html.match(/判断することが重要/g) || []).length,
+                table_fixed: /table-layout\s*:\s*fixed/.test(html),
+                template_leak: ['製品保証','工事保証','定期点検','施工'].filter(w => html.includes(w)),
+                html_size: html.length,
+                is_challenge_page: html.includes('One moment') || html.length < 20000,
+              }
+            };
+
+            // 全チェックがPASSかどうか
+            const c = analysis.codex_checks;
+            const allPass = c.wakaru_count === 1 && c.lead_count === 1 &&
+                            c.dup_judge === 0 && c.table_fixed &&
+                            c.template_leak.length === 0 && !c.is_challenge_page;
+            analysis.codex_overall = allPass ? 'PASS' : 'FAIL';
+
+            fs.writeFileSync('pm-review-output/pm-codex-analysis.json',
+              JSON.stringify(analysis, null, 2));
+            console.log('Codex analysis:', JSON.stringify(analysis.codex_checks, null, 2));
+            console.log('Codex overall:', analysis.codex_overall);
             ```
 
-            実行後、`pm-review-output/pm-review-runner-result.json` の内容を確認して表示してください。
+            実行後に `pm-review-output/pm-codex-analysis.json` の内容を表示してください。
 
             ## 重要な制約
             - APPROVED / REJECT の判定は絶対に行わない（ChatGPT PM のみが判定する）
-            - CloudFlare Challenge が検出された場合は CLOUDFLARE_BLOCKED として報告する
-            - DOM 検証が SKIPPED の場合は APPROVED 不可と明示する
+            - pm-review-runner-result.json は上書き禁止（Step A の結果を保護する）
+            - ネットワーク接続は行わない
 
             詳細な指示は `prompts/pm_review_agent.md` を参照すること。
           openai-api-key: ${{ secrets.OPENAI_API_KEY }}
