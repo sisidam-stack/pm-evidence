@@ -3,178 +3,132 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>TOJIリカバリーウェア（T-004） 問い合わせ・面談チェックリスト</title>
+<title>TOJIリカバリーウェア 購入前チェックリスト</title>
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-body {
-  font-family: 'Noto Sans JP', 'Hiragino Sans', 'Meiryo', sans-serif;
-  font-size: 14px;
-  line-height: 1.7;
-  color: #1f2937;
-  background: #f9fafb;
-  padding: 20px;
-  max-width: 720px;
-  margin: 0 auto;
-}
-.header {
-  background: linear-gradient(135deg, #1d4ed8, #3b82f6);
-  color: #fff;
-  padding: 20px 24px;
-  border-radius: 10px;
-  margin-bottom: 20px;
-}
+body { font-family: 'Noto Sans JP', 'Hiragino Sans', 'Meiryo', sans-serif; font-size: 14px; line-height: 1.7; color: #1f2937; background: #f9fafb; padding: 20px; max-width: 720px; margin: 0 auto; }
+.header { background: linear-gradient(135deg, #ea580c, #fb923c); color: #fff; padding: 20px 24px; border-radius: 10px; margin-bottom: 20px; }
 .header h1 { font-size: 1.25rem; font-weight: bold; margin-bottom: 4px; }
 .header .meta { font-size: .8rem; opacity: .85; }
-.section-title {
-  font-size: .8rem;
-  font-weight: bold;
-  color: #6b7280;
-  text-transform: uppercase;
-  letter-spacing: .05em;
-  margin: 20px 0 8px;
-  padding-bottom: 4px;
-  border-bottom: 1px solid #e5e7eb;
-}
-.check-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  padding: 10px 12px;
-  background: #fff;
-  border: 1px solid #e5e7eb;
-  border-radius: 6px;
-  margin-bottom: 6px;
-  cursor: pointer;
-  transition: background .15s;
-}
+.section-title { font-size: .8rem; font-weight: bold; color: #6b7280; text-transform: uppercase; letter-spacing: .05em; margin: 20px 0 8px; padding-bottom: 4px; border-bottom: 1px solid #e5e7eb; }
+.check-item { display: flex; align-items: flex-start; gap: 10px; padding: 10px 12px; background: #fff; border: 1px solid #e5e7eb; border-radius: 6px; margin-bottom: 6px; cursor: pointer; transition: background .15s; }
 .check-item:hover { background: #f0f9ff; }
 .check-box { width: 18px; height: 18px; cursor: pointer; flex-shrink: 0; margin-top: 2px; accent-color: #3b82f6; }
 label { display: flex; flex-wrap: wrap; gap: 4px 8px; cursor: pointer; flex: 1; }
-.check-num {
-  background: #dbeafe;
-  color: #1d4ed8;
-  font-size: .75rem;
-  font-weight: bold;
-  border-radius: 3px;
-  padding: 0 5px;
-  white-space: nowrap;
-}
-.check-cat {
-  font-size: .8rem;
-  color: #6b7280;
-  white-space: nowrap;
-}
+.check-num { background: #dbeafe; color: #1d4ed8; font-size: .75rem; font-weight: bold; border-radius: 3px; padding: 0 5px; white-space: nowrap; }
+.check-cat { font-size: .8rem; color: #6b7280; white-space: nowrap; }
 .check-text { font-size: .88rem; color: #1f2937; }
 input:checked + label .check-text { text-decoration: line-through; color: #9ca3af; }
-.footer {
-  text-align: center;
-  font-size: .75rem;
-  color: #9ca3af;
-  margin-top: 20px;
-  padding-top: 12px;
-  border-top: 1px solid #e5e7eb;
-}
-.print-btn {
-  display: block;
-  width: 100%;
-  padding: 10px;
-  background: #3b82f6;
-  color: #fff;
-  border: none;
-  border-radius: 6px;
-  font-size: .9rem;
-  cursor: pointer;
-  margin-top: 16px;
-}
+.footer { text-align: center; font-size: .75rem; color: #9ca3af; margin-top: 20px; padding-top: 12px; border-top: 1px solid #e5e7eb; }
+.print-btn { display: block; width: 100%; padding: 10px; background: #3b82f6; color: #fff; border: none; border-radius: 6px; font-size: .9rem; cursor: pointer; margin-top: 16px; }
 .print-btn:hover { background: #2563eb; }
-
-@media print {
-  body { background: #fff; padding: 0; max-width: 100%; }
-  .header { background: #1d4ed8 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-  .check-box { -webkit-print-color-adjust: exact; }
-  .print-btn { display: none; }
-  .check-item { break-inside: avoid; }
-}
+@media print { body { background: #fff; padding: 0; max-width: 100%; } .header { background: #1d4ed8 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; } .check-box { -webkit-print-color-adjust: exact; } .print-btn { display: none; } .check-item { break-inside: avoid; } }
 </style>
 </head>
 <body>
 <div class="header">
-  <h1>📋 TOJIリカバリーウェア（T-004）</h1>
-  <div class="meta">問い合わせ・面談時チェックリスト｜2026年06月26日 作成</div>
+  <h1>📋 TOJIリカバリーウェア 購入前チェックリスト</h1>
+  <div class="meta">購入前チェックリスト｜2026年07月08日 作成</div>
 </div>
-
-<div class="section-title">確認事項（全8項目）</div>
+<div class="section-title">確認事項（全12項目）</div>
 
         <div class="check-item">
           <input type="checkbox" id="chk1" class="check-box">
           <label for="chk1">
             <span class="check-num">01</span>
-            <span class="check-cat">対応エリア確認</span>
-            <span class="check-text">対応エリア（都道府県・電力会社）を確認した</span>
+            <span class="check-cat">商品構成の理解</span>
+            <span class="check-text">販売されているのはTシャツ等の単品で、上下セット商品ではないことを理解した</span>
           </label>
         </div>
         <div class="check-item">
           <input type="checkbox" id="chk2" class="check-box">
           <label for="chk2">
             <span class="check-num">02</span>
-            <span class="check-cat">手続き対象確認</span>
-            <span class="check-text">手続き対象（電気・ガス・ネット等）を確認した</span>
+            <span class="check-cat">モデルの選択</span>
+            <span class="check-text">希望のモデル（TOJI / TOJIT / TOJI2）を決めた</span>
           </label>
         </div>
         <div class="check-item">
           <input type="checkbox" id="chk3" class="check-box">
           <label for="chk3">
             <span class="check-num">03</span>
-            <span class="check-cat">キャッシュバック条件</span>
-            <span class="check-text">キャッシュバック・特典の受け取り条件・時期を確認した</span>
+            <span class="check-cat">サイズの確認</span>
+            <span class="check-text">公式サイトのサイズ表で自分に合うサイズを確認した</span>
           </label>
         </div>
         <div class="check-item">
           <input type="checkbox" id="chk4" class="check-box">
           <label for="chk4">
             <span class="check-num">04</span>
-            <span class="check-cat">適用条件確認</span>
-            <span class="check-text">申込み対象の条件（年齢・世帯数・再契約等）を確認した</span>
+            <span class="check-cat">在庫の確認</span>
+            <span class="check-text">希望モデル・サイズがSOLD OUTでないか公式サイトで確認した</span>
           </label>
         </div>
         <div class="check-item">
           <input type="checkbox" id="chk5" class="check-box">
           <label for="chk5">
             <span class="check-num">05</span>
-            <span class="check-cat">手続き完了予定日</span>
-            <span class="check-text">手続き完了予定日・切替時期を確認した</span>
+            <span class="check-cat">価格・送料の確認</span>
+            <span class="check-text">税込価格と送料の条件を公式購入ページで確認した</span>
           </label>
         </div>
         <div class="check-item">
           <input type="checkbox" id="chk6" class="check-box">
           <label for="chk6">
             <span class="check-num">06</span>
-            <span class="check-cat">必要書類確認</span>
-            <span class="check-text">申込みに必要な書類・情報（検針票等）を確認した</span>
+            <span class="check-cat">支払い方法の確認</span>
+            <span class="check-text">利用できる支払い方法を公式購入ページで確認した</span>
           </label>
         </div>
         <div class="check-item">
           <input type="checkbox" id="chk7" class="check-box">
           <label for="chk7">
             <span class="check-num">07</span>
-            <span class="check-cat">解約条件確認</span>
-            <span class="check-text">解約・途中解約の条件・違約金を確認した</span>
+            <span class="check-cat">医療機器でない理解</span>
+            <span class="check-text">公式FAQ「本製品は医療機器ではありません」を読み、治療目的の製品でないことを理解した</span>
           </label>
         </div>
         <div class="check-item">
           <input type="checkbox" id="chk8" class="check-box">
           <label for="chk8">
             <span class="check-num">08</span>
-            <span class="check-cat">他社比較</span>
-            <span class="check-text">類似サービスと比較検討した</span>
+            <span class="check-cat">効果の個人差</span>
+            <span class="check-text">温感・リラックス感の体感には個人差があることを理解した</span>
           </label>
         </div>
-
-<button class="print-btn" onclick="window.print()">🖨️ 印刷 / PDFで保存</button>
-
-<div class="footer">
-  このチェックリストは TOJIリカバリーウェア（T-004） の申込み前確認用です。
-  情報は 2026年06月26日 時点のものです。最新情報は公式サイトでご確認ください。
-</div>
+        <div class="check-item">
+          <input type="checkbox" id="chk9" class="check-box">
+          <label for="chk9">
+            <span class="check-num">09</span>
+            <span class="check-cat">お手入れ方法の確認</span>
+            <span class="check-text">洗濯方法・洗濯耐性についての説明を確認した</span>
+          </label>
+        </div>
+        <div class="check-item">
+          <input type="checkbox" id="chk10" class="check-box">
+          <label for="chk10">
+            <span class="check-num">10</span>
+            <span class="check-cat">返品・交換条件</span>
+            <span class="check-text">公式サイトの返品・交換ポリシーを確認した</span>
+          </label>
+        </div>
+        <div class="check-item">
+          <input type="checkbox" id="chk11" class="check-box">
+          <label for="chk11">
+            <span class="check-num">11</span>
+            <span class="check-cat">購入経路の確認</span>
+            <span class="check-text">公式サイト（toji-wear.jp）からの直接購入であることを確認した</span>
+          </label>
+        </div>
+        <div class="check-item">
+          <input type="checkbox" id="chk12" class="check-box">
+          <label for="chk12">
+            <span class="check-num">12</span>
+            <span class="check-cat">ギフト対応の確認</span>
+            <span class="check-text">贈り物の場合はギフト包装の可否を確認した</span>
+          </label>
+        </div>
+<button class="print-btn" onclick="window.print()">🖨 このチェックリストを印刷する</button>
+<div class="footer">本チェックリストは編集部が作成した確認用資料です。最新の情報は必ず公式サイトでご確認ください。</div>
 </body>
 </html>
