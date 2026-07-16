@@ -4,9 +4,10 @@
   "layer": "Layer1",
   "site_key": "ongaku-sheer",
   "service_name": "シアーミュージック",
-  "checklist_path": "/Users/ishidamotoki/Applications/CroudeCode作業フォルダ/affiliate-tool/public/evidence/ongaku-sheer/latest/checklist.html",
-  "item_count": 12,
-  "file_size_bytes": 7864,
-  "generated_at": "2026-07-16T10:50:22.615350",
+  "domain": "music_lesson",
+  "checklist_path": "public/evidence/ongaku-sheer/latest/checklist.html",
+  "item_count": 15,
+  "file_size_bytes": 9064,
+  "generated_at": "2026-07-16T20:34:19.386900",
   "blockers": []
 }

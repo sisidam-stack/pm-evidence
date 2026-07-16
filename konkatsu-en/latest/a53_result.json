@@ -4,9 +4,10 @@
   "layer": "Layer1",
   "site_key": "konkatsu-en",
   "service_name": "エン婚活エージェント",
-  "checklist_path": "/Users/ishidamotoki/Applications/CroudeCode作業フォルダ/affiliate-tool/public/evidence/konkatsu-en/latest/checklist.html",
-  "item_count": 12,
-  "file_size_bytes": 7873,
-  "generated_at": "2026-07-16T10:50:22.585480",
+  "domain": "matchmaking",
+  "checklist_path": "public/evidence/konkatsu-en/latest/checklist.html",
+  "item_count": 17,
+  "file_size_bytes": 10177,
+  "generated_at": "2026-07-16T20:34:19.361658",
   "blockers": []
 }

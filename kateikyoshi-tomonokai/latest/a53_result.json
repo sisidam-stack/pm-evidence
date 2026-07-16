@@ -4,9 +4,10 @@
   "layer": "Layer1",
   "site_key": "kateikyoshi-tomonokai",
   "service_name": "オンライン東大家庭教師友の会",
-  "checklist_path": "/Users/ishidamotoki/Applications/CroudeCode作業フォルダ/affiliate-tool/public/evidence/kateikyoshi-tomonokai/latest/checklist.html",
-  "item_count": 12,
-  "file_size_bytes": 7909,
-  "generated_at": "2026-07-16T10:50:22.551188",
+  "domain": "tutoring",
+  "checklist_path": "public/evidence/kateikyoshi-tomonokai/latest/checklist.html",
+  "item_count": 17,
+  "file_size_bytes": 9978,
+  "generated_at": "2026-07-16T20:34:19.331956",
   "blockers": []
 }
