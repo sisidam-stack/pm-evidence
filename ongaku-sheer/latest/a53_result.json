@@ -1,0 +1,12 @@
+{
+  "gate": "A-53 Download Asset Gate",
+  "status": "PASS",
+  "layer": "Layer1",
+  "site_key": "ongaku-sheer",
+  "service_name": "シアーミュージック",
+  "checklist_path": "/Users/ishidamotoki/Applications/CroudeCode作業フォルダ/affiliate-tool/public/evidence/ongaku-sheer/latest/checklist.html",
+  "item_count": 12,
+  "file_size_bytes": 7864,
+  "generated_at": "2026-07-16T10:50:22.615350",
+  "blockers": []
+}

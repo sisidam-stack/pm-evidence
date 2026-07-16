@@ -1,0 +1,12 @@
+{
+  "gate": "A-53 Download Asset Gate",
+  "status": "PASS",
+  "layer": "Layer1",
+  "site_key": "konkatsu-en",
+  "service_name": "エン婚活エージェント",
+  "checklist_path": "/Users/ishidamotoki/Applications/CroudeCode作業フォルダ/affiliate-tool/public/evidence/konkatsu-en/latest/checklist.html",
+  "item_count": 12,
+  "file_size_bytes": 7873,
+  "generated_at": "2026-07-16T10:50:22.585480",
+  "blockers": []
+}

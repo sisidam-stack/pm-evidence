@@ -1,0 +1,12 @@
+{
+  "gate": "A-53 Download Asset Gate",
+  "status": "PASS",
+  "layer": "Layer1",
+  "site_key": "uranai-vernis",
+  "service_name": "電話占いヴェルニ",
+  "checklist_path": "/Users/ishidamotoki/Applications/CroudeCode作業フォルダ/affiliate-tool/public/evidence/uranai-vernis/latest/checklist.html",
+  "item_count": 12,
+  "file_size_bytes": 7855,
+  "generated_at": "2026-07-16T10:50:22.646676",
+  "blockers": []
+}
