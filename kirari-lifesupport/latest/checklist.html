@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>きらりライフサポート 問い合わせ・面談チェックリスト</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Noto Sans JP', 'Hiragino Sans', 'Meiryo', sans-serif;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #1f2937;
+  background: #f9fafb;
+  padding: 20px;
+  max-width: 720px;
+  margin: 0 auto;
+}
+.header {
+  background: linear-gradient(135deg, #1d4ed8, #3b82f6);
+  color: #fff;
+  padding: 20px 24px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+.header h1 { font-size: 1.25rem; font-weight: bold; margin-bottom: 4px; }
+.header .meta { font-size: .8rem; opacity: .85; }
+.section-title {
+  font-size: .8rem;
+  font-weight: bold;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  margin: 20px 0 8px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #e5e7eb;
+}
+.check-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 12px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  margin-bottom: 6px;
+  cursor: pointer;
+  transition: background .15s;
+}
+.check-item:hover { background: #f0f9ff; }
+.check-box { width: 18px; height: 18px; cursor: pointer; flex-shrink: 0; margin-top: 2px; accent-color: #3b82f6; }
+label { display: flex; flex-wrap: wrap; gap: 4px 8px; cursor: pointer; flex: 1; }
+.check-num {
+  background: #dbeafe;
+  color: #1d4ed8;
+  font-size: .75rem;
+  font-weight: bold;
+  border-radius: 3px;
+  padding: 0 5px;
+  white-space: nowrap;
+}
+.check-cat {
+  font-size: .8rem;
+  color: #6b7280;
+  white-space: nowrap;
+}
+.check-text { font-size: .88rem; color: #1f2937; }
+input:checked + label .check-text { text-decoration: line-through; color: #9ca3af; }
+.footer {
+  text-align: center;
+  font-size: .75rem;
+  color: #9ca3af;
+  margin-top: 20px;
+  padding-top: 12px;
+  border-top: 1px solid #e5e7eb;
+}
+.print-btn {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background: #3b82f6;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: .9rem;
+  cursor: pointer;
+  margin-top: 16px;
+}
+.print-btn:hover { background: #2563eb; }
+
+@media print {
+  body { background: #fff; padding: 0; max-width: 100%; }
+  .header { background: #1d4ed8 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .check-box { -webkit-print-color-adjust: exact; }
+  .print-btn { display: none; }
+  .check-item { break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>📋 きらりライフサポート</h1>
+  <div class="meta">問い合わせ・面談時チェックリスト｜2026年07月28日 作成</div>
+</div>
+
+<div class="section-title">確認事項（全16項目）</div>
+
+        <div class="check-item">
+          <input type="checkbox" id="chk1" class="check-box">
+          <label for="chk1">
+            <span class="check-num">01</span>
+            <span class="check-cat">対応エリア確認</span>
+            <span class="check-text">対応エリア（都道府県・市区町村）を確認した</span>
+          </label>
+        </div>
+        <div class="check-item">
+          <input type="checkbox" id="chk2" class="check-box">
+          <label for="chk2">
+            <span class="check-num">02</span>
+            <span class="check-cat">料金体系確認</span>
+            <span class="check-text">時間コース別の単価・訪問費等の追加費用を確認した</span>
+          </label>
+        </div>
+        <div class="check-item">
+          <input type="checkbox" id="chk3" class="check-box">
+          <label for="chk3">
+            <span class="check-num">03</span>
+            <span class="check-cat">入会金確認</span>
+            <span class="check-text">入会金の金額・免除条件（早期退会免除等）を確認した</span>
+          </label>
+        </div>
+        <div class="check-item">
+          <input type="checkbox" id="chk4" class="check-box">
+          <label for="chk4">
+            <span class="check-num">04</span>
+            <span class="check-cat">依頼内容の組合せ確認</span>
+            <span class="check-text">1回の訪問で依頼できるサービスの組合せ範囲（掃除・料理・育児サポート等）を確認した</span>
+          </label>
+        </div>
+        <div class="check-item">
+          <input type="checkbox" id="chk5" class="check-box">
+          <label for="chk5">
+            <span class="check-num">05</span>
+            <span class="check-cat">専任制・担当確認</span>
+            <span class="check-text">毎回同じスタッフが対応する専任制か、担当変更の条件を確認した</span>
+          </label>
+        </div>
+        <div class="check-item">
+          <input type="checkbox" id="chk6" class="check-box">
+          <label for="chk6">
+            <span class="check-num">06</span>
+            <span class="check-cat">育児・保育対応条件確認</span>
+            <span class="check-text">乳幼児等の保育サポートを依頼する場合の追加条件・追加費用を確認した</span>
+          </label>
+        </div>
+        <div class="check-item">
+          <input type="checkbox" id="chk7" class="check-box">
+          <label for="chk7">
+            <span class="check-num">07</span>
+            <span class="check-cat">損害賠償保険確認</span>
+            <span class="check-text">サービス提供中の事故・物損に対する損害賠償保険の有無と適用条件を確認した</span>
+          </label>
+        </div>
+        <div class="check-item">
+          <input type="checkbox" id="chk8" class="check-box">
+          <label for="chk8">
+            <span class="check-num">08</span>
+            <span class="check-cat">品質チェック体制確認</span>
+            <span class="check-text">初回訪問時の品質チェック・同行体制の有無を確認した</span>
+          </label>
+        </div>
+        <div class="check-item">
+          <input type="checkbox" id="chk9" class="check-box">
+          <label for="chk9">
+            <span class="check-num">09</span>
+            <span class="check-cat">キャンセル条件確認</span>
+            <span class="check-text">キャンセル・日程変更の条件と費用の有無を確認した</span>
+          </label>
+        </div>
+        <div class="check-item">
+          <input type="checkbox" id="chk10" class="check-box">
+          <label for="chk10">
+            <span class="check-num">10</span>
+            <span class="check-cat">解約手続き確認</span>
+            <span class="check-text">解約・退会の手続き方法と違約金の有無を確認した</span>
+          </label>
+        </div>
+        <div class="check-item">
+          <input type="checkbox" id="chk11" class="check-box">
+          <label for="chk11">
+            <span class="check-num">11</span>
+            <span class="check-cat">支払い方法確認</span>
+            <span class="check-text">対応している支払い方法（現金・クレジットカード等）を確認した</span>
+          </label>
+        </div>
+        <div class="check-item">
+          <input type="checkbox" id="chk12" class="check-box">
+          <label for="chk12">
+            <span class="check-num">12</span>
+            <span class="check-cat">他社比較実施</span>
+            <span class="check-text">類似サービスと料金・対応エリア・保証内容を比較検討した</span>
+          </label>
+        </div>
+        <div class="check-item">
+          <input type="checkbox" id="chk13" class="check-box">
+          <label for="chk13">
+            <span class="check-num">13</span>
+            <span class="check-cat">service_name</span>
+            <span class="check-text">サービス名: きらりライフサポート（旧名称: 東京かあさん、運営: 株式会社ぴんぴんきらり）を確認した</span>
+          </label>
+        </div>
+        <div class="check-item">
+          <input type="checkbox" id="chk14" class="check-box">
+          <label for="chk14">
+            <span class="check-num">14</span>
+            <span class="check-cat">service_overview</span>
+            <span class="check-text">家事代行・ベビーシッター・ペットシッターの枠を超え、掃除/料理/洗濯/整理整頓/育児サポート/保育園送迎/買物代行等を1回の訪問で組み合わせて依頼できる完全オーダーメイド型のご家庭サポートサービス。専任制（同じスタッフが継続対応）を確認した</span>
+          </label>
+        </div>
+        <div class="check-item">
+          <input type="checkbox" id="chk15" class="check-box">
+          <label for="chk15">
+            <span class="check-num">15</span>
+            <span class="check-cat">pricing</span>
+            <span class="check-text">料金（税込・2026年7月時点）: 1時間コース3,300円/h、2時間コース3,000円/h、2.5時間コース2,850円/h、3時間コース2,600円/h、3.5時間コース2,500円/h、4時間以上コース2,400円/h。入会金5,500円（初月のみ・30日以内退会で免除）、訪問費880円/回が別途発生を確認した</span>
+          </label>
+        </div>
+        <div class="check-item">
+          <input type="checkbox" id="chk16" class="check-box">
+          <label for="chk16">
+            <span class="check-num">16</span>
+            <span class="check-cat">coverage_area</span>
+            <span class="check-text">対応エリア: 東京都・神奈川県・千葉県・埼玉県のみ（東京都は千代田区〜西東京市まで多数の区市を公式サイトに列挙、対応エリア外の県・地域は非対応）を確認した</span>
+          </label>
+        </div>
+
+<button class="print-btn" onclick="window.print()">🖨️ 印刷 / PDFで保存</button>
+
+<div class="footer">
+  このチェックリストは きらりライフサポート の申込み前確認用です。
+  情報は 2026年07月28日 時点のものです。最新情報は公式サイトでご確認ください。
+</div>
+</body>
+</html>

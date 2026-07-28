@@ -1,0 +1,13 @@
+{
+  "gate": "A-53 Download Asset Gate",
+  "status": "PASS",
+  "layer": "Layer1",
+  "site_key": "kirari-lifesupport",
+  "service_name": "きらりライフサポート",
+  "domain": "housekeeping_service",
+  "checklist_path": "public/evidence/kirari-lifesupport/latest/checklist.html",
+  "item_count": 16,
+  "file_size_bytes": 10267,
+  "generated_at": "2026-07-28T09:01:15.130881",
+  "blockers": []
+}
