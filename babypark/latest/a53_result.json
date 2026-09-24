@@ -1,0 +1,13 @@
+{
+  "gate": "A-53 Download Asset Gate",
+  "status": "PASS",
+  "layer": "Layer1",
+  "site_key": "babypark",
+  "service_name": "ベビーパーク",
+  "domain": "early_childhood_education",
+  "checklist_path": "/Users/ishidamotoki/Applications/CroudeCode作業フォルダ/affiliate-tool/public/evidence/babypark/latest/checklist.html",
+  "item_count": 17,
+  "file_size_bytes": 9924,
+  "generated_at": "2026-09-24T06:33:05.126997",
+  "blockers": []
+}
