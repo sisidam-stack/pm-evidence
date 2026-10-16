@@ -1,0 +1,13 @@
+{
+  "gate": "A-53 Download Asset Gate",
+  "status": "PASS",
+  "layer": "Layer1",
+  "site_key": "lifeshiftlab",
+  "service_name": "ライフシフトラボ",
+  "domain": "career_school",
+  "checklist_path": "public/evidence/lifeshiftlab/latest/checklist.html",
+  "item_count": 15,
+  "file_size_bytes": 9453,
+  "generated_at": "2026-10-16T14:47:53.217033",
+  "blockers": []
+}
