@@ -1,0 +1,13 @@
+{
+  "gate": "A-53 Download Asset Gate",
+  "status": "PASS",
+  "layer": "Layer1",
+  "site_key": "fitclinic",
+  "service_name": "フィットクリニック",
+  "domain": "online_clinic",
+  "checklist_path": "public/evidence/fitclinic/latest/checklist.html",
+  "item_count": 15,
+  "file_size_bytes": 9528,
+  "generated_at": "2026-10-23T21:27:06.512350",
+  "blockers": []
+}
