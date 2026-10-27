@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>きらりライフサポート 問い合わせ・面談チェックリスト</title>
+<title>きらりライフサポート 申し込み前・面談チェックリスト</title>
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 body {
@@ -46,6 +46,14 @@ body {
   margin-bottom: 6px;
   cursor: pointer;
   transition: background .15s;
+}
+.scope-note {
+  background: #fffbeb;
+  border: 1px solid #f59e0b;
+  border-radius: 6px;
+  padding: 10px 12px;
+  margin-bottom: 12px;
+  font-size: .85rem;
 }
 .check-item:hover { background: #f0f9ff; }
 .check-box { width: 18px; height: 18px; cursor: pointer; flex-shrink: 0; margin-top: 2px; accent-color: #3b82f6; }
@@ -100,137 +108,129 @@ input:checked + label .check-text { text-decoration: line-through; color: #9ca3a
 <body>
 <div class="header">
   <h1>📋 きらりライフサポート</h1>
-  <div class="meta">問い合わせ・面談時チェックリスト｜2026年07月28日 作成</div>
+  <div class="meta">申し込み前・面談チェックリスト｜2026年10月27日 作成</div>
 </div>
 
-<div class="section-title">確認事項（全16項目）</div>
+<div class="section-title">確認事項（全15項目）</div>
 
         <div class="check-item">
           <input type="checkbox" id="chk1" class="check-box">
           <label for="chk1">
             <span class="check-num">01</span>
-            <span class="check-cat">対応エリア確認</span>
-            <span class="check-text">対応エリア（都道府県・市区町村）を確認した</span>
+            <span class="check-cat">対応エリア</span>
+            <span class="check-text">住所が東京都と、神奈川県・千葉県・埼玉県の一部地域に入るかを、申込みフォームの郵便番号で確かめた</span>
           </label>
         </div>
         <div class="check-item">
           <input type="checkbox" id="chk2" class="check-box">
           <label for="chk2">
             <span class="check-num">02</span>
-            <span class="check-cat">料金体系確認</span>
-            <span class="check-text">時間コース別の単価・訪問費等の追加費用を確認した</span>
+            <span class="check-cat">時間と料金</span>
+            <span class="check-text">1回の時間で1時間あたりの料金が変わる（4時間以上2,970円〜1時間3,960円・税込）ことを確かめ、頼む時間を決めた</span>
           </label>
         </div>
         <div class="check-item">
           <input type="checkbox" id="chk3" class="check-box">
           <label for="chk3">
             <span class="check-num">03</span>
-            <span class="check-cat">入会金確認</span>
-            <span class="check-text">入会金の金額・免除条件（早期退会免除等）を確認した</span>
+            <span class="check-cat">訪問費</span>
+            <span class="check-text">時間料金とは別に、訪問1回ごとに990円（税込）かかることを確かめた</span>
           </label>
         </div>
         <div class="check-item">
           <input type="checkbox" id="chk4" class="check-box">
           <label for="chk4">
             <span class="check-num">04</span>
-            <span class="check-cat">依頼内容の組合せ確認</span>
-            <span class="check-text">1回の訪問で依頼できるサービスの組合せ範囲（掃除・料理・育児サポート等）を確認した</span>
+            <span class="check-cat">入会金と新規特典</span>
+            <span class="check-text">入会金5,500円（税込）と、新規特典（入会金無料・初回2,000円引き）が自分に当てはまるかを運営に確かめた</span>
           </label>
         </div>
         <div class="check-item">
           <input type="checkbox" id="chk5" class="check-box">
           <label for="chk5">
             <span class="check-num">05</span>
-            <span class="check-cat">専任制・担当確認</span>
-            <span class="check-text">毎回同じスタッフが対応する専任制か、担当変更の条件を確認した</span>
+            <span class="check-cat">頼みたいこと</span>
+            <span class="check-text">訪問のたびに頼みたいこと（掃除・料理・育児・買物など）と優先順位を書き出した</span>
           </label>
         </div>
         <div class="check-item">
           <input type="checkbox" id="chk6" class="check-box">
           <label for="chk6">
             <span class="check-num">06</span>
-            <span class="check-cat">育児・保育対応条件確認</span>
-            <span class="check-text">乳幼児等の保育サポートを依頼する場合の追加条件・追加費用を確認した</span>
+            <span class="check-cat">担当</span>
+            <span class="check-text">原則として同じきらりさんが続けて担当すること（専任制）と、担当が変わることもあると利用規約にあることを確かめた</span>
           </label>
         </div>
         <div class="check-item">
           <input type="checkbox" id="chk7" class="check-box">
           <label for="chk7">
             <span class="check-num">07</span>
-            <span class="check-cat">損害賠償保険確認</span>
-            <span class="check-text">サービス提供中の事故・物損に対する損害賠償保険の有無と適用条件を確認した</span>
+            <span class="check-cat">0〜2歳の保育</span>
+            <span class="check-text">保護者がいないときは1時間550円のシッターオプションが要ることを確かめた</span>
           </label>
         </div>
         <div class="check-item">
           <input type="checkbox" id="chk8" class="check-box">
           <label for="chk8">
             <span class="check-num">08</span>
-            <span class="check-cat">品質チェック体制確認</span>
-            <span class="check-text">初回訪問時の品質チェック・同行体制の有無を確認した</span>
+            <span class="check-cat">補助券</span>
+            <span class="check-text">ベビーシッター補助は使えず、使えるのはベネフィット・ワンの東京都人材支援事業団の補助券（家事代行券）だけであることを確かめた</span>
           </label>
         </div>
         <div class="check-item">
           <input type="checkbox" id="chk9" class="check-box">
           <label for="chk9">
             <span class="check-num">09</span>
-            <span class="check-cat">キャンセル条件確認</span>
-            <span class="check-text">キャンセル・日程変更の条件と費用の有無を確認した</span>
+            <span class="check-cat">深夜早朝・鍵</span>
+            <span class="check-text">朝早く・夜遅くの深夜早朝料金と、鍵を預けるときの料金を確かめた</span>
           </label>
         </div>
         <div class="check-item">
           <input type="checkbox" id="chk10" class="check-box">
           <label for="chk10">
             <span class="check-num">10</span>
-            <span class="check-cat">解約手続き確認</span>
-            <span class="check-text">解約・退会の手続き方法と違約金の有無を確認した</span>
+            <span class="check-cat">支払い</span>
+            <span class="check-text">定期契約の支払いが口座振替であることを確かめた</span>
           </label>
         </div>
         <div class="check-item">
           <input type="checkbox" id="chk11" class="check-box">
           <label for="chk11">
             <span class="check-num">11</span>
-            <span class="check-cat">支払い方法確認</span>
-            <span class="check-text">対応している支払い方法（現金・クレジットカード等）を確認した</span>
+            <span class="check-cat">キャンセル料</span>
+            <span class="check-text">訪問の48時間前より後の取り消しにキャンセル料がかかることがあり、年3回まで免除されるしくみを確かめた</span>
           </label>
         </div>
         <div class="check-item">
           <input type="checkbox" id="chk12" class="check-box">
           <label for="chk12">
             <span class="check-num">12</span>
-            <span class="check-cat">他社比較実施</span>
-            <span class="check-text">類似サービスと料金・対応エリア・保証内容を比較検討した</span>
+            <span class="check-cat">最低料金</span>
+            <span class="check-text">1時間以内に終わっても1時間分の料金がかかることを確かめた</span>
           </label>
         </div>
         <div class="check-item">
           <input type="checkbox" id="chk13" class="check-box">
           <label for="chk13">
             <span class="check-num">13</span>
-            <span class="check-cat">service_name</span>
-            <span class="check-text">サービス名: きらりライフサポート（旧名称: 東京かあさん、運営: 株式会社ぴんぴんきらり）を確認した</span>
+            <span class="check-cat">トライアル</span>
+            <span class="check-text">定期の前に試せるトライアルがあり、初回とトライアルは在宅が要ることを確かめた</span>
           </label>
         </div>
         <div class="check-item">
           <input type="checkbox" id="chk14" class="check-box">
           <label for="chk14">
             <span class="check-num">14</span>
-            <span class="check-cat">service_overview</span>
-            <span class="check-text">家事代行・ベビーシッター・ペットシッターの枠を超え、掃除/料理/洗濯/整理整頓/育児サポート/保育園送迎/買物代行等を1回の訪問で組み合わせて依頼できる完全オーダーメイド型のご家庭サポートサービス。専任制（同じスタッフが継続対応）を確認した</span>
+            <span class="check-cat">損害賠償保険</span>
+            <span class="check-text">対人・対物とも1事故1億円まで（動物・植物は対象外）、適用は事務局へ問い合わせることを確かめた</span>
           </label>
         </div>
         <div class="check-item">
           <input type="checkbox" id="chk15" class="check-box">
           <label for="chk15">
             <span class="check-num">15</span>
-            <span class="check-cat">pricing</span>
-            <span class="check-text">料金（税込・2026年7月時点）: 1時間コース3,300円/h、2時間コース3,000円/h、2.5時間コース2,850円/h、3時間コース2,600円/h、3.5時間コース2,500円/h、4時間以上コース2,400円/h。入会金5,500円（初月のみ・30日以内退会で免除）、訪問費880円/回が別途発生を確認した</span>
-          </label>
-        </div>
-        <div class="check-item">
-          <input type="checkbox" id="chk16" class="check-box">
-          <label for="chk16">
-            <span class="check-num">16</span>
-            <span class="check-cat">coverage_area</span>
-            <span class="check-text">対応エリア: 東京都・神奈川県・千葉県・埼玉県のみ（東京都は千代田区〜西東京市まで多数の区市を公式サイトに列挙、対応エリア外の県・地域は非対応）を確認した</span>
+            <span class="check-cat">相性</span>
+            <span class="check-text">初回の訪問のあと、きらりさんとの相性や頼み方で気になることを運営に相談できるかを聞いた</span>
           </label>
         </div>
 
@@ -238,7 +238,7 @@ input:checked + label .check-text { text-decoration: line-through; color: #9ca3a
 
 <div class="footer">
   このチェックリストは きらりライフサポート の申込み前確認用です。
-  情報は 2026年07月28日 時点のものです。最新情報は公式サイトでご確認ください。
+  情報は 2026年10月27日 時点のものです。最新情報は公式サイトでご確認ください。
 </div>
 </body>
 </html>
