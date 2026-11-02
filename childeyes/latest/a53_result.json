@@ -5,9 +5,9 @@
   "site_key": "childeyes",
   "service_name": "チャイルド・アイズ",
   "domain": "early_childhood_education",
-  "checklist_path": "public/evidence/childeyes/latest/checklist.html",
-  "item_count": 17,
-  "file_size_bytes": 10682,
-  "generated_at": "2026-07-28T09:01:15.157717",
+  "checklist_path": "/Users/ishidamotoki/Applications/CroudeCode作業フォルダ/affiliate-tool/public/evidence/childeyes/latest/checklist.html",
+  "item_count": 21,
+  "file_size_bytes": 12914,
+  "generated_at": "2026-11-02T14:11:45.169517",
   "blockers": []
 }

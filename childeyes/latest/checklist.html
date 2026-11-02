@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>チャイルド・アイズ 問い合わせ・面談チェックリスト</title>
+<title>チャイルド・アイズ チャイルド・アイズ 問い合わせ・面談チェックリスト</title>
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 body {
@@ -46,6 +46,14 @@ body {
   margin-bottom: 6px;
   cursor: pointer;
   transition: background .15s;
+}
+.scope-note {
+  background: #fffbeb;
+  border: 1px solid #f59e0b;
+  border-radius: 6px;
+  padding: 10px 12px;
+  margin-bottom: 12px;
+  font-size: .85rem;
 }
 .check-item:hover { background: #f0f9ff; }
 .check-box { width: 18px; height: 18px; cursor: pointer; flex-shrink: 0; margin-top: 2px; accent-color: #3b82f6; }
@@ -100,145 +108,177 @@ input:checked + label .check-text { text-decoration: line-through; color: #9ca3a
 <body>
 <div class="header">
   <h1>📋 チャイルド・アイズ</h1>
-  <div class="meta">問い合わせ・面談時チェックリスト｜2026年07月28日 作成</div>
+  <div class="meta">チャイルド・アイズ 問い合わせ・面談チェックリスト｜2026年11月02日 作成</div>
 </div>
 
-<div class="section-title">確認事項（全17項目）</div>
+<div class="section-title">確認事項（全21項目）</div>
 
         <div class="check-item">
           <input type="checkbox" id="chk1" class="check-box">
           <label for="chk1">
             <span class="check-num">01</span>
-            <span class="check-cat">対象年齢・コース確認</span>
-            <span class="check-text">対象年齢とコース区分（知能育成・受験対策等）を確認した</span>
+            <span class="check-cat">対象年齢とコース</span>
+            <span class="check-text">子どもの年齢が対象（1.5歳〜小学6年生）に入るかと、知能育成コースと受験対策コースのどちらにするかを確かめた</span>
           </label>
         </div>
         <div class="check-item">
           <input type="checkbox" id="chk2" class="check-box">
           <label for="chk2">
             <span class="check-num">02</span>
-            <span class="check-cat">料金確認</span>
-            <span class="check-text">月々の受講費・教材にかかる費用・入会金等を教室へ直接確認した</span>
+            <span class="check-cat">教室の場所</span>
+            <span class="check-text">通える範囲に教室があるかを、公式サイトの教室検索で確かめた</span>
           </label>
         </div>
         <div class="check-item">
           <input type="checkbox" id="chk3" class="check-box">
           <label for="chk3">
             <span class="check-num">03</span>
-            <span class="check-cat">無料体験内容確認</span>
-            <span class="check-text">無料体験レッスン・教室見学の内容と申込み方法を確認した</span>
+            <span class="check-cat">教室ごとの違い</span>
+            <span class="check-text">通いたい教室で開講しているコースと、レッスンの曜日・時間を確かめ、通える教室が複数あれば体験で比べた</span>
           </label>
         </div>
         <div class="check-item">
           <input type="checkbox" id="chk4" class="check-box">
           <label for="chk4">
             <span class="check-num">04</span>
-            <span class="check-cat">対応教室・エリア確認</span>
-            <span class="check-text">通える教室の所在地・開校状況を教室検索で確認した</span>
+            <span class="check-cat">講師と指導方針</span>
+            <span class="check-text">通いたい教室の指導方針や授業内容の疑問を、無料体験か教室見学で聞いた</span>
           </label>
         </div>
         <div class="check-item">
           <input type="checkbox" id="chk5" class="check-box">
           <label for="chk5">
             <span class="check-num">05</span>
-            <span class="check-cat">レッスン形式確認</span>
-            <span class="check-text">母子分離か保護者同伴可能かなど、レッスン形式を確認した</span>
+            <span class="check-cat">レッスン料と教材の費用</span>
+            <span class="check-text">毎月のレッスン料と教材の費用を公式サイトの料金表（Aエリア・Bエリア）で確かめ、通いたい教室がどちらの料金かを、教室への問い合わせか無料体験で確かめた</span>
           </label>
         </div>
         <div class="check-item">
           <input type="checkbox" id="chk6" class="check-box">
           <label for="chk6">
             <span class="check-num">06</span>
-            <span class="check-cat">教材・カリキュラム確認</span>
-            <span class="check-text">使用する教材・カリキュラムの特徴を確認した</span>
+            <span class="check-cat">入会金とキャンペーン</span>
+            <span class="check-text">入会金が通常23,100円（税込）で、2026年11月30日までの秋のキャンペーンでは11,550円（税込）になることと、通う教室で当てはまるかを教室に確かめた</span>
           </label>
         </div>
         <div class="check-item">
           <input type="checkbox" id="chk7" class="check-box">
           <label for="chk7">
             <span class="check-num">07</span>
-            <span class="check-cat">検定・受験対策内容確認</span>
-            <span class="check-text">検定対策・受験対策（行動観察・面接対策等）の実施内容を確認した</span>
+            <span class="check-cat">ほかの費用</span>
+            <span class="check-text">維持管理費（月1,628円）のほか、検定の受験料や季節講習の費用など、毎月のレッスン料のほかにかかる費用があるかを教室に確かめた</span>
           </label>
         </div>
         <div class="check-item">
           <input type="checkbox" id="chk8" class="check-box">
           <label for="chk8">
             <span class="check-num">08</span>
-            <span class="check-cat">振替・欠席時対応確認</span>
-            <span class="check-text">レッスンの振替・欠席時の対応方法を確認した</span>
+            <span class="check-cat">支払い方法</span>
+            <span class="check-text">毎月のレッスン料の支払い方法（振込・口座振替など）を、通いたい教室に確かめた</span>
           </label>
         </div>
         <div class="check-item">
           <input type="checkbox" id="chk9" class="check-box">
           <label for="chk9">
             <span class="check-num">09</span>
-            <span class="check-cat">講師・指導方針確認</span>
-            <span class="check-text">講師の指導方針・体制について確認した</span>
+            <span class="check-cat">教材</span>
+            <span class="check-text">知研式知能理論に基づくオリジナル教材（100種類以上）を使うことを確かめた</span>
           </label>
         </div>
         <div class="check-item">
           <input type="checkbox" id="chk10" class="check-box">
           <label for="chk10">
             <span class="check-num">10</span>
-            <span class="check-cat">追加費用確認</span>
-            <span class="check-text">検定受験料・季節講習費等、通常の受講費以外の費用の有無を確認した</span>
+            <span class="check-cat">レッスンの形</span>
+            <span class="check-text">レッスンは母子分離型が基本で、1.5〜3歳などは保護者の同伴もできることを確かめ、レッスンに同席したいかを考えた</span>
           </label>
         </div>
         <div class="check-item">
           <input type="checkbox" id="chk11" class="check-box">
           <label for="chk11">
             <span class="check-num">11</span>
-            <span class="check-cat">解約・退会手続き確認</span>
-            <span class="check-text">解約・退会の手続き方法を確認した</span>
+            <span class="check-cat">受験対策コースの開講</span>
+            <span class="check-text">受験対策コースを考えているなら、通いたい教室でそのコースを開講しているかを、体験の申し込みのときに確かめた</span>
           </label>
         </div>
         <div class="check-item">
           <input type="checkbox" id="chk12" class="check-box">
           <label for="chk12">
             <span class="check-num">12</span>
-            <span class="check-cat">他社比較実施</span>
-            <span class="check-text">類似の幼児教室と料金・カリキュラムを比較検討した</span>
+            <span class="check-cat">受験対策の中身</span>
+            <span class="check-text">小学校受験の対策ではペーパーテストのほかに行動観察・面接対策もあることを確かめ、志望校に合わせた対策の中身を教室に聞いた</span>
           </label>
         </div>
         <div class="check-item">
           <input type="checkbox" id="chk13" class="check-box">
           <label for="chk13">
             <span class="check-num">13</span>
-            <span class="check-cat">service_name</span>
-            <span class="check-text">サービス名: チャイルド・アイズ（運営: 株式会社ＹＰスイッチ、やる気スイッチグループ）を確認した</span>
+            <span class="check-cat">合格実績</span>
+            <span class="check-text">志望する幼稚園・小学校への合格実績があるかと、教室の得意な受験校を教室に聞いた</span>
           </label>
         </div>
         <div class="check-item">
           <input type="checkbox" id="chk14" class="check-box">
           <label for="chk14">
             <span class="check-num">14</span>
-            <span class="check-cat">target_age</span>
-            <span class="check-text">対象年齢: 1.5歳〜小学6年生。知能育成コース（1.5歳〜3歳/4歳・年少/5歳・年中/6歳・年長/小1〜）と受験対策コース（幼稚園受験対策/小学校受験コース/中学受験準備コース〈思考力アドバンスコースアストルム〉）の2本柱を確認した</span>
+            <span class="check-cat">中学受験準備</span>
+            <span class="check-text">中学受験準備コースの目的を確かめ、志望校別の受験指導が要るなら進学塾との併用を考えた</span>
           </label>
         </div>
         <div class="check-item">
           <input type="checkbox" id="chk15" class="check-box">
           <label for="chk15">
             <span class="check-num">15</span>
-            <span class="check-cat">pricing_not_published</span>
-            <span class="check-text">料金: 公式サイトに全国一律の料金記載なし（フランチャイズ型で教室ごとに異なる）。FAQページでも『料金について気になる点は各教室にお問い合わせください』とのみ案内を確認した</span>
+            <span class="check-cat">家庭学習</span>
+            <span class="check-text">教室のレッスンのほかに、家での取り組みが求められるかを確かめた</span>
           </label>
         </div>
         <div class="check-item">
           <input type="checkbox" id="chk16" class="check-box">
           <label for="chk16">
             <span class="check-num">16</span>
-            <span class="check-cat">coverage_nationwide</span>
-            <span class="check-text">対応エリア: 全国多数の教室を展開（教室検索ページ/search/で確認可能）。2025年後半〜2026年にかけても新規開校が続いている（例: 所沢ファルマン通り校2026.07、東石井校2026.02、八千代村上校2026.02、広島南校2026.02等、公式サイト開校情報より）を確認した</span>
+            <span class="check-cat">無料体験の申し込み</span>
+            <span class="check-text">無料体験レッスン・教室見学を、公式サイトのWebフォームから申し込めることを確かめた</span>
           </label>
         </div>
         <div class="check-item">
           <input type="checkbox" id="chk17" class="check-box">
           <label for="chk17">
             <span class="check-num">17</span>
-            <span class="check-cat">campaign_summer_lesson</span>
-            <span class="check-text">2026.06.01付ニュースリリースで短期集中型「夏期特別レッスン2026」実施中（脳をバランスよく刺激する『夏の知育チャレンジ』コース）を確認した</span>
+            <span class="check-cat">無料体験で見ること</span>
+            <span class="check-text">無料体験で、子どもの反応・講師との相性・教室の雰囲気・ほかの生徒の様子を見て、入会するかを決めることにした</span>
+          </label>
+        </div>
+        <div class="check-item">
+          <input type="checkbox" id="chk18" class="check-box">
+          <label for="chk18">
+            <span class="check-num">18</span>
+            <span class="check-cat">転居のとき</span>
+            <span class="check-text">転居の予定があるなら、転居先の近くの教室へ移れるかと、その手続きを教室に聞いた</span>
+          </label>
+        </div>
+        <div class="check-item">
+          <input type="checkbox" id="chk19" class="check-box">
+          <label for="chk19">
+            <span class="check-num">19</span>
+            <span class="check-cat">ほかの教室との比較</span>
+            <span class="check-text">ほかの幼児教室（七田式・こぐま会など）と、対象年齢・目的・通える場所・料金の出し方を比べた</span>
+          </label>
+        </div>
+        <div class="check-item">
+          <input type="checkbox" id="chk20" class="check-box">
+          <label for="chk20">
+            <span class="check-num">20</span>
+            <span class="check-cat">最新の情報</span>
+            <span class="check-text">対象条件・料金・キャンペーン内容は変わることがあるため、申し込む前に公式サイトで最新の情報を確かめた</span>
+          </label>
+        </div>
+        <div class="check-item">
+          <input type="checkbox" id="chk21" class="check-box">
+          <label for="chk21">
+            <span class="check-num">21</span>
+            <span class="check-cat">問い合わせ</span>
+            <span class="check-text">気になる点を、申し込む前に公式サイトの問い合わせ窓口か通いたい教室に問い合わせた</span>
           </label>
         </div>
 
@@ -246,7 +286,7 @@ input:checked + label .check-text { text-decoration: line-through; color: #9ca3a
 
 <div class="footer">
   このチェックリストは チャイルド・アイズ の申込み前確認用です。
-  情報は 2026年07月28日 時点のものです。最新情報は公式サイトでご確認ください。
+  情報は 2026年11月02日 時点のものです。最新情報は公式サイトでご確認ください。
 </div>
 </body>
 </html>
