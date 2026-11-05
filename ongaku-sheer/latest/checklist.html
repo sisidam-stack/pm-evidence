@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>シアーミュージック 問い合わせ・面談チェックリスト</title>
+<title>シアーミュージック シアーミュージック 申し込み前・体験レッスン チェックリスト</title>
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 body {
@@ -46,6 +46,14 @@ body {
   margin-bottom: 6px;
   cursor: pointer;
   transition: background .15s;
+}
+.scope-note {
+  background: #fffbeb;
+  border: 1px solid #f59e0b;
+  border-radius: 6px;
+  padding: 10px 12px;
+  margin-bottom: 12px;
+  font-size: .85rem;
 }
 .check-item:hover { background: #f0f9ff; }
 .check-box { width: 18px; height: 18px; cursor: pointer; flex-shrink: 0; margin-top: 2px; accent-color: #3b82f6; }
@@ -100,129 +108,217 @@ input:checked + label .check-text { text-decoration: line-through; color: #9ca3a
 <body>
 <div class="header">
   <h1>📋 シアーミュージック</h1>
-  <div class="meta">問い合わせ・面談時チェックリスト｜2026年07月16日 作成</div>
+  <div class="meta">シアーミュージック 申し込み前・体験レッスン チェックリスト｜2026年11月05日 作成</div>
 </div>
 
-<div class="section-title">確認事項（全15項目）</div>
+<div class="section-title">確認事項（全26項目）</div>
 
         <div class="check-item">
           <input type="checkbox" id="chk1" class="check-box">
           <label for="chk1">
             <span class="check-num">01</span>
-            <span class="check-cat">料金体系確認</span>
-            <span class="check-text">入会金・月謝（回数別）の料金体系を確認した</span>
+            <span class="check-cat">料金：お月謝</span>
+            <span class="check-text">お月謝は月2回11,000円・月3回14,850円・月4回17,600円（いずれも税込）で、無理なく通える月の回数を決めた</span>
           </label>
         </div>
         <div class="check-item">
           <input type="checkbox" id="chk2" class="check-box">
           <label for="chk2">
             <span class="check-num">02</span>
-            <span class="check-cat">楽器レンタル確認</span>
-            <span class="check-text">楽器レンタルの有無と対象楽器を確認した</span>
+            <span class="check-cat">料金：1回あたり</span>
+            <span class="check-text">1回あたりは月2回5,500円・月3回4,950円・月4回4,400円（税込）であることを確かめ、受けられない回があると実際の1回あたりが高くなることも考えた</span>
           </label>
         </div>
         <div class="check-item">
           <input type="checkbox" id="chk3" class="check-box">
           <label for="chk3">
             <span class="check-num">03</span>
-            <span class="check-cat">指名料確認</span>
-            <span class="check-text">講師の指名可否・指名料の有無を確認した</span>
+            <span class="check-cat">料金：入会金</span>
+            <span class="check-text">入会のときに入会金2,200円（税込）がかかることを確かめた</span>
           </label>
         </div>
         <div class="check-item">
           <input type="checkbox" id="chk4" class="check-box">
           <label for="chk4">
             <span class="check-num">04</span>
-            <span class="check-cat">レッスン形式確認</span>
-            <span class="check-text">レッスン形式（マンツーマン/グループ、対面/オンライン）を確認した</span>
+            <span class="check-cat">料金：入会金0円キャンペーン</span>
+            <span class="check-text">入会金0円キャンペーン（期間内に体験レッスンの受講と入会手続きを終えると入会金2,200円が0円）の対象校舎・期間に、通いたい校舎が入っているかを公式サイトのお知らせで確かめた</span>
           </label>
         </div>
         <div class="check-item">
           <input type="checkbox" id="chk5" class="check-box">
           <label for="chk5">
             <span class="check-num">05</span>
-            <span class="check-cat">振替可否確認</span>
-            <span class="check-text">校舎間の振替・移動が可能か確認した</span>
+            <span class="check-cat">料金：指名料</span>
+            <span class="check-text">選びたい講師に指名料がかかるか、かかるならいくらかを総合受付センターに聞いた</span>
           </label>
         </div>
         <div class="check-item">
           <input type="checkbox" id="chk6" class="check-box">
           <label for="chk6">
             <span class="check-num">06</span>
-            <span class="check-cat">体験レッスン確認</span>
-            <span class="check-text">体験レッスンの内容・回数・費用を確認した</span>
+            <span class="check-cat">料金：ほかの費用</span>
+            <span class="check-text">入会金・お月謝・指名料のほかに費用（運営管理費・施設利用料など）がかからないかを運営に確かめた</span>
           </label>
         </div>
         <div class="check-item">
           <input type="checkbox" id="chk7" class="check-box">
           <label for="chk7">
             <span class="check-num">07</span>
-            <span class="check-cat">休会解約条件確認</span>
-            <span class="check-text">休会・退会の手続きと違約金の有無を確認した</span>
+            <span class="check-cat">支払い</span>
+            <span class="check-text">入会金と初月のお月謝はJデビット決済か振込（現金は不可）で、翌月分のお月謝は当月27日までに支払うことを確かめ、使える支払い方法を入会手続きのときにスタッフと確かめた</span>
           </label>
         </div>
         <div class="check-item">
           <input type="checkbox" id="chk8" class="check-box">
           <label for="chk8">
             <span class="check-num">08</span>
-            <span class="check-cat">レッスン時間確認</span>
-            <span class="check-text">レッスン時間・コマ数と実際の指導時間を確認した</span>
+            <span class="check-cat">予約</span>
+            <span class="check-text">レッスンの曜日・時間は固定ではなく予約サイトか電話で予約し、翌月分の予約枠は毎月20日に公開されることを確かめた</span>
           </label>
         </div>
         <div class="check-item">
           <input type="checkbox" id="chk9" class="check-box">
           <label for="chk9">
             <span class="check-num">09</span>
-            <span class="check-cat">イベント参加確認</span>
-            <span class="check-text">発表会・イベント参加の任意性と費用を確認した</span>
+            <span class="check-cat">キャンセル</span>
+            <span class="check-text">キャンセル・変更はレッスン前日の17時までで、それ以降のキャンセルや当日の欠席は1レッスンを受けたものとして数えられることを確かめた</span>
           </label>
         </div>
         <div class="check-item">
           <input type="checkbox" id="chk10" class="check-box">
           <label for="chk10">
             <span class="check-num">10</span>
-            <span class="check-cat">対応エリア確認</span>
-            <span class="check-text">対応エリア・校舎の所在地を確認した</span>
+            <span class="check-cat">繰り越し</span>
+            <span class="check-text">その月に受けなかったレッスンは翌月へ繰り越せないことを確かめた</span>
           </label>
         </div>
         <div class="check-item">
           <input type="checkbox" id="chk11" class="check-box">
           <label for="chk11">
             <span class="check-num">11</span>
-            <span class="check-cat">契約期間確認</span>
-            <span class="check-text">契約期間の縛り・自動更新の有無を確認した</span>
+            <span class="check-cat">回数の変更</span>
+            <span class="check-text">月の回数は、変更したい月の前月5日までに手続きをすると翌月から変えられることを確かめた</span>
           </label>
         </div>
         <div class="check-item">
           <input type="checkbox" id="chk12" class="check-box">
           <label for="chk12">
             <span class="check-num">12</span>
-            <span class="check-cat">他社比較実施</span>
-            <span class="check-text">類似サービスと料金・レッスン内容を比較検討した</span>
+            <span class="check-cat">休会</span>
+            <span class="check-text">休会の手続きの期限・休める期間と、休会中の月謝の扱いを、公式サイトのよくある質問と総合受付センターで確かめた</span>
           </label>
         </div>
         <div class="check-item">
           <input type="checkbox" id="chk13" class="check-box">
           <label for="chk13">
             <span class="check-num">13</span>
-            <span class="check-cat">service_name</span>
-            <span class="check-text">サービス名: シアーミュージック（運営: SHEER INC.）を確認した</span>
+            <span class="check-cat">退会</span>
+            <span class="check-text">退会は電話またはWEBで、退会したい月の前月5日までに手続きが必要なことを確かめ、月の途中で退会したときの月謝の扱い（日割りの有無）を総合受付センターに聞いた</span>
           </label>
         </div>
         <div class="check-item">
           <input type="checkbox" id="chk14" class="check-box">
           <label for="chk14">
             <span class="check-num">14</span>
-            <span class="check-cat">pricing</span>
-            <span class="check-text">料金: 入会金2,200円（税込）、お月謝は月2回11,000円/月3回14,850円/月4回17,600円（いずれも税込）。1コマ45分を確認した</span>
+            <span class="check-cat">返金</span>
+            <span class="check-text">納入済みの入会金は返金されないことと、正当な理由がない限り返金されないことを確かめた</span>
           </label>
         </div>
         <div class="check-item">
           <input type="checkbox" id="chk15" class="check-box">
           <label for="chk15">
             <span class="check-num">15</span>
-            <span class="check-cat">coverage_area</span>
-            <span class="check-text">対応エリア: 全国（北海道・東北・北陸・甲信越／関東／近畿・東海／中国・四国・九州・沖縄の4エリアに校舎展開、追加料金なしで校舎間移動可）を確認した</span>
+            <span class="check-cat">月の途中の入会</span>
+            <span class="check-text">月の途中で入会したときの月謝の扱いを、入会手続きのときにスタッフに聞いた</span>
+          </label>
+        </div>
+        <div class="check-item">
+          <input type="checkbox" id="chk16" class="check-box">
+          <label for="chk16">
+            <span class="check-num">16</span>
+            <span class="check-cat">無料体験レッスン</span>
+            <span class="check-text">無料体験レッスンを受けて、講師との相性・レッスンの進め方・教室の雰囲気を確かめてから入会を決めた</span>
+          </label>
+        </div>
+        <div class="check-item">
+          <input type="checkbox" id="chk17" class="check-box">
+          <label for="chk17">
+            <span class="check-num">17</span>
+            <span class="check-cat">無料体験レッスン</span>
+            <span class="check-text">体験レッスンは30分で全体で約1時間、予約時間の5〜10分前に校舎へ行くこと（15分以上遅れると受講できないことがある）を確かめ、練習したい曲の音源や楽譜、ボイストレーニング系は水、当日入会する場合はキャッシュカードを用意した</span>
+          </label>
+        </div>
+        <div class="check-item">
+          <input type="checkbox" id="chk18" class="check-box">
+          <label for="chk18">
+            <span class="check-num">18</span>
+            <span class="check-cat">無料体験レッスン</span>
+            <span class="check-text">無料体験レッスンは校舎ごとに予約枠が限られているため、希望の日時で受けられるかを早めに確かめた</span>
+          </label>
+        </div>
+        <div class="check-item">
+          <input type="checkbox" id="chk19" class="check-box">
+          <label for="chk19">
+            <span class="check-num">19</span>
+            <span class="check-cat">講師</span>
+            <span class="check-text">担任制ではなく講師を自由に選ぶ形のため、希望する講師の枠が通いたい時間帯に取れるかを体験のときにスタッフに聞いた</span>
+          </label>
+        </div>
+        <div class="check-item">
+          <input type="checkbox" id="chk20" class="check-box">
+          <label for="chk20">
+            <span class="check-num">20</span>
+            <span class="check-cat">レッスン時間</span>
+            <span class="check-text">1コマは45分（入替・準備の時間を含む）で、自分に足りる長さかを考えた</span>
+          </label>
+        </div>
+        <div class="check-item">
+          <input type="checkbox" id="chk21" class="check-box">
+          <label for="chk21">
+            <span class="check-num">21</span>
+            <span class="check-cat">レッスンの形</span>
+            <span class="check-text">レッスンはマンツーマンであることと、仲間と学びたいときに参加できるもの（ゴスペルチームなど）があるかを確かめた</span>
+          </label>
+        </div>
+        <div class="check-item">
+          <input type="checkbox" id="chk22" class="check-box">
+          <label for="chk22">
+            <span class="check-num">22</span>
+            <span class="check-cat">楽器レンタル</span>
+            <span class="check-text">楽器レンタルが無料で、校舎スタッフか講師に申し出ること、サックスはレンタルを中止していることを確かめた</span>
+          </label>
+        </div>
+        <div class="check-item">
+          <input type="checkbox" id="chk23" class="check-box">
+          <label for="chk23">
+            <span class="check-num">23</span>
+            <span class="check-cat">コース</span>
+            <span class="check-text">受けたいコース（ボイストレーニング系・楽器系）があるかと、月の回数の範囲で複数のコースを組み合わせられることを確かめた</span>
+          </label>
+        </div>
+        <div class="check-item">
+          <input type="checkbox" id="chk24" class="check-box">
+          <label for="chk24">
+            <span class="check-num">24</span>
+            <span class="check-cat">校舎</span>
+            <span class="check-text">追加料金なしで全国の校舎のレッスンを受けられることと、引っ越しや転勤のときは手続きで転校できることを確かめた</span>
+          </label>
+        </div>
+        <div class="check-item">
+          <input type="checkbox" id="chk25" class="check-box">
+          <label for="chk25">
+            <span class="check-num">25</span>
+            <span class="check-cat">校舎</span>
+            <span class="check-text">通う予定の校舎の在籍講師・開講コースと、その校舎の最新情報を確かめた</span>
+          </label>
+        </div>
+        <div class="check-item">
+          <input type="checkbox" id="chk26" class="check-box">
+          <label for="chk26">
+            <span class="check-num">26</span>
+            <span class="check-cat">最新情報</span>
+            <span class="check-text">対象条件やキャンペーン内容は変わることがあるため、申し込む前に公式サイトで最新の情報を確かめた</span>
           </label>
         </div>
 
@@ -230,7 +326,7 @@ input:checked + label .check-text { text-decoration: line-through; color: #9ca3a
 
 <div class="footer">
   このチェックリストは シアーミュージック の申込み前確認用です。
-  情報は 2026年07月16日 時点のものです。最新情報は公式サイトでご確認ください。
+  情報は 2026年11月05日 時点のものです。最新情報は公式サイトでご確認ください。
 </div>
 </body>
 </html>
