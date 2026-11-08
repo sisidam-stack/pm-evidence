@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>オンライン東大家庭教師友の会 問い合わせ・面談チェックリスト</title>
+<title>オンライン東大家庭教師友の会 オンライン東大家庭教師友の会 問い合わせ・面談チェックリスト</title>
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 body {
@@ -46,6 +46,14 @@ body {
   margin-bottom: 6px;
   cursor: pointer;
   transition: background .15s;
+}
+.scope-note {
+  background: #fffbeb;
+  border: 1px solid #f59e0b;
+  border-radius: 6px;
+  padding: 10px 12px;
+  margin-bottom: 12px;
+  font-size: .85rem;
 }
 .check-item:hover { background: #f0f9ff; }
 .check-box { width: 18px; height: 18px; cursor: pointer; flex-shrink: 0; margin-top: 2px; accent-color: #3b82f6; }
@@ -100,145 +108,169 @@ input:checked + label .check-text { text-decoration: line-through; color: #9ca3a
 <body>
 <div class="header">
   <h1>📋 オンライン東大家庭教師友の会</h1>
-  <div class="meta">問い合わせ・面談時チェックリスト｜2026年07月16日 作成</div>
+  <div class="meta">オンライン東大家庭教師友の会 問い合わせ・面談チェックリスト｜2026年11月09日 作成</div>
 </div>
 
-<div class="section-title">確認事項（全17項目）</div>
+<div class="section-title">確認事項（全20項目）</div>
 
         <div class="check-item">
           <input type="checkbox" id="chk1" class="check-box">
           <label for="chk1">
             <span class="check-num">01</span>
-            <span class="check-cat">対象学年確認</span>
-            <span class="check-text">対応学年・対象範囲を確認した（キャンペーン対象学年との相違に注意）</span>
+            <span class="check-cat">オンラインと対面</span>
+            <span class="check-text">申し込むのがオンライン指導か対面指導かを決め、体験授業やサービスの中身の違いを公式サイトで確かめた</span>
           </label>
         </div>
         <div class="check-item">
           <input type="checkbox" id="chk2" class="check-box">
           <label for="chk2">
             <span class="check-num">02</span>
-            <span class="check-cat">料金体系確認</span>
-            <span class="check-text">料金体系（時間単価・学年別/目的別の違い）を確認した</span>
+            <span class="check-cat">対面指導の地域</span>
+            <span class="check-text">対面での指導を望むなら、住んでいる地域が対面指導の案内の対象に入るかを確かめた</span>
           </label>
         </div>
         <div class="check-item">
           <input type="checkbox" id="chk3" class="check-box">
           <label for="chk3">
             <span class="check-num">03</span>
-            <span class="check-cat">無料体験の内容確認</span>
-            <span class="check-text">無料体験授業の内容・回数・条件を確認した</span>
+            <span class="check-cat">授業料</span>
+            <span class="check-text">授業料が時間あたり3,960円〜11,000円（税込）で、コースと教師の区分で決まることを確かめ、月に何回・何時間受けるかを決めて毎月の金額を出した</span>
           </label>
         </div>
         <div class="check-item">
           <input type="checkbox" id="chk4" class="check-box">
           <label for="chk4">
             <span class="check-num">04</span>
-            <span class="check-cat">教師変更条件確認</span>
-            <span class="check-text">教師の変更・交代にかかる条件や費用を確認した</span>
+            <span class="check-cat">学習サポート費と入会金</span>
+            <span class="check-text">授業料のほかに学習サポート費（指導があった月だけ月3,300円）と入会金（一世帯あたり22,000円・税込）がかかることを確かめた</span>
           </label>
         </div>
         <div class="check-item">
           <input type="checkbox" id="chk5" class="check-box">
           <label for="chk5">
             <span class="check-num">05</span>
-            <span class="check-cat">追加費用確認</span>
-            <span class="check-text">入会金・解約金・キャンセル料等の追加費用の有無を確認した</span>
+            <span class="check-cat">支払い方法</span>
+            <span class="check-text">授業料は完全後払いで、受講した翌月の中旬ごろに届く請求書を月末までに振込か口座振替で払うこと（口座振替は毎月385円の手数料）を確かめた</span>
           </label>
         </div>
         <div class="check-item">
           <input type="checkbox" id="chk6" class="check-box">
           <label for="chk6">
             <span class="check-num">06</span>
-            <span class="check-cat">授業形式確認</span>
-            <span class="check-text">授業形式（オンライン/対面、使用ツール）を確認した</span>
+            <span class="check-cat">受験対策コース</span>
+            <span class="check-text">受験対策コースは時間あたり4,510円〜、医学部受験コースは時間あたり8,800円〜で、コースによっては毎月の金額が高くなることを確かめた</span>
           </label>
         </div>
         <div class="check-item">
           <input type="checkbox" id="chk7" class="check-box">
           <label for="chk7">
             <span class="check-num">07</span>
-            <span class="check-cat">対応エリア時間帯確認</span>
-            <span class="check-text">対応エリア・時間帯の制約を確認した</span>
+            <span class="check-cat">学生の教師とプロ講師</span>
+            <span class="check-text">プロ家庭教師コースは新規の申込みを停止しているため、学生の教師（スタンダード・プレミアム）のどちらにするかを料金とあわせて決めた</span>
           </label>
         </div>
         <div class="check-item">
           <input type="checkbox" id="chk8" class="check-box">
           <label for="chk8">
             <span class="check-num">08</span>
-            <span class="check-cat">教材費確認</span>
-            <span class="check-text">教材費・機材費が別途必要か確認した</span>
+            <span class="check-cat">7つの0円</span>
+            <span class="check-text">1人目の体験料・教師交代費・授業キャンセル料・更新費・解約費・再入会費・兄弟姉妹入会費・機材貸出費が0円になる「7つの0円」の中身を確かめた</span>
           </label>
         </div>
         <div class="check-item">
           <input type="checkbox" id="chk9" class="check-box">
           <label for="chk9">
             <span class="check-num">09</span>
-            <span class="check-cat">契約期間確認</span>
-            <span class="check-text">契約期間・最低利用期間の縛りを確認した</span>
+            <span class="check-cat">キャンセルの条件</span>
+            <span class="check-text">授業のキャンセル料はかからないが、指導開始直前のキャンセルは控え、指導前日までに教師へ連絡するよう求められていることを確かめた</span>
           </label>
         </div>
         <div class="check-item">
           <input type="checkbox" id="chk10" class="check-box">
           <label for="chk10">
             <span class="check-num">10</span>
-            <span class="check-cat">進捗報告確認</span>
-            <span class="check-text">保護者向けの学習報告・進捗共有の有無を確認した</span>
+            <span class="check-cat">やめるとき・再開するとき</span>
+            <span class="check-text">途中でやめても解約金・違約金はかからず、退会制度がないため再開するときも入会金が要らないことを確かめた</span>
           </label>
         </div>
         <div class="check-item">
           <input type="checkbox" id="chk11" class="check-box">
           <label for="chk11">
             <span class="check-num">11</span>
-            <span class="check-cat">解約手続き確認</span>
-            <span class="check-text">解約・退会の手続き方法を確認した</span>
+            <span class="check-cat">返金</span>
+            <span class="check-text">購入済みのサービスの変更・キャンセル・返金の扱いを、特定商取引法に基づく表示で確かめた</span>
           </label>
         </div>
         <div class="check-item">
           <input type="checkbox" id="chk12" class="check-box">
           <label for="chk12">
             <span class="check-num">12</span>
-            <span class="check-cat">他社比較実施</span>
-            <span class="check-text">類似サービスと料金・体験内容を比較検討した</span>
+            <span class="check-cat">成績保証</span>
+            <span class="check-text">成績保証があるかを、申し込む前に運営に問い合わせた</span>
           </label>
         </div>
         <div class="check-item">
           <input type="checkbox" id="chk13" class="check-box">
           <label for="chk13">
             <span class="check-num">13</span>
-            <span class="check-cat">service_name</span>
-            <span class="check-text">サービス名: オンライン東大家庭教師友の会（運営: 株式会社トモノカイ、創業26年）を確認した</span>
+            <span class="check-cat">体験授業で見ること</span>
+            <span class="check-text">無料の体験授業で、教師との相性・指導の仕方・授業の雰囲気を確かめた</span>
           </label>
         </div>
         <div class="check-item">
           <input type="checkbox" id="chk14" class="check-box">
           <label for="chk14">
             <span class="check-num">14</span>
-            <span class="check-cat">pricing_base</span>
-            <span class="check-text">料金: 小中高生の家庭教師 3,960円/時間〜（学年別・目的別に細分化）を確認した</span>
+            <span class="check-cat">続けるかの判断</span>
+            <span class="check-text">体験授業だけで決めず、数回の授業を受けてから続けるかを決めることにした</span>
           </label>
         </div>
         <div class="check-item">
           <input type="checkbox" id="chk15" class="check-box">
           <label for="chk15">
             <span class="check-num">15</span>
-            <span class="check-cat">seven_zero_yen</span>
-            <span class="check-text">「7つの0円」制度: 体験料・教師交代費・キャンセル料・更新費・解約費・兄弟姉妹入会費・機材貸出費が全て0円を確認した</span>
+            <span class="check-cat">教師の交代</span>
+            <span class="check-text">教師が合わないときは交代を申し出られ、教師交代費は0円であることを確かめた</span>
           </label>
         </div>
         <div class="check-item">
           <input type="checkbox" id="chk16" class="check-box">
           <label for="chk16">
             <span class="check-num">16</span>
-            <span class="check-cat">trial_lesson</span>
-            <span class="check-text">70分無料体験授業＋オンライン自習室無料体験（7月キャンペーン、内容は月替わりの可能性あり）を確認した</span>
+            <span class="check-cat">学ぶ姿勢と家の手助け</span>
+            <span class="check-text">子どもが自分から学ぶ姿勢と、集中できる学習環境や保護者の手助け（特に低学年）を用意できるかを考えた</span>
           </label>
         </div>
         <div class="check-item">
           <input type="checkbox" id="chk17" class="check-box">
           <label for="chk17">
             <span class="check-num">17</span>
-            <span class="check-cat">coverage_area</span>
-            <span class="check-text">対応エリア: 全国（オンライン指導のため教師の対応エリアを気にせず選択可能）を確認した</span>
+            <span class="check-cat">端末と通信環境</span>
+            <span class="check-text">パソコンと安定したインターネット環境を用意できるかを確かめ、カメラが無ければWEBカメラの無料貸出を相談した（タブレットでは作動しない可能性がある）</span>
+          </label>
+        </div>
+        <div class="check-item">
+          <input type="checkbox" id="chk18" class="check-box">
+          <label for="chk18">
+            <span class="check-num">18</span>
+            <span class="check-cat">曜日と時間帯</span>
+            <span class="check-text">希望の曜日・時間帯で授業を組めるかと、毎回の授業時間や月の回数をどう増減できるかを確かめた</span>
+          </label>
+        </div>
+        <div class="check-item">
+          <input type="checkbox" id="chk19" class="check-box">
+          <label for="chk19">
+            <span class="check-num">19</span>
+            <span class="check-cat">ほかのサービスとの比較</span>
+            <span class="check-text">ほかのオンライン家庭教師と、料金・解約費・保証の内容を比べた</span>
+          </label>
+        </div>
+        <div class="check-item">
+          <input type="checkbox" id="chk20" class="check-box">
+          <label for="chk20">
+            <span class="check-num">20</span>
+            <span class="check-cat">最新の情報</span>
+            <span class="check-text">対象条件・キャンペーン内容・料金・支払い方法は変わることがあるため、申し込む前に公式サイトで最新の情報を確かめた</span>
           </label>
         </div>
 
@@ -246,7 +278,7 @@ input:checked + label .check-text { text-decoration: line-through; color: #9ca3a
 
 <div class="footer">
   このチェックリストは オンライン東大家庭教師友の会 の申込み前確認用です。
-  情報は 2026年07月16日 時点のものです。最新情報は公式サイトでご確認ください。
+  情報は 2026年11月09日 時点のものです。最新情報は公式サイトでご確認ください。
 </div>
 </body>
 </html>
