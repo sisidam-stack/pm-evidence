@@ -1,0 +1,13 @@
+{
+  "gate": "A-53 Download Asset Gate",
+  "status": "PASS",
+  "layer": "Layer1",
+  "site_key": "tantei-ryokin",
+  "service_name": "探偵社SIGNAL",
+  "domain": "detective_agency",
+  "checklist_path": "/Users/ishidamotoki/Applications/CroudeCode作業フォルダ/affiliate-tool/public/evidence/tantei-ryokin/latest/checklist.html",
+  "item_count": 12,
+  "file_size_bytes": 7633,
+  "generated_at": "2026-11-11T12:13:59.011793",
+  "blockers": []
+}
