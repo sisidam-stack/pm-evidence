@@ -6,8 +6,8 @@
   "service_name": "電話占いヴェルニ",
   "domain": "fortune_telling",
   "checklist_path": "public/evidence/uranai-vernis/latest/checklist.html",
-  "item_count": 15,
-  "file_size_bytes": 9047,
-  "generated_at": "2026-07-16T20:34:19.412882",
+  "item_count": 17,
+  "file_size_bytes": 11047,
+  "generated_at": "2026-11-11T13:38:27.619930",
   "blockers": []
 }

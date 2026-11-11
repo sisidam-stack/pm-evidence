@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>電話占いヴェルニ 問い合わせ・面談チェックリスト</title>
+<title>電話占いヴェルニ 電話占いヴェルニ 利用前チェックリスト</title>
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 body {
@@ -46,6 +46,14 @@ body {
   margin-bottom: 6px;
   cursor: pointer;
   transition: background .15s;
+}
+.scope-note {
+  background: #fffbeb;
+  border: 1px solid #f59e0b;
+  border-radius: 6px;
+  padding: 10px 12px;
+  margin-bottom: 12px;
+  font-size: .85rem;
 }
 .check-item:hover { background: #f0f9ff; }
 .check-box { width: 18px; height: 18px; cursor: pointer; flex-shrink: 0; margin-top: 2px; accent-color: #3b82f6; }
@@ -100,129 +108,145 @@ input:checked + label .check-text { text-decoration: line-through; color: #9ca3a
 <body>
 <div class="header">
   <h1>📋 電話占いヴェルニ</h1>
-  <div class="meta">問い合わせ・面談時チェックリスト｜2026年07月16日 作成</div>
+  <div class="meta">電話占いヴェルニ 利用前チェックリスト｜2026年11月11日 作成</div>
 </div>
 
-<div class="section-title">確認事項（全15項目）</div>
+<div class="section-title">確認事項（全17項目）</div>
 
         <div class="check-item">
           <input type="checkbox" id="chk1" class="check-box">
           <label for="chk1">
             <span class="check-num">01</span>
-            <span class="check-cat">料金体系確認</span>
-            <span class="check-text">料金体系（1分あたりの単価、占い師ごとの違い）を確認した</span>
+            <span class="check-cat">料金</span>
+            <span class="check-text">占い師ごとに1分180円〜600円（税込）と料金に幅があり、メール占いの料金も占い師で変わるため、相談したい占い師の料金を予約前に確かめた</span>
           </label>
         </div>
         <div class="check-item">
           <input type="checkbox" id="chk2" class="check-box">
           <label for="chk2">
             <span class="check-num">02</span>
-            <span class="check-cat">初回特典条件確認</span>
-            <span class="check-text">初回無料ポイント・特典の適用条件を確認した</span>
+            <span class="check-cat">予算</span>
+            <span class="check-text">通話中はずっと料金がかかるため、落ち着いているときに、毎回の予算の上限を決めてから電話することにした</span>
           </label>
         </div>
         <div class="check-item">
           <input type="checkbox" id="chk3" class="check-box">
           <label for="chk3">
             <span class="check-num">03</span>
-            <span class="check-cat">対応方法確認</span>
-            <span class="check-text">対応方法（電話・チャット・メール）と各料金の違いを確認した</span>
+            <span class="check-cat">鑑定時間</span>
+            <span class="check-text">鑑定時間の上限（何分までにするか）を決め、鑑定の始めに占い師へ伝えることにした</span>
           </label>
         </div>
         <div class="check-item">
           <input type="checkbox" id="chk4" class="check-box">
           <label for="chk4">
             <span class="check-num">04</span>
-            <span class="check-cat">占い師指名確認</span>
-            <span class="check-text">占い師の指名・変更が可能か確認した</span>
+            <span class="check-cat">相談の準備</span>
+            <span class="check-text">初回は短めの鑑定から試すことにし、相談したいことを事前にメモした</span>
           </label>
         </div>
         <div class="check-item">
           <input type="checkbox" id="chk5" class="check-box">
           <label for="chk5">
             <span class="check-num">05</span>
-            <span class="check-cat">支払い方法確認</span>
-            <span class="check-text">支払い方法・課金の仕組み（従量課金/ポイント制等）を確認した</span>
+            <span class="check-cat">続けて使うときの費用</span>
+            <span class="check-text">定額制ではなく、長引くと最終的な支払額が先に決まらないことと、続けて使うと費用がかかることを理解した</span>
           </label>
         </div>
         <div class="check-item">
           <input type="checkbox" id="chk6" class="check-box">
           <label for="chk6">
             <span class="check-num">06</span>
-            <span class="check-cat">登録退会手続き確認</span>
-            <span class="check-text">会員登録・退会の手続きを確認した</span>
+            <span class="check-cat">支払い方法</span>
+            <span class="check-text">支払いは先払い（サービスポイントが付く）と後払い（付かない・利用日を含めて4日以内に支払う）の2通りで、購入したポイントの有効期間は180日だと確かめた</span>
           </label>
         </div>
         <div class="check-item">
           <input type="checkbox" id="chk7" class="check-box">
           <label for="chk7">
             <span class="check-num">07</span>
-            <span class="check-cat">プライバシー方針確認</span>
-            <span class="check-text">相談内容の秘匿性・プライバシー保護方針を確認した</span>
+            <span class="check-cat">先払いのポイント</span>
+            <span class="check-text">ポイントを先払いで買うと金額に応じて上乗せされるポイントの量を、公式の料金案内で確かめた</span>
           </label>
         </div>
         <div class="check-item">
           <input type="checkbox" id="chk8" class="check-box">
           <label for="chk8">
             <span class="check-num">08</span>
-            <span class="check-cat">待機時間確認</span>
-            <span class="check-text">待機時間・つながりやすさの傾向を確認した</span>
+            <span class="check-cat">新規登録特典</span>
+            <span class="check-text">新規登録特典の内容と、すでにアカウントを持っていると対象外になることを公式サイトで確かめた</span>
           </label>
         </div>
         <div class="check-item">
           <input type="checkbox" id="chk9" class="check-box">
           <label for="chk9">
             <span class="check-num">09</span>
-            <span class="check-cat">追加料金確認</span>
-            <span class="check-text">追加料金が発生するケース（延長・指名料等）を確認した</span>
+            <span class="check-cat">特典の変更</span>
+            <span class="check-text">特典・キャンペーンの内容や付与額は時期で変わるため、申し込む前に公式サイトで今の条件を確かめた</span>
           </label>
         </div>
         <div class="check-item">
           <input type="checkbox" id="chk10" class="check-box">
           <label for="chk10">
             <span class="check-num">10</span>
-            <span class="check-cat">キャンペーン条件確認</span>
-            <span class="check-text">キャンペーン・割引の適用条件と期限を確認した</span>
+            <span class="check-cat">最新情報</span>
+            <span class="check-text">対象条件などは変わることがあるため、申し込む前に公式サイトで最新情報を確かめた</span>
           </label>
         </div>
         <div class="check-item">
           <input type="checkbox" id="chk11" class="check-box">
           <label for="chk11">
             <span class="check-num">11</span>
-            <span class="check-cat">相談窓口確認</span>
-            <span class="check-text">苦情・トラブル時の相談窓口の有無を確認した</span>
+            <span class="check-cat">占い師の選び方</span>
+            <span class="check-text">在籍1,700名以上の中から、得意な占術・鑑定スタイル・口コミ評価をプロフィールで確かめて占い師を選んだ</span>
           </label>
         </div>
         <div class="check-item">
           <input type="checkbox" id="chk12" class="check-box">
           <label for="chk12">
             <span class="check-num">12</span>
-            <span class="check-cat">他社比較実施</span>
-            <span class="check-text">類似サービスと料金・占い師の在籍数を比較検討した</span>
+            <span class="check-cat">予約</span>
+            <span class="check-text">希望の占い師が鑑定中や待機時間外のときは予約で順番に案内されることを確かめ、候補の占い師を複数決めた（お気に入り登録で待機を知らせるメールが届く）</span>
           </label>
         </div>
         <div class="check-item">
           <input type="checkbox" id="chk13" class="check-box">
           <label for="chk13">
             <span class="check-num">13</span>
-            <span class="check-cat">service_name</span>
-            <span class="check-text">サービス名: 電話占いヴェルニ（運営: 株式会社ファンフィール、2004年〜運営）を確認した</span>
+            <span class="check-cat">相談の方法</span>
+            <span class="check-text">相談は電話・チャット・メールのどれかで、対面の鑑定は無いことを確かめた</span>
           </label>
         </div>
         <div class="check-item">
           <input type="checkbox" id="chk14" class="check-box">
           <label for="chk14">
             <span class="check-num">14</span>
-            <span class="check-cat">pricing_range</span>
-            <span class="check-text">料金: 占い師ごとに1分220円〜580円と幅がある従量課金制（メール占いは1通3,400円〜5,800円）を確認した</span>
+            <span class="check-cat">年齢の条件</span>
+            <span class="check-text">年齢の利用条件（未成年・高校生は入会や利用を断られる場合がある）を公式の利用規約で確かめた</span>
           </label>
         </div>
         <div class="check-item">
           <input type="checkbox" id="chk15" class="check-box">
           <label for="chk15">
             <span class="check-num">15</span>
-            <span class="check-cat">coverage_area</span>
-            <span class="check-text">対応エリア: 全国（電話・チャット・メールのため地域制限なし）を確認した</span>
+            <span class="check-cat">返金と保証</span>
+            <span class="check-text">メーカー保証のような保証の制度は無く、利用規約で鑑定後の返金には応じないと定められていることを確かめた</span>
+          </label>
+        </div>
+        <div class="check-item">
+          <input type="checkbox" id="chk16" class="check-box">
+          <label for="chk16">
+            <span class="check-num">16</span>
+            <span class="check-cat">口コミの読み方</span>
+            <span class="check-text">占いの結果や満足度は人や相性で違い、口コミは投稿者個人の感想だと理解した</span>
+          </label>
+        </div>
+        <div class="check-item">
+          <input type="checkbox" id="chk17" class="check-box">
+          <label for="chk17">
+            <span class="check-num">17</span>
+            <span class="check-cat">大きな判断</span>
+            <span class="check-text">離婚・退職・高額なお金の判断などは占いだけで決めず、必要なら弁護士・カウンセラー等にも相談すると決めた</span>
           </label>
         </div>
 
@@ -230,7 +254,7 @@ input:checked + label .check-text { text-decoration: line-through; color: #9ca3a
 
 <div class="footer">
   このチェックリストは 電話占いヴェルニ の申込み前確認用です。
-  情報は 2026年07月16日 時点のものです。最新情報は公式サイトでご確認ください。
+  情報は 2026年11月11日 時点のものです。最新情報は公式サイトでご確認ください。
 </div>
 </body>
 </html>
